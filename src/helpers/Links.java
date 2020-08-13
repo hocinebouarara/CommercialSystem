@@ -10,5 +10,10 @@ package helpers;
  * @author hocin
  */
 public class Links {
-    
+
+    public static String CLIENTSVIEW = "/client/clientsView.fxml";
+    public static String HOMEVIEW ="/home/homeView.fxml";
+
+    public static String VIEWSTYLE = "/home/homeview.css";
+
 }
