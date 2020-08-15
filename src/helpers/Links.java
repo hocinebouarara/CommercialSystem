@@ -11,7 +11,7 @@ package helpers;
  */
 public class Links {
 
-    public static String CLIENTSVIEW = "/client/clientsView.fxml";
+    public static String CLIENTSVIEW = "/clients/clientsView.fxml";
     public static String HOMEVIEW ="/home/homeView.fxml";
 
     public static String VIEWSTYLE = "/home/homeview.css";
