@@ -1,14 +1,161 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.net.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import de.jensd.fx.glyphs.octicons.OctIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.HomeViewController">
-    <stylesheets>
-        <URL value="@homeview.css"/>
-    </stylesheets>
-</AnchorPane>
+
+<HBox alignment="TOP_RIGHT" prefHeight="650.0" prefWidth="1200.0" style="-fx-background-color: #651FFF;" stylesheets="@homeview.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.HomeViewController">
+   <children>
+      <VBox>
+         <children>
+            <HBox alignment="CENTER" prefHeight="138.0" prefWidth="164.0">
+               <children>
+                  <Circle fx:id="myImage" fill="TRANSPARENT" radius="69.0" stroke="WHITE" strokeType="INSIDE" />
+               </children>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </HBox>
+            <VBox fx:id="boxButton">
+               <children>
+                  <JFXButton accessibleText="homeMenu" onMouseClicked="#getHomeView" prefHeight="60.0" prefWidth="190.0" text="Dashboard" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Italic" size="20.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="BANK" size="30" translateX="-4.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton accessibleText="productsMenu" onMouseClicked="#getproductsView" prefHeight="60.0" prefWidth="190.0" text="Products" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Italic" size="20.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="ARCHIVE" size="30" translateX="-19.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton accessibleText="clientsMenu" onMouseClicked="#getClientsView" prefHeight="60.0" prefWidth="190.0" text="Clients" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Italic" size="20.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="HUMAN_MALE_FEMALE" size="35" translateX="-29.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton accessibleText="supplierMenu" alignment="CENTER" onMouseClicked="#getSuppliersView" prefHeight="60.0" prefWidth="190.0" text="Supplier" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Italic" size="20.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView fill="WHITE" glyphName="TRUCK" size="30" translateX="-21.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton accessibleText="purchasesMenu" alignment="CENTER" onMouseClicked="#getPurchasesView" prefHeight="60.0" prefWidth="190.0" text="Purchases" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Italic" size="20.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="CART_ARROW_DOWN" size="30" translateX="-12.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton accessibleText="salesMenu" alignment="CENTER" onMouseClicked="#getSalesView" prefHeight="60.0" prefWidth="190.0" text="Sales" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic Italic" size="20.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" translateX="-33.0">
+                           <image>
+                              <Image url="@../image/icons8-multichannel-48.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <AnchorPane maxWidth="1100.0" prefHeight="585.0" prefWidth="1025.0" style="-fx-background-radius: 30 0 0 30; -fx-background-color: white;">
+         <children>
+            <HBox layoutX="10.0" layoutY="33.0" prefHeight="70.0" prefWidth="986.0" style="-fx-background-color: #651FFF; -fx-background-radius: 10px;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="417.0">
+                     <children>
+                        <FontAwesomeIconView fill="#fcfcfc" glyphName="SEARCH" size="30" wrappingWidth="31.0">
+                           <HBox.margin>
+                              <Insets left="8.0" top="20.0" />
+                           </HBox.margin>
+                        </FontAwesomeIconView>
+                        <TextField prefHeight="35.0" prefWidth="407.0" promptText="Searching for Item" style="-fx-background-radius: 20px;">
+                           <HBox.margin>
+                              <Insets top="20.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Century Gothic" size="20.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="70.0" prefWidth="523.0">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <children>
+                        <HBox prefHeight="46.0" prefWidth="94.0">
+                           <children>
+                              <FontAwesomeIconView fill="WHITE" glyphName="WEIXIN" size="28">
+                                 <HBox.margin>
+                                    <Insets top="35.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIconView>
+                              <OctIconView fill="WHITE" glyphName="SIGN_OUT" size="28">
+                                 <HBox.margin>
+                                    <Insets left="13.0" top="35.0" />
+                                 </HBox.margin>
+                              </OctIconView>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" layoutX="560.0" prefHeight="31.0" prefWidth="422.0" AnchorPane.leftAnchor="560.0" AnchorPane.rightAnchor="4.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <MaterialDesignIconView fill="RED" glyphName="WINDOW_MINIMIZE" onMouseClicked="#min" size="16" styleClass="FontAwesomeIconView">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </MaterialDesignIconView>
+                  <MaterialDesignIconView fill="RED" glyphName="CHECKBOX_BLANK_CIRCLE" layoutX="406.0" layoutY="32.0" onMouseClicked="#max" size="16" styleClass="FontAwesomeIconView">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </MaterialDesignIconView>
+                  <MaterialDesignIconView fill="RED" glyphName="CLOSE_CIRCLE" layoutX="416.0" layoutY="32.0" onMouseClicked="#close" size="16" styleClass="FontAwesomeIconView">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </MaterialDesignIconView>
+               </children>
+            </HBox>
+            <AnchorPane fx:id="anchorPane" layoutX="15.0" layoutY="116.0" prefHeight="500.0" prefWidth="959.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="114.0" />
+         </children>
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+      </AnchorPane>
+   </children>
+</HBox>
