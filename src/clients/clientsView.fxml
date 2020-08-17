@@ -49,7 +49,7 @@
                         <Insets left="5.0" right="10.0" />
                      </HBox.margin>
                   </FontAwesomeIconView>
-                  <FontAwesomeIconView fill="#880e4f" glyphName="REFRESH" onMouseClicked="#refreshTable" size="40">
+                  <FontAwesomeIconView fill="#880e4f" glyphName="REFRESH" onMouseClicked="#refreshTable" size="40" styleClass="FontAwesomeIconView">
                      <HBox.margin>
                         <Insets right="10.0" />
                      </HBox.margin>
