@@ -61,7 +61,6 @@ public class AddClientController  implements Initializable {
     }
 
 
-    @FXML
     private void saveHandle(ActionEvent event) {
         
     
@@ -82,7 +81,7 @@ public class AddClientController  implements Initializable {
         agentField.setText(null);
 
     }
-
+    @FXML
     public void Registersign() {
 
         String name = nameField.getText();
@@ -101,6 +100,9 @@ public class AddClientController  implements Initializable {
             alert.setContentText("Please Fill All DATA");
             alert.showAndWait();
             return;
+        }else{
+            isRegister();
+            clean();
         }
 
     }
