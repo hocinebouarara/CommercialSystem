@@ -105,14 +105,7 @@ public class AddSupplierController implements Initializable {
 
     @FXML
     private void clean() {
-        succesfullyPane.setVisible(false);
-        nameField.setText(null);
-        adressField.setText(null);
-        cityField.setText(null);
-        phoneField.setText(null);
-        faxField.setText(null);
-        agentField.setText(null);
-        cnssField.setText(null);
+        
     }
 
     @FXML
