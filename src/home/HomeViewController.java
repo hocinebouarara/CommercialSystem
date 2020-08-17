@@ -136,6 +136,8 @@ public class HomeViewController implements Initializable {
 
     @FXML
     private void getSuppliersView(MouseEvent event) {
+        loadViews(Links.SUPPLIERSVIEW);
+
     }
 
     @FXML
