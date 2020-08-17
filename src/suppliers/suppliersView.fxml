@@ -68,7 +68,7 @@
                   <TableColumn fx:id="nameCol" maxWidth="108.0" prefWidth="108.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="NAME" />
                   <TableColumn fx:id="agentCol" maxWidth="108.0" prefWidth="108.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="AGENT" />
                   <TableColumn fx:id="adressCol" maxWidth="108.0" prefWidth="108.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="ADRESS" />
-                  <TableColumn fx:id="CityCol" maxWidth="105.0" prefWidth="105.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="CITY" />
+                  <TableColumn fx:id="CityCol" maxWidth="104.0" prefWidth="104.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="CITY" />
                   <TableColumn fx:id="phoneCol" maxWidth="88.0" prefWidth="88.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="PHONE" />
                   <TableColumn fx:id="faxCol" maxWidth="88.0" prefWidth="88.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="FAX" />
                   <TableColumn fx:id="CnssCol" maxWidth="88.0" prefWidth="88.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="CNSS" />
