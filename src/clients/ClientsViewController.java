@@ -20,7 +20,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -31,15 +30,12 @@ import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
 import models.Client;
 
 /**
@@ -47,7 +43,7 @@ import models.Client;
  *
  * @author hocin
  */
-public class ClientsViewController implements Initializable {
+public class ClientsViewController  implements Initializable {
 
     @FXML
     private Pane editPane;
@@ -151,6 +147,7 @@ public class ClientsViewController implements Initializable {
                         editIcon.setOnMouseClicked((MouseEvent mouseEvent) -> {
                             
                             client = tableView.getSelectionModel().getSelectedItem();
+                            
                             addMembers();
                             
 
