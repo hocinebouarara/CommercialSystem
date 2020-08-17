@@ -83,8 +83,8 @@ public class AddProductController implements Initializable {
 
     @FXML
     private void close(MouseEvent event) {
-
-        
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
     }
 
     public void isRegister() {
@@ -92,7 +92,7 @@ public class AddProductController implements Initializable {
 
         query = "INSERT INTO article (REFA, DEAR,QSAR, SEAR,PRAC,PRVE,PRTA,PRTV) VALUES ( ?,?, ?, ?, ?,?, ?, ?)";
         try {
-           
+
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, referField.getText());
             preparedStatement.setString(2, desigField.getText());
@@ -112,6 +112,7 @@ public class AddProductController implements Initializable {
         }
     }
 
+    @FXML
     public void Registersign() {
 
         String reference = referField.getText();
