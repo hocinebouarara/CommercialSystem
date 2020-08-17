@@ -16,9 +16,11 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import models.Product;
 
@@ -28,7 +30,7 @@ import models.Product;
  * @author hocin
  */
 public class AddProductController implements Initializable {
-    
+
     @FXML
     private JFXTextField referField;
     @FXML
@@ -47,7 +49,7 @@ public class AddProductController implements Initializable {
     private JFXTextField saleTotField;
     @FXML
     private VBox succesfullyPane;
-    
+
     String query = null;
     Connection connection = null;
     ResultSet resultSet = null;
@@ -60,20 +62,14 @@ public class AddProductController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }
-    
+
     @FXML
     private void getImage(MouseEvent event) {
     }
-    
-    @FXML
-    private void saveHandle(ActionEvent event) {
-        Registersign();
-        
-    }
-    
+
     @FXML
     private void clean() {
-        succesfullyPane.setVisible(false);       
+        succesfullyPane.setVisible(false);
         referField.setText(null);
         desigField.setText(null);
         QntField.setText(null);
@@ -82,22 +78,21 @@ public class AddProductController implements Initializable {
         buyTotField.setText(null);
         saleTotField.setText(null);
         saleField.setText(null);
-        
+
     }
-    
+
     @FXML
     private void close(MouseEvent event) {
-        
+
         
     }
-    
+
     public void isRegister() {
         connection = DbConnect.getConnect();
-        
+
         query = "INSERT INTO article (REFA, DEAR,QSAR, SEAR,PRAC,PRVE,PRTA,PRTV) VALUES ( ?,?, ?, ?, ?,?, ?, ?)";
         try {
-            Registersign();
-            
+           
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, referField.getText());
             preparedStatement.setString(2, desigField.getText());
@@ -107,7 +102,7 @@ public class AddProductController implements Initializable {
             preparedStatement.setString(6, saleField.getText());
             preparedStatement.setString(7, buyTotField.getText());
             preparedStatement.setString(8, saleTotField.getText());
-            
+
             preparedStatement.execute();
 
             //JOptionPane.showMessageDialog(null, "succes");
@@ -116,9 +111,9 @@ public class AddProductController implements Initializable {
             JOptionPane.showMessageDialog(null, e);
         }
     }
-    
+
     public void Registersign() {
-        
+
         String reference = referField.getText();
         String designation = desigField.getText();
         String category = CatField.getText();
@@ -127,22 +122,22 @@ public class AddProductController implements Initializable {
         String totalbuy = buyTotField.getText();
         String saleprice = saleField.getText();
         String totalsales = saleTotField.getText();
-        
+
         if (reference.isEmpty() || designation.isEmpty()
                 || category.isEmpty() || quantity.isEmpty()
                 || buyprice.isEmpty() || totalbuy.isEmpty()
                 || saleprice.isEmpty() || totalsales.isEmpty()) {
-            
+
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
             alert.setContentText("Please Fill All DATA");
             alert.showAndWait();
             return;
-        }else{
+        } else {
             isRegister();
             clean();
         }
-        
+
     }
-    
+
 }
