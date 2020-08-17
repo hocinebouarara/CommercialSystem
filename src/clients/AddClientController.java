@@ -112,7 +112,6 @@ public class AddClientController  implements Initializable {
 
         query = "INSERT INTO client (NOCL, ADCL, VICL, TECL, FACL, NORECL) VALUES (?, ?, ?,?, ?, ?)";
         try {
-            Registersign();
 
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, nameField.getText());
