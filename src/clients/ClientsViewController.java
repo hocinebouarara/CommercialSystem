@@ -43,7 +43,7 @@ import models.Client;
  *
  * @author hocin
  */
-public class ClientsViewController  implements Initializable {
+public class ClientsViewController implements Initializable {
 
     @FXML
     private Pane editPane;
@@ -121,11 +121,13 @@ public class ClientsViewController  implements Initializable {
 
                         deleteIcon.setStyle(
                                 " -fx-cursor: hand ;"
-                                + "-glyph-size:22px"
+                                + "-glyph-size:22px;"
+                                + "-fx-fill:#ff1744;"
                         );
                         editIcon.setStyle(
                                 " -fx-cursor: hand ;"
-                                + "-glyph-size:22px"
+                                + "-glyph-size:22px;"
+                                + "-fx-fill:#00E676;"
                         );
 
                         deleteIcon.setOnMouseClicked((MouseEvent mouseEvent) -> {
@@ -145,11 +147,10 @@ public class ClientsViewController  implements Initializable {
                         });
 
                         editIcon.setOnMouseClicked((MouseEvent mouseEvent) -> {
-                            
+
                             client = tableView.getSelectionModel().getSelectedItem();
-                            
+
                             addMembers();
-                            
 
                         });
 
