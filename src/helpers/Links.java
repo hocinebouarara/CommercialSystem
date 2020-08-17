@@ -13,6 +13,9 @@ public class Links {
 
     public static String CLIENTSVIEW = "/clients/clientsView.fxml";
     public static String HOMEVIEW ="/home/homeView.fxml";
+    public static String PRODUCTSVIEW ="/products/productsView.fxml";
+    
+    
 
     public static String VIEWSTYLE = "/home/homeview.css";
 
