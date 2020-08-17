@@ -77,7 +77,7 @@ public class ProductsViewController implements Initializable {
     Connection connection = null;
     ResultSet resultSet = null;
     PreparedStatement preparedStatement = null;
-    Client Product = null;
+    Product product = null;
 
     ObservableList<Product> productList = FXCollections.observableArrayList();
     @FXML
@@ -133,14 +133,30 @@ public class ProductsViewController implements Initializable {
 
                         deleteIcon.setStyle(
                                 " -fx-cursor: hand ;"
-                                + "-glyph-size:22px"
+                                + "-glyph-size:22px;"
+                                + "-fx-fill:#ff1744;"
                         );
                         editIcon.setStyle(
                                 " -fx-cursor: hand ;"
-                                + "-glyph-size:22px"
+                                + "-glyph-size:22px;"
+                                + "-fx-fill:#00E676;"
                         );
 
                         deleteIcon.setOnMouseClicked((MouseEvent mouseEvent) -> {
+                            
+                             try {
+
+                                product= productTable.getSelectionModel().getSelectedItem();
+                                connection = DbConnect.getConnect();
+                                query = "delete from article where idar =" + product.getId();
+                                preparedStatement = connection.prepareCall(query);
+                                preparedStatement.execute();
+                                refreshTable();
+                                product = null;
+
+                            } catch (SQLException ex) {
+                                Logger.getLogger(ClientsViewController.class.getName()).log(Level.SEVERE, null, ex);
+                            }
 
                         });
 
