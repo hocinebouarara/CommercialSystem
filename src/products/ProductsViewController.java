@@ -102,12 +102,12 @@ public class ProductsViewController implements Initializable {
         idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
         referenceCol.setCellValueFactory(new PropertyValueFactory<>("reference"));
         desigCol.setCellValueFactory(new PropertyValueFactory<>("designation"));
-        saleTotCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
-        quantityCol.setCellValueFactory(new PropertyValueFactory<>("category"));
-        categoryCol.setCellValueFactory(new PropertyValueFactory<>("buyingPrice"));
-        buyCol.setCellValueFactory(new PropertyValueFactory<>("salePrice"));
-        saleCol.setCellValueFactory(new PropertyValueFactory<>("totalBuy"));
-        buyTotCol.setCellValueFactory(new PropertyValueFactory<>("totalSale"));
+        quantityCol.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        categoryCol.setCellValueFactory(new PropertyValueFactory<>("category"));
+        buyCol.setCellValueFactory(new PropertyValueFactory<>("buyingPrice"));
+        saleCol.setCellValueFactory(new PropertyValueFactory<>("salePrice"));
+        buyTotCol.setCellValueFactory(new PropertyValueFactory<>("totalBuy"));
+        saleTotCol.setCellValueFactory(new PropertyValueFactory<>("totalSale"));
 
         //editableCols();
         // ManageCol.setCellValueFactory(new PropertyValueFactory("update"));
@@ -133,12 +133,12 @@ public class ProductsViewController implements Initializable {
 
                         deleteIcon.setStyle(
                                 " -fx-cursor: hand ;"
-                                + "-glyph-size:22px;"
+                                + "-glyph-size:28px;"
                                 + "-fx-fill:#ff1744;"
                         );
                         editIcon.setStyle(
                                 " -fx-cursor: hand ;"
-                                + "-glyph-size:22px;"
+                                + "-glyph-size:28px;"
                                 + "-fx-fill:#00E676;"
                         );
 
@@ -166,8 +166,8 @@ public class ProductsViewController implements Initializable {
 
                         HBox managebtn = new HBox(editIcon, deleteIcon);
                         managebtn.setStyle("-fx-alignment:center");
-                        HBox.setMargin(deleteIcon, new Insets(1, 0, 0, 5));
-                        HBox.setMargin(editIcon, new Insets(8, 0, 5, 0));
+                        HBox.setMargin(deleteIcon, new Insets(2, 2, 0, 3));
+                        HBox.setMargin(editIcon, new Insets(2, 3, 0, 2));
 
                         setGraphic(managebtn);
 
