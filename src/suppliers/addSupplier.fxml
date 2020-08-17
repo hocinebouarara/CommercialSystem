@@ -1,11 +1,212 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="suppliers.AddSupplierController">
-    
-</AnchorPane>
+<VBox alignment="CENTER" style="-fx-background-radius: 10px; -fx-background-color: #F06292;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="suppliers.AddSupplierController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="469.0" prefWidth="589.0" stylesheets="@../home/homeview.css">
+         <children>
+            <Label layoutX="14.0" layoutY="10.0" prefHeight="46.0" prefWidth="183.0" text="Account Setting" textFill="#726969">
+               <font>
+                  <Font name="Century Gothic" size="20.0" />
+               </font>
+            </Label>
+            <VBox alignment="CENTER" layoutX="9.0" layoutY="83.0">
+               <children>
+                  <Circle fill="#1f93ff00" radius="88.0" stroke="#eeebeb" strokeType="INSIDE" />
+                  <FontAwesomeIconView fill="#651fff" glyphName="PLUS_CIRCLE" size="37" styleClass="FontAwesomeIconView" translateX="1.0" translateY="-14.0" />
+               </children>
+            </VBox>
+            <Pane layoutX="20.0" layoutY="52.0" prefHeight="2.0" prefWidth="200.0" style="-fx-background-color: #eeebeb;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="40.0" />
+            <VBox alignment="TOP_CENTER" layoutX="197.0" layoutY="74.0" prefHeight="391.0" prefWidth="406.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="38.0" prefWidth="310.0">
+                     <children>
+                        <Label prefHeight="61.0" prefWidth="92.0" text="Name" textFill="#726969">
+                           <font>
+                              <Font name="Yu Gothic UI Light" size="22.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="nameField" focusColor="#651fff" prefHeight="25.0" prefWidth="276.0" unFocusColor="#eeebeb">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="310.0">
+                     <children>
+                        <Label prefHeight="61.0" prefWidth="92.0" text="Adress" textFill="#726969">
+                           <font>
+                              <Font name="Yu Gothic UI Light" size="22.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="adressField" focusColor="#651fff" prefHeight="25.0" prefWidth="276.0" unFocusColor="#eeebeb">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="86.0" prefHeight="38.0" prefWidth="310.0">
+                     <children>
+                        <Label prefHeight="61.0" prefWidth="92.0" text="Agent" textFill="#726969">
+                           <font>
+                              <Font name="Yu Gothic UI Light" size="22.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="agentField" focusColor="#651fff" prefHeight="25.0" prefWidth="276.0" unFocusColor="#eeebeb">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="310.0">
+                     <children>
+                        <Label prefHeight="61.0" prefWidth="92.0" text="City" textFill="#726969">
+                           <font>
+                              <Font name="Yu Gothic UI Light" size="22.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="cityField" focusColor="#651fff" prefHeight="25.0" prefWidth="276.0" unFocusColor="#eeebeb">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="310.0">
+                     <children>
+                        <Label prefHeight="61.0" prefWidth="92.0" text="Phone" textFill="#726969">
+                           <font>
+                              <Font name="Yu Gothic UI Light" size="22.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="phoneField" focusColor="#651fff" prefHeight="25.0" prefWidth="276.0" unFocusColor="#eeebeb">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="48.0" prefHeight="38.0" prefWidth="310.0">
+                     <children>
+                        <Label prefHeight="61.0" prefWidth="92.0" text="Fax" textFill="#726969">
+                           <font>
+                              <Font name="Yu Gothic UI Light" size="22.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="faxField" focusColor="#651fff" prefHeight="25.0" prefWidth="276.0" unFocusColor="#eeebeb">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="274.0" prefHeight="38.0" prefWidth="310.0">
+                     <children>
+                        <Label prefHeight="61.0" prefWidth="92.0" text="Cnss" textFill="#726969">
+                           <font>
+                              <Font name="Yu Gothic UI Light" size="22.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="cnssField" focusColor="#651fff" prefHeight="25.0" prefWidth="276.0" unFocusColor="#eeebeb">
+                           <HBox.margin>
+                              <Insets right="2.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="309.0">
+                     <children>
+                        <JFXButton alignment="CENTER" onMouseClicked="#Registersign" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: #651FFF;" text="Save" textFill="WHITE">
+                           <font>
+                              <Font name="Gill Sans MT" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                        <JFXButton alignment="CENTER" layoutX="10.0" layoutY="10.0" onMouseClicked="#clean" prefHeight="40.0" prefWidth="128.0" style="-fx-background-color: #FFFF00;" text="Clean" textFill="WHITE">
+                           <font>
+                              <Font name="Gill Sans MT" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </JFXButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox fx:id="succesfullyPane" alignment="CENTER" layoutX="18.0" layoutY="348.0" prefHeight="93.0" prefWidth="176.0">
+               <children>
+                  <FontAwesomeIconView fill="#00e676" glyphName="CHECK_CIRCLE_ALT" size="65" wrappingWidth="51.85714340209961" />
+                  <Label alignment="CENTER" prefHeight="28.0" prefWidth="227.0" text="Client add Successfuly" textFill="#726969">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <FontAwesomeIconView fill="#bfbbbb" glyphName="CLOSE" layoutX="572.0" layoutY="29.0" onMouseClicked="#close" size="30" styleClass="FontAwesomeIconView" text="" />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
