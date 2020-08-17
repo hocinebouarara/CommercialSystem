@@ -40,7 +40,7 @@
             </VBox>
          </children>
       </HBox>
-      <AnchorPane layoutX="5.0" layoutY="70.0" prefHeight="429.0" prefWidth="894.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="69.0">
+      <AnchorPane layoutX="5.0" layoutY="70.0" prefHeight="449.0" prefWidth="913.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="70.0">
          <children>
             <HBox layoutX="47.0" layoutY="14.0" prefHeight="40.0" prefWidth="854.0" AnchorPane.topAnchor="10.0">
                <children>
@@ -62,16 +62,16 @@
                   <FontAwesomeIconView fill="#455a64" glyphName="PRINT" layoutX="60.0" layoutY="44.0" size="40" styleClass="FontAwesomeIconView" />
                </children>
             </HBox>
-            <TableView fx:id="tableView" layoutX="7.0" layoutY="63.0" prefHeight="316.0" prefWidth="804.0" style="-fx-alignment: center;" stylesheets="@../home/homeview.css">
+            <TableView fx:id="tableView" layoutX="9.0" layoutY="63.0" prefHeight="320.0" prefWidth="849.0" style="-fx-alignment: center;" stylesheets="@../home/homeview.css" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="63.0">
               <columns>
                 <TableColumn fx:id="idCol" maxWidth="90.0" prefWidth="90.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="ID" />
-                  <TableColumn fx:id="nameCol" maxWidth="110.0" prefWidth="110.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="NAME" />
-                  <TableColumn fx:id="adressCol" maxWidth="110.0" prefWidth="110.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="ADRESS" />
-                  <TableColumn fx:id="CityCol" maxWidth="110.0" prefWidth="110.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="CITY" />
+                  <TableColumn fx:id="nameCol" maxWidth="120.0" prefWidth="120.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="NAME" />
+                  <TableColumn fx:id="adressCol" maxWidth="120.0" prefWidth="120.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="ADRESS" />
+                  <TableColumn fx:id="CityCol" maxWidth="120.0" prefWidth="120.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="CITY" />
                   <TableColumn fx:id="phoneCol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="PHONE" />
                   <TableColumn fx:id="faxCol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="FAX" />
-                  <TableColumn fx:id="agentCol" maxWidth="110.0" prefWidth="110.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="AGENT" />
-                  <TableColumn fx:id="operationCol" maxWidth="106.0" minWidth="0.0" prefWidth="58.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="ACTION" />
+                  <TableColumn fx:id="agentCol" maxWidth="120.0" prefWidth="120.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="AGENT" />
+                  <TableColumn fx:id="operationCol" maxWidth="106.0" minWidth="0.0" prefWidth="64.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="ACTION" />
               </columns>
             </TableView>
          </children>
