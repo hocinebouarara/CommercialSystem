@@ -62,7 +62,7 @@
                   <FontAwesomeIconView fill="#455a64" glyphName="PRINT" layoutX="60.0" layoutY="44.0" size="40" styleClass="FontAwesomeIconView" />
                </children>
             </HBox>
-            <TableView fx:id="tableView" layoutX="9.0" layoutY="63.0" prefHeight="320.0" prefWidth="849.0" style="-fx-alignment: center;" stylesheets="@../home/homeview.css" AnchorPane.bottomAnchor="66.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="63.0">
+            <TableView fx:id="tableView" layoutX="9.0" layoutY="63.0" prefHeight="320.0" prefWidth="849.0" style="-fx-alignment: center;" stylesheets="@../home/homeview.css" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="63.0">
               <columns>
                 <TableColumn fx:id="idCol" maxWidth="90.0" prefWidth="90.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="ID" />
                   <TableColumn fx:id="nameCol" maxWidth="120.0" prefWidth="120.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="NAME" />
