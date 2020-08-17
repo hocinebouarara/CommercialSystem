@@ -6,6 +6,7 @@
 package products;
 
 import clients.ClientsViewController;
+import com.jfoenix.controls.JFXTextField;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import helpers.DbConnect;
@@ -19,6 +20,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -29,6 +31,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.util.Callback;
 import models.Client;
 import models.Product;
@@ -40,10 +43,6 @@ import models.Product;
  */
 public class ProductsViewController implements Initializable {
 
-    @FXML
-    private Pane editPane;
-    @FXML
-    private Pane statPane;
     @FXML
     private TableView<Product> productTable;
     @FXML
@@ -74,6 +73,10 @@ public class ProductsViewController implements Initializable {
     Client Product = null;
 
     ObservableList<Product> productList = FXCollections.observableArrayList();
+    @FXML
+    private Pane editPane;
+    @FXML
+    private Pane statPane;
 
     /**
      * Initializes the controller class.
@@ -159,23 +162,7 @@ public class ProductsViewController implements Initializable {
         actionCol.setCellFactory(cellFoctory);
         productTable.setItems(productList);
     }
-
     @FXML
-    private void editPane(MouseEvent event) {
-    }
-
-    @FXML
-    private void statisticsPane(MouseEvent event) {
-    }
-
-    @FXML
-    private void addMembers(MouseEvent event) {
-    }
-
-    @FXML
-    private void refreshTable(MouseEvent event) {
-    }
-
     private void refreshTable() {
         productList.clear();
 
@@ -198,8 +185,22 @@ public class ProductsViewController implements Initializable {
             resultSet.close();
         } catch (SQLException e) {
             System.err.print(e);
+            
         }
-
+        
     }
+
+    @FXML
+    private void editPane(MouseEvent event) {
+    }
+
+    @FXML
+    private void statisticsPane(MouseEvent event) {
+    }
+
+    @FXML
+    private void addMembers(MouseEvent event) {
+    }
+
 
 }
