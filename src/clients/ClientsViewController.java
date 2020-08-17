@@ -5,30 +5,40 @@
  */
 package clients;
 
-import com.jfoenix.controls.JFXButton;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import helpers.DbConnect;
+import helpers.Links;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.util.Callback;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import models.Client;
 
 /**
@@ -65,7 +75,7 @@ public class ClientsViewController implements Initializable {
     Connection connection = null;
     ResultSet resultSet = null;
     PreparedStatement preparedStatement = null;
-    
+
     ObservableList<Client> cliensList = FXCollections.observableArrayList();
 
     /**
@@ -79,7 +89,7 @@ public class ClientsViewController implements Initializable {
 
     private void loadData() {
         // TODO
-        
+
         connection = DbConnect.getConnect();
         refreshTable();
         idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -93,59 +103,72 @@ public class ClientsViewController implements Initializable {
         // ManageCol.setCellValueFactory(new PropertyValueFactory("update"));
         // insert btn in every row
         Callback<TableColumn<Client, String>, TableCell<Client, String>> cellFoctory = (TableColumn<Client, String> param) -> {
-            
+
             // make the tablecell containing buttons
             final TableCell<Client, String> cell = new TableCell<Client, String>() {
-                
+
                 // Override updateItem method
                 @Override
                 public void updateItem(String item, boolean empty) {
-                    
+
                     super.updateItem(item, empty);
                     // ensure that cell is created only on non-empty rows
                     if (empty) {
                         setGraphic(null);
                         setText(null);
                     } else {
-                        
-                        final JFXButton editButton = new JFXButton("update");
-                        
-                        editButton.setStyle("-fx-background-color:#2196F3;"
-                                + "-fx-background-radius:4px;"
-                                + "-fx-font-size: 8px; "
-                                + "-fx-text-fill: #ffffff;"
+
+                        FontAwesomeIconView deleteIcon = new FontAwesomeIconView(FontAwesomeIcon.TRASH);
+                        FontAwesomeIconView editIcon = new FontAwesomeIconView(FontAwesomeIcon.PENCIL_SQUARE);
+
+                        Icon dicon = new ImageIcon("C:\\Users\\hocin\\Documents\\NetBeansProjects\\commercialsysetm\\src\\image\\icons8-trash-48.png");
+                        Icon eicon = new ImageIcon("give path of the image");
+
+                        deleteIcon.setStyle(
+                                " -fx-cursor: hand ;"
+                                  + "-glyph-size:22px"
+                                
                         );
-                        
-                        final Button deleteButton = new Button("delete");
-                        
-                        deleteButton.setStyle("-fx-background-color:#f44336;"
-                                + "-fx-background-radius:4px;"
-                                + "-fx-font-size: 8px; "
-                                + "-fx-text-fill: #ffffff;"
+                        editIcon.setStyle(
+                                " -fx-cursor: hand ;"
+                                        + "-glyph-size:22px"
+                                
                         );
-                        
-                        tableView.setStyle("-fx-alignment: CENTER-RIGHT;");
-                        HBox managebtn = new HBox(editButton, deleteButton);
-                        HBox.setMargin(deleteButton, new Insets(5, 8, 5, 3));
-                        HBox.setMargin(editButton, new Insets(5, 3, 5, 10));
-                        
-                        editButton.setOnAction(event -> {
-                            //getSelected();
-                            
+
+                        deleteIcon.setOnMouseClicked((MouseEvent mouseEvent) -> {
+                            if (mouseEvent.getButton().equals(MouseButton.PRIMARY)) {
+                               
+                            }
+                            refreshTable();
                         });
-                        
+
+                        editIcon.setOnMouseClicked((MouseEvent mouseEvent) -> {
+                            if (mouseEvent.getButton().equals(MouseButton.PRIMARY)) {
+                                if (mouseEvent.getClickCount() == 1) {
+                                    System.out.println("edit btn clicked");
+                                    
+                                }
+                            }
+                           
+                        });
+
+                        HBox managebtn = new HBox(editIcon, deleteIcon);
+                        managebtn.setStyle("-fx-alignment:center");
+                        HBox.setMargin(deleteIcon, new Insets(1, 0, 0, 5));
+                        HBox.setMargin(editIcon, new Insets(8, 0, 5, 0));
+
                         setGraphic(managebtn);
-                        
+
                         setText(null);
-                        
+
                     }
-                    
+
                 }
-                
+
             };
-            
+
             return cell;
-            
+
         };
         operationCol.setCellFactory(cellFoctory);
         tableView.setItems(cliensList);
@@ -164,6 +187,7 @@ public class ClientsViewController implements Initializable {
         statPane.setStyle("-fx-background-color: #651FFF");
     }
 
+    @FXML
     private void refreshTable() {
         cliensList.clear();
 
@@ -174,12 +198,12 @@ public class ClientsViewController implements Initializable {
 
             while (resultSet.next()) {
                 cliensList.add(new Client(
-                        resultSet.getInt("IDCL"), 
+                        resultSet.getInt("IDCL"),
                         resultSet.getString("NOCL"),
-                        resultSet.getString("ADCL"), 
-                        resultSet.getString("VICL"), 
-                        resultSet.getString("TECL"), 
-                        resultSet.getString("FACL"), 
+                        resultSet.getString("ADCL"),
+                        resultSet.getString("VICL"),
+                        resultSet.getString("TECL"),
+                        resultSet.getString("FACL"),
                         resultSet.getString("NORECL")
                 )
                 );
@@ -191,6 +215,23 @@ public class ClientsViewController implements Initializable {
         } catch (Exception e) {
             System.err.print(e);
         }
+    }
+
+    @FXML
+    private void addMembers(MouseEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/clients/addClient.fxml"));
+            Scene scene = new Scene(root);
+            scene.getStylesheets().add(getClass().getResource(Links.VIEWSTYLE).toExternalForm());
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.setScene(scene);
+            stage.show();
+
+        } catch (IOException ex) {
+            Logger.getLogger(ClientsViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
 }
