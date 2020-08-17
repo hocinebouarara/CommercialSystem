@@ -24,7 +24,7 @@
             <VBox alignment="CENTER" layoutX="9.0" layoutY="83.0">
                <children>
                   <Circle fill="#1f93ff00" radius="88.0" stroke="#eeebeb" strokeType="INSIDE" />
-                  <FontAwesomeIconView fill="#651fff" glyphName="PLUS_CIRCLE" size="37" translateX="1.0" translateY="-14.0" />
+                  <FontAwesomeIconView fill="#651fff" glyphName="PLUS_CIRCLE" size="37" styleClass="FontAwesomeIconView" translateX="1.0" translateY="-14.0" />
                </children>
             </VBox>
             <Pane layoutX="20.0" layoutY="52.0" prefHeight="2.0" prefWidth="200.0" style="-fx-background-color: #eeebeb;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="40.0" />
@@ -185,7 +185,7 @@
                   </Label>
                </children>
             </VBox>
-            <FontAwesomeIconView fill="#bfbbbb" glyphName="CLOSE" layoutX="572.0" layoutY="29.0" size="30" text="" />
+            <FontAwesomeIconView fill="#bfbbbb" glyphName="CLOSE" layoutX="572.0" layoutY="29.0" onMouseClicked="#close" size="30" styleClass="FontAwesomeIconView" text="" />
          </children>
       </AnchorPane>
    </children>
