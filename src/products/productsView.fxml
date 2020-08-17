@@ -40,7 +40,7 @@
             </VBox>
          </children>
       </HBox>
-      <AnchorPane layoutX="5.0" layoutY="70.0" prefHeight="429.0" prefWidth="913.0">
+      <AnchorPane layoutX="5.0" layoutY="69.0" prefHeight="449.0" prefWidth="913.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="70.0">
          <children>
             <HBox layoutX="47.0" layoutY="14.0" prefHeight="40.0" prefWidth="854.0" AnchorPane.topAnchor="10.0">
                <children>
@@ -62,18 +62,18 @@
                   <FontAwesomeIconView fill="#455a64" glyphName="PRINT" layoutX="60.0" layoutY="44.0" size="40" styleClass="FontAwesomeIconView" />
                </children>
             </HBox>
-            <TableView fx:id="productTable" layoutX="14.0" layoutY="62.0" prefHeight="324.0" prefWidth="849.0" style="-fx-alignment: center;" stylesheets="@../home/homeview.css">
+            <TableView fx:id="productTable" layoutX="22.0" layoutY="62.0" prefHeight="320.0" prefWidth="849.0" style="-fx-alignment: center;" stylesheets="@../home/homeview.css" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="63.0">
                <columns>
-                  <TableColumn fx:id="idCol" maxWidth="81.0" minWidth="0.0" prefWidth="81.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="ID" />
+                  <TableColumn fx:id="idCol" maxWidth="77.0" minWidth="0.0" prefWidth="77.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="ID" />
                   <TableColumn fx:id="referenceCol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="REFERENCE" />
                   <TableColumn fx:id="desigCol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="DESIGNATION" />
                   <TableColumn fx:id="categoryCol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="CATRGORY" />
-                  <TableColumn fx:id="quantityCol" maxWidth="80.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="QUANTITY" />
-                  <TableColumn fx:id="buyCol" maxWidth="80.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="BUY PRICE" />
-                  <TableColumn fx:id="saleCol" maxWidth="80.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="SALE PRICE" />
-                  <TableColumn fx:id="buyTotCol" maxWidth="80.0" minWidth="0.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="BUY TOTAL" />
+                  <TableColumn fx:id="quantityCol" maxWidth="78.0" prefWidth="78.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="QUANTITY" />
+                  <TableColumn fx:id="buyCol" maxWidth="78.0" prefWidth="78.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="BUY PRICE" />
+                  <TableColumn fx:id="saleCol" maxWidth="78.0" prefWidth="78.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="SALE PRICE" />
+                  <TableColumn fx:id="buyTotCol" maxWidth="78.0" minWidth="0.0" prefWidth="78.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="BUY TOTAL" />
                   <TableColumn fx:id="saleTotCol" maxWidth="81.0" minWidth="0.0" prefWidth="81.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="SALE TOTAL" />
-                  <TableColumn fx:id="actionCol" maxWidth="58.0" minWidth="0.0" prefWidth="58.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="ACTION" />
+                  <TableColumn fx:id="actionCol" maxWidth="64.0" minWidth="0.0" prefWidth="64.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="ACTION" />
                </columns>
             </TableView>
          </children>
