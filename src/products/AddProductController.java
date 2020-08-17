@@ -67,19 +67,70 @@ public class AddProductController implements Initializable {
 
     @FXML
     private void saveHandle(ActionEvent event) {
-        
+        Registersign();
+        isRegister();
+        clean();
     }
 
     @FXML
     private void clean() {
+        
+        
     }
 
     @FXML
     private void close(MouseEvent event) {
     }
 
-    
+    public void isRegister() {
+        connection = DbConnect.getConnect();
 
-    
+        query = "INSERT INTO article (REFA, DEAR,QSAR, SEAR,PRAC,PRVE,PRTA,PRTV) VALUES ( ?,?, ?, ?, ?,?, ?, ?)";
+        try {
+            Registersign();
+
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, referField.getText());
+            preparedStatement.setString(2, desigField.getText());
+            preparedStatement.setString(3, QntField.getText());
+            preparedStatement.setString(4, CatField.getText());
+            preparedStatement.setString(5, buyField.getText());
+            preparedStatement.setString(6, saleField.getText());
+            preparedStatement.setString(7, buyTotField.getText());
+            preparedStatement.setString(8, saleTotField.getText());
+
+            preparedStatement.execute();
+
+            //JOptionPane.showMessageDialog(null, "succes");
+        } catch (Exception e) {
+            // TODO: handle exception
+            JOptionPane.showMessageDialog(null, e);
+        }
+    }
+
+    public void Registersign() {
+
+        String reference = referField.getText();
+        String designation = desigField.getText();
+        String category = CatField.getText();
+        String quantity = QntField.getText();
+        String buyprice = buyField.getText();
+        String totalbuy = buyTotField.getText();
+        String saleprice = saleField.getText();
+        String totalsales = saleTotField.getText();
+
+        if (reference.isEmpty() || designation.isEmpty()
+                || category.isEmpty() || quantity.isEmpty()
+                || buyprice.isEmpty() || totalbuy.isEmpty()
+                || saleprice.isEmpty() || totalsales.isEmpty()) {
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText(null);
+            alert.setContentText("Please Fill All DATA");
+            alert.showAndWait();
+            return;
+        }
+
+    }
 
 }
