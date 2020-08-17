@@ -14,6 +14,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -75,6 +76,7 @@ public class ClientsViewController implements Initializable {
     Connection connection = null;
     ResultSet resultSet = null;
     PreparedStatement preparedStatement = null;
+    Client client = null;
 
     ObservableList<Client> cliensList = FXCollections.observableArrayList();
 
@@ -121,35 +123,37 @@ public class ClientsViewController implements Initializable {
                         FontAwesomeIconView deleteIcon = new FontAwesomeIconView(FontAwesomeIcon.TRASH);
                         FontAwesomeIconView editIcon = new FontAwesomeIconView(FontAwesomeIcon.PENCIL_SQUARE);
 
-                        Icon dicon = new ImageIcon("C:\\Users\\hocin\\Documents\\NetBeansProjects\\commercialsysetm\\src\\image\\icons8-trash-48.png");
-                        Icon eicon = new ImageIcon("give path of the image");
-
                         deleteIcon.setStyle(
                                 " -fx-cursor: hand ;"
-                                  + "-glyph-size:22px"
-                                
+                                + "-glyph-size:22px"
                         );
                         editIcon.setStyle(
                                 " -fx-cursor: hand ;"
-                                        + "-glyph-size:22px"
-                                
+                                + "-glyph-size:22px"
                         );
 
                         deleteIcon.setOnMouseClicked((MouseEvent mouseEvent) -> {
-                            if (mouseEvent.getButton().equals(MouseButton.PRIMARY)) {
-                               
+                            try {
+
+                                client = tableView.getSelectionModel().getSelectedItem();
+                                connection = DbConnect.getConnect();
+                                query = "delete from client where idcl =" + client.getId();
+                                preparedStatement = connection.prepareCall(query);
+                                preparedStatement.execute();
+                                refreshTable();
+                                client = null;
+
+                            } catch (SQLException ex) {
+                                Logger.getLogger(ClientsViewController.class.getName()).log(Level.SEVERE, null, ex);
                             }
-                            refreshTable();
                         });
 
                         editIcon.setOnMouseClicked((MouseEvent mouseEvent) -> {
-                            if (mouseEvent.getButton().equals(MouseButton.PRIMARY)) {
-                                if (mouseEvent.getClickCount() == 1) {
-                                    System.out.println("edit btn clicked");
-                                    
-                                }
-                            }
-                           
+                            
+                            client = tableView.getSelectionModel().getSelectedItem();
+                            addMembers();
+                            
+
                         });
 
                         HBox managebtn = new HBox(editIcon, deleteIcon);
@@ -218,7 +222,7 @@ public class ClientsViewController implements Initializable {
     }
 
     @FXML
-    private void addMembers(MouseEvent event) {
+    private void addMembers() {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/clients/addClient.fxml"));
             Scene scene = new Scene(root);
