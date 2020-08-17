@@ -121,12 +121,12 @@ public class ClientsViewController implements Initializable {
 
                         deleteIcon.setStyle(
                                 " -fx-cursor: hand ;"
-                                + "-glyph-size:22px;"
+                                + "-glyph-size:28px;"
                                 + "-fx-fill:#ff1744;"
                         );
                         editIcon.setStyle(
                                 " -fx-cursor: hand ;"
-                                + "-glyph-size:22px;"
+                                + "-glyph-size:28px;"
                                 + "-fx-fill:#00E676;"
                         );
 
@@ -156,8 +156,8 @@ public class ClientsViewController implements Initializable {
 
                         HBox managebtn = new HBox(editIcon, deleteIcon);
                         managebtn.setStyle("-fx-alignment:center");
-                        HBox.setMargin(deleteIcon, new Insets(1, 0, 0, 5));
-                        HBox.setMargin(editIcon, new Insets(8, 0, 5, 0));
+                        HBox.setMargin(deleteIcon, new Insets(2, 2, 0, 3));
+                        HBox.setMargin(editIcon, new Insets(2, 3, 0, 2));
 
                         setGraphic(managebtn);
 
