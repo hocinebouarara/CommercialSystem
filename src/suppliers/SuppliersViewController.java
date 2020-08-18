@@ -141,6 +141,20 @@ public class SuppliersViewController implements Initializable {
                         );
 
                         deleteIcon.setOnMouseClicked((MouseEvent mouseEvent) -> {
+                            
+                             try {
+
+                                supplier = supplierTable.getSelectionModel().getSelectedItem();
+                                connection = DbConnect.getConnect();
+                                query = "delete from fournisseur where idfo =" + supplier.getId();
+                                preparedStatement = connection.prepareCall(query);
+                                preparedStatement.execute();
+                                refreshTable();
+                                supplier = null;
+
+                            } catch (SQLException ex) {
+                                Logger.getLogger(ClientsViewController.class.getName()).log(Level.SEVERE, null, ex);
+                            }
 
                         });
 
