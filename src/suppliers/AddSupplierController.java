@@ -5,36 +5,23 @@
  */
 package suppliers;
 
-import clients.ClientsViewController;
 import com.jfoenix.controls.JFXTextField;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
-import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import helpers.DbConnect;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 import javax.swing.JOptionPane;
-import models.Client;
 import models.Supplier;
 
 /**
@@ -67,8 +54,6 @@ public class AddSupplierController implements Initializable {
     PreparedStatement preparedStatement = null;
     Supplier supplier = null;
 
-    ObservableList<Supplier> suppliersList = FXCollections.observableArrayList();
-
     /**
      * Initializes the controller class.
      *
@@ -89,10 +74,11 @@ public class AddSupplierController implements Initializable {
         String phone = phoneField.getText();
         String fax = faxField.getText();
         String agent = agentField.getText();
+        String cnss = cnssField.getText();
 
         if (name.isEmpty() || adress.isEmpty()
                 || city.isEmpty() || phone.isEmpty()
-                || fax.isEmpty() || agent.isEmpty()) {
+                || fax.isEmpty() || agent.isEmpty() || cnss.isEmpty()) {
 
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
