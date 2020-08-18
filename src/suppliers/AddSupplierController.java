@@ -23,6 +23,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
@@ -30,6 +31,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import javax.swing.JOptionPane;
 import models.Client;
@@ -58,7 +60,7 @@ public class AddSupplierController implements Initializable {
     private JFXTextField cnssField;
     @FXML
     private VBox succesfullyPane;
-    
+
     String query = null;
     Connection connection = null;
     ResultSet resultSet = null;
@@ -67,17 +69,17 @@ public class AddSupplierController implements Initializable {
 
     ObservableList<Supplier> suppliersList = FXCollections.observableArrayList();
 
-
     /**
      * Initializes the controller class.
+     *
      * @param url
      * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        
-    }    
+
+    }
 
     @FXML
     private void Registersign() {
@@ -97,7 +99,7 @@ public class AddSupplierController implements Initializable {
             alert.setContentText("Please Fill All DATA");
             alert.showAndWait();
             return;
-        }else{
+        } else {
             isRegister();
             clean();
         }
@@ -113,40 +115,38 @@ public class AddSupplierController implements Initializable {
         faxField.setText(null);
         agentField.setText(null);
         cnssField.setText(null);
-        
+
     }
 
     @FXML
     private void close(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
     }
 
     private void isRegister() {
-         connection = DbConnect.getConnect();
+        connection = DbConnect.getConnect();
 
         query = "INSERT INTO fournisseur (NOFR, NORE, ADFR, VIFR, TEFR, FAFR,CNSS) VALUES (?,?, ?, ?,?, ?, ?)";
         try {
 
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, nameField.getText());
-             preparedStatement.setString(2, agentField.getText());
+            preparedStatement.setString(2, agentField.getText());
             preparedStatement.setString(3, adressField.getText());
             preparedStatement.setString(4, cityField.getText());
             preparedStatement.setString(5, phoneField.getText());
             preparedStatement.setString(6, faxField.getText());
             preparedStatement.setString(7, cnssField.getText());
-            
-           
 
             preparedStatement.execute();
             succesfullyPane.setVisible(true);
-            
-     
-            
+
             //JOptionPane.showMessageDialog(null, "succes");
         } catch (Exception e) {
             // TODO: handle exception
             JOptionPane.showMessageDialog(null, e);
         }
     }
-    
+
 }
