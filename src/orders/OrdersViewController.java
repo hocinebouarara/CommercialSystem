@@ -15,6 +15,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -37,6 +38,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
 import models.PurchaseOrder;
+import products.ProductsViewController;
 
 /**
  * FXML Controller class
@@ -138,9 +140,41 @@ public class OrdersViewController implements Initializable {
 
                         deleteIcon.setOnMouseClicked((MouseEvent mouseEvent) -> {
 
+                           
+
                         });
 
                         editIcon.setOnMouseClicked((MouseEvent mouseEvent) -> {
+
+                            purchaseOrder = ordersTable.getSelectionModel().getSelectedItem();
+
+                            int orderID = purchaseOrder.getOrderId();
+                            int productId = purchaseOrder.getProductId();
+                            int supplierId = purchaseOrder.getSupplierId();
+                            String productName = purchaseOrder.getDesignation();
+                            String supplierName = purchaseOrder.getSupplierName();
+
+                            FXMLLoader loader = new FXMLLoader();
+                            loader.setLocation(getClass().getResource("/orders/addSupplierOrder.fxml"));
+
+                            try {
+                                loader.load();
+                            } catch (IOException ex) {
+                                Logger.getLogger(OrdersViewController.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+
+                            AddSupplierOrderController addSupplierOrder = loader.getController();
+                            addSupplierOrder.setProductId(productId);
+                            addSupplierOrder.setSupplierId(supplierId);
+                            addSupplierOrder.setOrderId(orderID);
+                            addSupplierOrder.setUpdate(true);
+                            addSupplierOrder.setTextFields(purchaseOrder.getDesignation(), purchaseOrder.getDeliveryDate().toLocalDate(), purchaseOrder.getQuantity(), purchaseOrder.getSupplierName());
+                            Parent p = loader.getRoot();
+                            Stage stage = new Stage();
+                            stage.setScene(new Scene(p));
+                            stage.initStyle(StageStyle.TRANSPARENT);
+                            stage.show();
+
 
                         });
 
@@ -176,7 +210,7 @@ public class OrdersViewController implements Initializable {
 
     @FXML
     private void addMembers(MouseEvent event) {
-         try {
+        try {
             Parent root = FXMLLoader.load(getClass().getResource("/orders/addSupplierOrder.fxml"));
             Scene scene = new Scene(root);
             scene.getStylesheets().add(getClass().getResource(Links.VIEWSTYLE).toExternalForm());
@@ -195,7 +229,7 @@ public class OrdersViewController implements Initializable {
         purchasesOrdersList.clear();
 
         try {
-            query = "SELECT ligne_cmd_fr.IDCF,ligne_cmd_fr.IDCF,article.REFA,article.DEAR,ligne_cmd_fr.QCFR,\n"
+            query = "SELECT ligne_cmd_fr.IDCF,ligne_cmd_fr.IDAR,article.REFA,article.DEAR,ligne_cmd_fr.QCFR,\n"
                     + "\n"
                     + "fournisseur.IDFO,fournisseur.NOFR,commande_fr.DCFR,commande_fr.DALF\n"
                     + "  \n"
@@ -212,7 +246,7 @@ public class OrdersViewController implements Initializable {
             while (resultSet.next()) {
                 purchasesOrdersList.add(new PurchaseOrder(
                         resultSet.getInt("ligne_cmd_fr.IDCF"),
-                        resultSet.getInt("ligne_cmd_fr.IDCF"),
+                        resultSet.getInt("ligne_cmd_fr.IDAR"),
                         resultSet.getString("article.REFA"),
                         resultSet.getString("article.DEAR"),
                         resultSet.getInt("ligne_cmd_fr.QCFR"),
