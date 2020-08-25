@@ -140,7 +140,19 @@ public class OrdersViewController implements Initializable {
 
                         deleteIcon.setOnMouseClicked((MouseEvent mouseEvent) -> {
 
-                           
+                            try {
+
+                                PurchaseOrder order = getTableView().getItems().get(getIndex());
+
+                                query = "DELETE FROM `commande_fr` WHERE idcf = '" + order.getOrderId() + "'";
+                                connection = DbConnect.getConnect();
+                                preparedStatement = connection.prepareStatement(query);
+                                preparedStatement.execute();
+                                refreshTable();
+
+                            } catch (SQLException ex) {
+                                Logger.getLogger(ProductsViewController.class.getName()).log(Level.SEVERE, null, ex);
+                            }
 
                         });
 
@@ -175,7 +187,7 @@ public class OrdersViewController implements Initializable {
                             stage.initStyle(StageStyle.TRANSPARENT);
                             stage.show();
 
-
+                           
                         });
 
                         HBox managebtn = new HBox(editIcon, deleteIcon);
