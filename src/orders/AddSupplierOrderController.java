@@ -244,6 +244,13 @@ public class AddSupplierOrderController implements Initializable {
 
     @FXML
     private void clean() {
+        product = null ;
+        supplier = null;
+        productFld.setText(null);
+        supplierFld.setText(null);
+        delivDateFld.setValue(null);
+        quantityFld.setText(""+0);
+        
     }
 
     @FXML
