@@ -171,7 +171,7 @@
             <Font name="Century Gothic" size="26.0" />
          </font>
       </Text>
-      <FontAwesomeIconView glyphName="CLOSE" layoutX="899.0" layoutY="33.0" onMouseClicked="#close" size="25" />
+      <FontAwesomeIconView glyphName="CLOSE" layoutX="899.0" layoutY="33.0" onMouseClicked="#close" size="25" styleClass="FontAwesomeIconView" />
       <AnchorPane fx:id="suppliersPane" layoutX="200.0" layoutY="-1.0" prefHeight="196.0" prefWidth="499.0" translateX="234.0" translateY="114.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="234.0" AnchorPane.topAnchor="0.0">
          <children>
             <TableView fx:id="suppliersTable" prefHeight="171.0" prefWidth="490.0" style="-fx-alignment: center;" stylesheets="@../home/homeview.css">
