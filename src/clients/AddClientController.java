@@ -29,7 +29,7 @@ import models.Client;
  *
  * @author hocin
  */
-public class AddClientController  implements Initializable {
+public class AddClientController implements Initializable {
 
     @FXML
     private JFXTextField nameField;
@@ -50,6 +50,8 @@ public class AddClientController  implements Initializable {
     Connection connection = null;
     ResultSet resultSet = null;
     PreparedStatement preparedStatement = null;
+    private boolean update = true;
+    int clientId;
 
     /**
      * Initializes the controller class.
@@ -60,15 +62,21 @@ public class AddClientController  implements Initializable {
         succesfullyPane.setVisible(false);
     }
 
-
-    private void saveHandle(ActionEvent event) {
-        
-    
-        isRegister();
-        clean();
-
+    public void setUpdate(boolean update) {
+        this.update = update;
     }
 
+    public void setTextFieds(int id, String name, String adress, String city,
+            String phone, String fax, String agent) {
+        clientId = id;
+        nameField.setText(name);
+        adressField.setText(adress);
+        cityField.setText(city);
+        phoneField.setText(phone);
+        faxField.setText(fax);
+        agentField.setText(agent);
+
+    }
 
     @FXML
     private void clean() {
@@ -81,6 +89,7 @@ public class AddClientController  implements Initializable {
         agentField.setText(null);
 
     }
+
     @FXML
     public void Registersign() {
 
@@ -100,18 +109,41 @@ public class AddClientController  implements Initializable {
             alert.setContentText("Please Fill All DATA");
             alert.showAndWait();
             return;
-        }else{
+        } else {
             isRegister();
             clean();
         }
 
     }
 
-    public void isRegister()  {
+    public void isRegister() {
         connection = DbConnect.getConnect();
+        if (update == false) {
+            
+            query = "INSERT INTO client (NOCL, ADCL, VICL, TECL, FACL, NORECL) VALUES (?, ?, ?,?, ?, ?)";
 
-        query = "INSERT INTO client (NOCL, ADCL, VICL, TECL, FACL, NORECL) VALUES (?, ?, ?,?, ?, ?)";
-        try {
+        } else {
+            
+            query = "UPDATE `client` SET "
+                    + "`NOCL`=?,"
+                    + "`ADCL`=?,"
+                    + "`VICL`=?,"
+                    + "`TECL`=?,"
+                    + "`FACL`=?,"
+                    + "`NORECL`=? WHERE IDCL = '"+clientId+"'";
+            
+        }
+        insert();
+    }
+
+    @FXML
+    private void close(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+    }
+
+    private void insert() {
+try {
 
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, nameField.getText());
@@ -123,20 +155,11 @@ public class AddClientController  implements Initializable {
 
             preparedStatement.execute();
             succesfullyPane.setVisible(true);
-            
-     
-            
+
             //JOptionPane.showMessageDialog(null, "succes");
         } catch (Exception e) {
             // TODO: handle exception
             JOptionPane.showMessageDialog(null, e);
-        }
-    }
-
-    @FXML
-    private void close(MouseEvent event) {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.close();
-    }
+        }    }
 
 }
