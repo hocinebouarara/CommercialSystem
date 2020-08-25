@@ -139,10 +139,10 @@ public class ProductsViewController implements Initializable {
                         );
 
                         deleteIcon.setOnMouseClicked((MouseEvent mouseEvent) -> {
-                            
-                             try {
 
-                                product= productTable.getSelectionModel().getSelectedItem();
+                            try {
+
+                                product = productTable.getSelectionModel().getSelectedItem();
                                 connection = DbConnect.getConnect();
                                 query = "delete from article where idar =" + product.getId();
                                 preparedStatement = connection.prepareCall(query);
@@ -157,6 +157,29 @@ public class ProductsViewController implements Initializable {
                         });
 
                         editIcon.setOnMouseClicked((MouseEvent mouseEvent) -> {
+
+                            product = productTable.getSelectionModel().getSelectedItem();
+                            FXMLLoader loader = new FXMLLoader();
+                            loader.setLocation(getClass().getResource("/products/addProduct.fxml"));
+
+                            try {
+                                loader.load();
+                            } catch (IOException ex) {
+                                Logger.getLogger(ProductsViewController.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                            AddProductController addProductController = loader.getController();
+                            addProductController.setTextFields(product.getId(), product.getReference(), product.getDesignation(),
+                                    product.getQuantity(), product.getCategory(), product.getBuyingPrice(),
+                                    product.getSalePrice(), product.getTotalBuy(), product.getTotalSale());
+                            
+                            addProductController.setUpdate(true);
+                            Parent p = loader.getRoot();
+                            Stage stage = new Stage();
+                            stage.setScene(new Scene(p));
+                            stage.initStyle(StageStyle.TRANSPARENT);
+                            stage.show();
+                            
+                            
 
                         });
 
@@ -181,6 +204,7 @@ public class ProductsViewController implements Initializable {
         actionCol.setCellFactory(cellFoctory);
         productTable.setItems(productList);
     }
+
     @FXML
     private void refreshTable() {
         productList.clear();
@@ -204,9 +228,9 @@ public class ProductsViewController implements Initializable {
             resultSet.close();
         } catch (SQLException e) {
             System.err.print(e);
-            
+
         }
-        
+
     }
 
     @FXML
@@ -219,7 +243,7 @@ public class ProductsViewController implements Initializable {
 
     @FXML
     private void addMembers(MouseEvent event) {
-        
+
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/products/addProduct.fxml"));
             Scene scene = new Scene(root);
@@ -233,6 +257,5 @@ public class ProductsViewController implements Initializable {
             Logger.getLogger(ClientsViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-
 
 }
