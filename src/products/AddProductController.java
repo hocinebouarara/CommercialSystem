@@ -11,9 +11,7 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -22,7 +20,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
-import models.Product;
 
 /**
  * FXML Controller class
@@ -54,6 +51,8 @@ public class AddProductController implements Initializable {
     Connection connection = null;
     ResultSet resultSet = null;
     PreparedStatement preparedStatement = null;
+    private int productId;
+    private boolean update = false;
 
     /**
      * Initializes the controller class.
@@ -89,27 +88,23 @@ public class AddProductController implements Initializable {
 
     public void isRegister() {
         connection = DbConnect.getConnect();
+        if (update == false) {
+            
+            query = "INSERT INTO article (REFA, DEAR,QSAR, SEAR,PRAC,PRVE,PRTA,PRTV) VALUES ( ?,?, ?, ?, ?,?, ?, ?)";
 
-        query = "INSERT INTO article (REFA, DEAR,QSAR, SEAR,PRAC,PRVE,PRTA,PRTV) VALUES ( ?,?, ?, ?, ?,?, ?, ?)";
-        try {
-
-            preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, referField.getText());
-            preparedStatement.setString(2, desigField.getText());
-            preparedStatement.setString(3, QntField.getText());
-            preparedStatement.setString(4, CatField.getText());
-            preparedStatement.setString(5, buyField.getText());
-            preparedStatement.setString(6, saleField.getText());
-            preparedStatement.setString(7, buyTotField.getText());
-            preparedStatement.setString(8, saleTotField.getText());
-
-            preparedStatement.execute();
-
-            //JOptionPane.showMessageDialog(null, "succes");
-        } catch (Exception e) {
-            // TODO: handle exception
-            JOptionPane.showMessageDialog(null, e);
+        }else{
+        query = "UPDATE `article` SET "
+                + "`REFA`=?,"
+                + "`DEAR`=?,"
+                + "`QSAR`=?,"
+                + "`SEAR`=?,"
+                + "`PRAC`=?,"
+                + "`PRVE`=?,"
+                + "`PRTA`=?,"
+                + "`PRTV`=? WHERE IDAR = '"+productId+"'";
+        
         }
+       insert();
     }
 
     @FXML
@@ -139,6 +134,48 @@ public class AddProductController implements Initializable {
             clean();
         }
 
+    }
+
+    public void setUpdate(boolean update) {
+        this.update = update;
+    }
+
+    public void setTextFields(int id, String reference, String designation,
+            int quantity, String category, float buyPrice,
+            float salePrice, float TotBuyPrice, float TotSalePrice) {
+
+        productId = id;
+        referField.setText(reference);
+        desigField.setText(designation);
+        QntField.setText(String.valueOf(quantity));
+        CatField.setText(category);
+        buyField.setText(String.valueOf(buyPrice));
+        saleField.setText(String.valueOf(salePrice));
+        buyTotField.setText(String.valueOf(TotBuyPrice));
+        saleTotField.setText(String.valueOf(TotSalePrice));
+
+    }
+
+    private void insert() {
+         try {
+
+            preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, referField.getText());
+            preparedStatement.setString(2, desigField.getText());
+            preparedStatement.setString(3, QntField.getText());
+            preparedStatement.setString(4, CatField.getText());
+            preparedStatement.setString(5, buyField.getText());
+            preparedStatement.setString(6, saleField.getText());
+            preparedStatement.setString(7, buyTotField.getText());
+            preparedStatement.setString(8, saleTotField.getText());
+
+            preparedStatement.execute();
+
+            //JOptionPane.showMessageDialog(null, "succes");
+        } catch (Exception e) {
+            // TODO: handle exception
+            JOptionPane.showMessageDialog(null, e);
+        }
     }
 
 }
