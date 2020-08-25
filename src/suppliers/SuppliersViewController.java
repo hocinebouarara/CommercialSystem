@@ -38,6 +38,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
 import models.Supplier;
+import products.ProductsViewController;
 
 /**
  * FXML Controller class
@@ -140,8 +141,8 @@ public class SuppliersViewController implements Initializable {
                         );
 
                         deleteIcon.setOnMouseClicked((MouseEvent mouseEvent) -> {
-                            
-                             try {
+
+                            try {
 
                                 supplier = supplierTable.getSelectionModel().getSelectedItem();
                                 connection = DbConnect.getConnect();
@@ -158,6 +159,27 @@ public class SuppliersViewController implements Initializable {
                         });
 
                         editIcon.setOnMouseClicked((MouseEvent mouseEvent) -> {
+
+                            supplier = supplierTable.getSelectionModel().getSelectedItem();
+                            FXMLLoader loader = new FXMLLoader();
+                            loader.setLocation(getClass().getResource("/suppliers/addSupplier.fxml"));
+
+                            try {
+                                loader.load();
+                            } catch (IOException ex) {
+                                Logger.getLogger(ProductsViewController.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                            AddSupplierController addSupplierController = loader.getController();
+                            addSupplierController.setUpdate(true);
+                            addSupplierController.setTextFields(supplier.getSupplierId(), supplier.getName(), supplier.getAgent(),
+                                    supplier.getAdress(), supplier.getCity(), supplier.getPhone(),
+                                    supplier.getFax(), supplier.getCnss());
+                            Parent p = loader.getRoot();
+                            Stage stage = new Stage();
+                            stage.setScene(new Scene(p));
+                            stage.initStyle(StageStyle.TRANSPARENT);
+                            stage.show();
+                            System.out.println(supplier.getSupplierId());
 
                         });
 
@@ -185,7 +207,7 @@ public class SuppliersViewController implements Initializable {
 
     @FXML
     private void addMembers(MouseEvent event) {
-         try {
+        try {
             Parent root = FXMLLoader.load(getClass().getResource("/suppliers/addSupplier.fxml"));
             Scene scene = new Scene(root);
             scene.getStylesheets().add(getClass().getResource(Links.VIEWSTYLE).toExternalForm());
