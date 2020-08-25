@@ -33,6 +33,16 @@ public class Product {
         this.totalSale = totalSale;
     }
 
+    public Product(int id, String reference, String designation, int quantity, String category) {
+        this.id = id;
+        this.reference = reference;
+        this.designation = designation;
+        this.quantity = quantity;
+        this.category = category;
+    }
+    
+    
+
     public int getId() {
         return id;
     }
