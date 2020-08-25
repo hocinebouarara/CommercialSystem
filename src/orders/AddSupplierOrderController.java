@@ -24,6 +24,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -31,6 +32,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import models.Product;
 import models.Supplier;
@@ -105,7 +107,7 @@ public class AddSupplierOrderController implements Initializable {
         productPane.setVisible(false);
         suppliersPane.setVisible(false);
         quantityFld.setText("" + 0);
-        System.out.println(currentDate());
+        
 
         SuppliersViewController suppliersViewController = new SuppliersViewController();
 
@@ -237,7 +239,6 @@ public class AddSupplierOrderController implements Initializable {
     @FXML
     private void getSuppliersItem(MouseEvent event) {
         supplier = (Supplier) suppliersTable.getSelectionModel().getSelectedItem();
-        System.out.println(supplier.getName());
         supplierFld.setText(supplier.getName());
 
     }
@@ -255,6 +256,8 @@ public class AddSupplierOrderController implements Initializable {
 
     @FXML
     private void close(MouseEvent event) {
+         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
     }
 
     @FXML
