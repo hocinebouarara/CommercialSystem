@@ -27,4 +27,10 @@
     .table-view .column-header .label {
         -fx-text-fill: white ;
     }
+
+.textField{
+    -fx-text-fill:white ;
+    -fx-font-size: 15px;
+    -fx-font-family: "Century Gothic";        
+    }
     
