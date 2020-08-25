@@ -10,13 +10,13 @@ package models;
  * @author hocin
  */
 public class Supplier {
-    
-    int id ;
-    
-    String name ,agent,adress,city,phone,fax,cnss;
 
-    public Supplier(int id, String name, String agent, String adress, String city, String phone, String fax, String cnss) {
-        this.id = id;
+    int supplierId;
+
+    String name, agent, adress, city, phone, fax, cnss;
+
+    public Supplier(int supplierId, String name, String agent, String adress, String city, String phone, String fax, String cnss) {
+        this.supplierId = supplierId;
         this.name = name;
         this.agent = agent;
         this.adress = adress;
@@ -25,15 +25,21 @@ public class Supplier {
         this.fax = fax;
         this.cnss = cnss;
     }
-    
-    
 
-    public int getId() {
-        return id;
+    public Supplier(int supplierId, String name, String agent, String adress, String phone) {
+        this.supplierId = supplierId;
+        this.name = name;
+        this.agent = agent;
+        this.adress = adress;
+        this.phone = phone;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getSupplierId() {
+        return supplierId;
+    }
+
+    public void setSupplierId(int supplierId) {
+        this.supplierId = supplierId;
     }
 
     public String getName() {
@@ -91,8 +97,5 @@ public class Supplier {
     public void setCnss(String cnss) {
         this.cnss = cnss;
     }
-    
-    
-    
-    
+
 }
