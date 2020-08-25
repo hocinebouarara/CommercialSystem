@@ -43,41 +43,8 @@ public class HomeViewController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        /* try {
-            // TODO
-
-            // VBox box = FXMLLoader.load(getClass().getResource(Links.DRAWERVIEW));
-            //AnchorPane home = FXMLLoader.load(getClass().getResource(Links.HOMEVIEW));
-            AnchorPane products = FXMLLoader.load(getClass().getResource(Links.CLIENTSVIEW));
-            for (Node node : boxButton.getChildren()) {
-                if (node.getAccessibleText() != null) {
-                    node.addEventHandler(MouseEvent.MOUSE_PRESSED, (e) -> {
-                        switch (node.getAccessibleText()) {
-                            case "clientsMenu":
-
-                                setNode(products);
-                                break;
-
-                        }
-                    });
-
-                }
-            }
-        } catch (IOException ex) {
-            Logger.getLogger(HomeViewController.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
-
+        
     }
-
-    /*public void getImage() {
-      
-        myImage.setStroke(Color.SEAGREEN);
-        myImage.setFill(Color.SNOW);
-        myImage.setEffect(new DropShadow(+25d, 0d, +2d, Color.DARKSEAGREEN));
-        myImage.setFill(new ImagePattern(Image));
-    
-
-}*/
     @FXML
     private void min(MouseEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
