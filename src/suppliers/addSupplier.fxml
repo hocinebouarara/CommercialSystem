@@ -50,14 +50,14 @@
                         <Insets />
                      </VBox.margin>
                   </HBox>
-                  <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="310.0">
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="86.0" prefHeight="38.0" prefWidth="310.0">
                      <children>
-                        <Label prefHeight="61.0" prefWidth="92.0" text="Adress" textFill="#726969">
+                        <Label prefHeight="61.0" prefWidth="92.0" text="Agent" textFill="#726969">
                            <font>
                               <Font name="Yu Gothic UI Light" size="22.0" />
                            </font>
                         </Label>
-                        <JFXTextField fx:id="adressField" focusColor="#651fff" prefHeight="25.0" prefWidth="276.0" unFocusColor="#eeebeb">
+                        <JFXTextField fx:id="agentField" focusColor="#651fff" prefHeight="25.0" prefWidth="276.0" unFocusColor="#eeebeb">
                            <HBox.margin>
                               <Insets right="2.0" />
                            </HBox.margin>
@@ -70,14 +70,14 @@
                         <Insets top="10.0" />
                      </VBox.margin>
                   </HBox>
-                  <HBox alignment="CENTER" layoutX="10.0" layoutY="86.0" prefHeight="38.0" prefWidth="310.0">
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="38.0" prefWidth="310.0">
                      <children>
-                        <Label prefHeight="61.0" prefWidth="92.0" text="Agent" textFill="#726969">
+                        <Label prefHeight="61.0" prefWidth="92.0" text="Adress" textFill="#726969">
                            <font>
                               <Font name="Yu Gothic UI Light" size="22.0" />
                            </font>
                         </Label>
-                        <JFXTextField fx:id="agentField" focusColor="#651fff" prefHeight="25.0" prefWidth="276.0" unFocusColor="#eeebeb">
+                        <JFXTextField fx:id="adressField" focusColor="#651fff" prefHeight="25.0" prefWidth="276.0" unFocusColor="#eeebeb">
                            <HBox.margin>
                               <Insets right="2.0" />
                            </HBox.margin>
