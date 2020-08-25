@@ -37,6 +37,8 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
 import models.Client;
+import products.ProductsViewController;
+import suppliers.AddSupplierController;
 
 /**
  * FXML Controller class
@@ -149,8 +151,24 @@ public class ClientsViewController implements Initializable {
                         editIcon.setOnMouseClicked((MouseEvent mouseEvent) -> {
 
                             client = tableView.getSelectionModel().getSelectedItem();
+                            FXMLLoader loader = new FXMLLoader();
+                            loader.setLocation(getClass().getResource("/clients/addClient.fxml"));
 
-                            addMembers();
+                            try {
+                                loader.load();
+                            } catch (IOException ex) {
+                                Logger.getLogger(ProductsViewController.class.getName()).log(Level.SEVERE, null, ex);
+                            }
+                            AddClientController addClientController = loader.getController();
+                            addClientController.setUpdate(true);
+                            addClientController.setTextFieds(client.getId(), client.getName(), client.getAdress(),
+                                    client.getCity(), client.getPhone(), client.getFax(), client.getAgent());
+
+                            Parent p = loader.getRoot();
+                            Stage stage = new Stage();
+                            stage.setScene(new Scene(p));
+                            stage.initStyle(StageStyle.TRANSPARENT);
+                            stage.show();
 
                         });
 
