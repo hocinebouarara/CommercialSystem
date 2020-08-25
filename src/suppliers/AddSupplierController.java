@@ -53,6 +53,8 @@ public class AddSupplierController implements Initializable {
     ResultSet resultSet = null;
     PreparedStatement preparedStatement = null;
     Supplier supplier = null;
+    private boolean update = false;
+    int supplierId;
 
     /**
      * Initializes the controller class.
@@ -63,6 +65,23 @@ public class AddSupplierController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+
+    }
+
+    public void setUpdate(boolean update) {
+        this.update = update;
+    }
+
+    public void setTextFields(int id, String name, String agent, String adress, String city,
+            String phone, String fax, String cnss) {
+        supplierId = id;
+        nameField.setText(name);
+        agentField.setText(agent);
+        adressField.setText(adress);
+        cityField.setText(city);
+        phoneField.setText(phone);
+        faxField.setText(fax);
+        cnssField.setText(cnss);
 
     }
 
@@ -113,7 +132,25 @@ public class AddSupplierController implements Initializable {
     private void isRegister() {
         connection = DbConnect.getConnect();
 
-        query = "INSERT INTO fournisseur (NOFR, NORE, ADFR, VIFR, TEFR, FAFR,CNSS) VALUES (?,?, ?, ?,?, ?, ?)";
+        if (update == false) {
+
+            query = "INSERT INTO fournisseur (NOFR, NORE, ADFR, VIFR, TEFR, FAFR,CNSS) VALUES (?,?, ?, ?,?, ?, ?)";
+
+        } else {
+            query = "UPDATE `fournisseur` SET "
+                    + "`NOFR`=?,"
+                    + "`NORE`=?,"
+                    + "`ADFR`=?,"
+                    + "`VIFR`=?,"
+                    + "`TEFR`=?,"
+                    + "`FAFR`=?,"
+                    + "`CNSS`=? WHERE IDFO = '" + supplierId + "'";
+        }
+
+        insert();
+    }
+
+    private void insert() {
         try {
 
             preparedStatement = connection.prepareStatement(query);
