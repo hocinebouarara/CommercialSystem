@@ -37,7 +37,6 @@ import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
-import models.Client;
 import models.Supplier;
 
 /**
@@ -98,7 +97,7 @@ public class SuppliersViewController implements Initializable {
 
         connection = DbConnect.getConnect();
         refreshTable();
-        idCol.setCellValueFactory(new PropertyValueFactory<>("id"));
+        idCol.setCellValueFactory(new PropertyValueFactory<>("supplierId"));
         nameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
         agentCol.setCellValueFactory(new PropertyValueFactory<>("agent"));
         adressCol.setCellValueFactory(new PropertyValueFactory<>("adress"));
@@ -146,7 +145,7 @@ public class SuppliersViewController implements Initializable {
 
                                 supplier = supplierTable.getSelectionModel().getSelectedItem();
                                 connection = DbConnect.getConnect();
-                                query = "delete from fournisseur where idfo =" + supplier.getId();
+                                query = "delete from fournisseur where idfo =" + supplier.getSupplierId();
                                 preparedStatement = connection.prepareCall(query);
                                 preparedStatement.execute();
                                 refreshTable();
