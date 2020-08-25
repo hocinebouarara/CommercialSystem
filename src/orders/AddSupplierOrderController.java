@@ -6,22 +6,16 @@
 package orders;
 
 import com.jfoenix.controls.JFXDatePicker;
-import static com.sun.org.apache.xalan.internal.lib.ExsltDatetime.dateTime;
 import helpers.DbConnect;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -90,8 +84,10 @@ public class AddSupplierOrderController implements Initializable {
     ResultSet resultSet = null;
     PreparedStatement preparedStatement = null;
     PreparedStatement statement = null;
-    Product product = null;
-    Supplier supplier = null;
+    private Product product = null;
+    private Supplier supplier = null;
+    private int productId, supplierId, orderId;
+    private boolean update = false;
 
     ObservableList<Product> productList = FXCollections.observableArrayList();
     ObservableList<Supplier> suppliersList = FXCollections.observableArrayList();
@@ -107,7 +103,6 @@ public class AddSupplierOrderController implements Initializable {
         productPane.setVisible(false);
         suppliersPane.setVisible(false);
         quantityFld.setText("" + 0);
-        
 
         SuppliersViewController suppliersViewController = new SuppliersViewController();
 
@@ -245,67 +240,104 @@ public class AddSupplierOrderController implements Initializable {
 
     @FXML
     private void clean() {
-        product = null ;
+        product = null;
         supplier = null;
         productFld.setText(null);
         supplierFld.setText(null);
         delivDateFld.setValue(null);
-        quantityFld.setText(""+0);
-        
+        quantityFld.setText("" + 0);
+
     }
 
     @FXML
     private void close(MouseEvent event) {
-         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
     }
 
     @FXML
     public void Registersign() {
 
-        String productName = productFld.getText();
-        LocalDate deliveryDate = delivDateFld.getValue();
-        String quantity = quantityFld.getText();
-        String supplierName = supplierFld.getText();
-
-        if (product == null || deliveryDate == null
-                || quantity.isEmpty() || supplierName == null) {
-
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText(null);
-            alert.setContentText("Please Fill All DATA");
-            alert.showAndWait();
-            return;
-        } else {
-            isRegister();
+        if (update == true) {
+            getQuery();
             clean();
+
+        } else {
+
+            String productName = productFld.getText();
+            LocalDate deliveryDate = delivDateFld.getValue();
+            String quantity = quantityFld.getText();
+            String supplierName = supplierFld.getText();
+
+            if (product == null || deliveryDate == null
+                    || quantity.isEmpty() || supplierName == null) {
+
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText(null);
+                alert.setContentText("Please Fill All DATA");
+                alert.showAndWait();
+                return;
+            } else {
+                getQuery();
+                clean();
+            }
+
         }
 
     }
 
-    private void isRegister() {
+    private void getQuery() {
 
         connection = DbConnect.getConnect();
 
-        query = "INSERT INTO `commande_fr`(`DCFR`, `DALF`, `IDFO`) VALUES (?,?,?)";
-        sql = "INSERT INTO `ligne_cmd_fr`(`IDAR`, `IDCF`, `QCFR`) VALUES (?,LAST_INSERT_ID(),?)";
+        if (update == false) {
+
+            query = "INSERT INTO `commande_fr`(`DCFR`, `DALF`, `IDFO`) VALUES (?,?,?)";
+            sql = "INSERT INTO `ligne_cmd_fr`(`IDAR`, `IDCF`, `QCFR`) VALUES (?,LAST_INSERT_ID(),?)";
+
+        } else {
+
+            query = "UPDATE `commande_fr` SET "
+                    + "`DCFR`=?,"
+                    + "`DALF`=?,"
+                    + "`IDFO`=? WHERE idcf= '" + orderId + "'";
+
+            sql = "UPDATE `ligne_cmd_fr` SET "
+                    + "`IDAR`=?,"
+                    + "`QCFR`=? WHERE idcf= '" + orderId + "'";
+
+        }
+        insert();
+
+    }
+
+    public void insert() {
         try {
 
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, currentDate().toString());
             preparedStatement.setString(2, delivDateFld.getValue().toString());
-            preparedStatement.setInt(3, supplier.getSupplierId());
+            if (supplier == null) {
+                preparedStatement.setInt(3, supplierId);
+
+            } else {
+                preparedStatement.setInt(3, supplier.getSupplierId());
+            }
 
             preparedStatement.execute();
 
             statement = connection.prepareStatement(sql);
-            statement.setInt(1, product.getId());
+            if (product == null) {
+                statement.setInt(1, productId);
+            } else {
+                statement.setInt(1, product.getId());
+            }
             statement.setInt(2, Integer.parseInt(quantityFld.getText()));
 
             statement.execute();
 
             //JOptionPane.showMessageDialog(null, "succes");
-        } catch (Exception e) {
+        } catch (NumberFormatException | SQLException e) {
             // TODO: handle exception
             JOptionPane.showMessageDialog(null, e);
         }
@@ -315,6 +347,32 @@ public class AddSupplierOrderController implements Initializable {
 
         LocalDate date = LocalDate.now();
         return date;
+
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public void setSupplierId(int supplierId) {
+        this.supplierId = supplierId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
+    }
+
+    public void setUpdate(boolean update) {
+        this.update = update;
+    }
+
+    
+
+    public void setTextFields(String productN, LocalDate date, int quntity, String supplierN) {
+        productFld.setText(productN);
+        delivDateFld.setValue(date);
+        quantityFld.setText(String.valueOf(quntity));
+        supplierFld.setText(supplierN);
 
     }
 
