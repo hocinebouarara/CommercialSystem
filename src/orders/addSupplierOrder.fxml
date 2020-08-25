@@ -73,7 +73,7 @@
                               </Text>
                               <TextField fx:id="quantityFld" prefHeight="30.0" prefWidth="258.0" style="-fx-background-radius: 15px;" translateX="37.0">
                                  <padding>
-                                    <Insets left="5.0" />
+                                    <Insets left="14.0" />
                                  </padding>
                                  <font>
                                     <Font name="Century Gothic" size="20.0" />
@@ -123,7 +123,7 @@
                               <Font name="Century Gothic Bold Italic" size="18.0" />
                            </font>
                         </JFXButton>
-                        <JFXButton prefHeight="38.0" prefWidth="193.0" style="-fx-background-color: #FFFF00;" text="Clean" textFill="WHITE">
+                        <JFXButton onMouseClicked="#clean" prefHeight="38.0" prefWidth="193.0" style="-fx-background-color: #FFFF00;" text="Clean" textFill="WHITE">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
@@ -156,15 +156,7 @@
                               <Insets right="10.0" />
                            </HBox.margin>
                            <font>
-                              <Font name="Century Gothic" size="18.0" />
-                           </font>
-                        </JFXButton>
-                        <JFXButton onMouseClicked="#clean" prefHeight="33.0" prefWidth="193.0" style="-fx-background-color: #FFFF00;" text="Cancel" textFill="WHITE">
-                           <HBox.margin>
-                              <Insets left="10.0" />
-                           </HBox.margin>
-                           <font>
-                              <Font name="Century Gothic" size="18.0" />
+                              <Font name="Century Gothic Bold" size="18.0" />
                            </font>
                         </JFXButton>
                      </children>
@@ -199,14 +191,6 @@
                      </HBox.margin>
                      <font>
                         <Font name="Century Gothic Bold Italic" size="18.0" />
-                     </font>
-                  </JFXButton>
-                  <JFXButton onMouseClicked="#clean" prefHeight="33.0" prefWidth="193.0" style="-fx-background-color: #FFFF00;" text="Cancel" textFill="WHITE">
-                     <HBox.margin>
-                        <Insets left="10.0" />
-                     </HBox.margin>
-                     <font>
-                        <Font name="Century Gothic Bold" size="18.0" />
                      </font>
                   </JFXButton>
                </children>
