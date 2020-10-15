@@ -18,6 +18,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -32,21 +34,20 @@ import models.Supplier;
 public class AddSupplierController implements Initializable {
 
     @FXML
-    private JFXTextField nameField;
+    private TextField nameField;
     @FXML
-    private JFXTextField adressField;
+    private TextField adressField;
     @FXML
-    private JFXTextField agentField;
+    private TextField agentField;
     @FXML
-    private JFXTextField cityField;
+    private TextField cityField;
     @FXML
-    private JFXTextField phoneField;
+    private TextField phoneField;
     @FXML
-    private JFXTextField faxField;
+    private TextField faxField;
     @FXML
-    private JFXTextField cnssField;
-    @FXML
-    private VBox succesfullyPane;
+    private TextField cnssField;
+    
 
     String query = null;
     Connection connection = null;
@@ -112,7 +113,7 @@ public class AddSupplierController implements Initializable {
 
     @FXML
     private void clean() {
-        succesfullyPane.setVisible(false);
+        
         nameField.setText(null);
         adressField.setText(null);
         cityField.setText(null);
@@ -163,8 +164,7 @@ public class AddSupplierController implements Initializable {
             preparedStatement.setString(7, cnssField.getText());
 
             preparedStatement.execute();
-            succesfullyPane.setVisible(true);
-
+            
             //JOptionPane.showMessageDialog(null, "succes");
         } catch (Exception e) {
             // TODO: handle exception
