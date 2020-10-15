@@ -2,7 +2,7 @@
     -fx-cursor: hand ;
 }
 .MenuBar:hover{
-    -fx-border-Color: #651FFF;
+    -fx-background-color: #651FFF;
     -fx-border-width: 0px 0px 4px 0px ;
 }
 .table-view {
