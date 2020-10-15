@@ -104,7 +104,7 @@ public class HomeViewController implements Initializable {
 
     @FXML
     private void getPurchasesView(MouseEvent event) {
-        loadViews(Links.PURCHASESORDERS);
+        loadViews(Links.PURCHASES);
     }
 
     @FXML
