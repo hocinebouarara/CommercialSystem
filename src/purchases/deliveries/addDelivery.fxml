@@ -1,11 +1,229 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="purchases.deliveries.AddDeliveryController">
-    
+<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="933.0" stylesheets="@../../home/homeview.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="purchases.deliveries.AddDeliveryController">
+   <children>
+      <Pane layoutX="10.0" layoutY="75.0" prefHeight="3.0" prefWidth="200.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="40.0" />
+      <Text layoutX="33.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Purchase Delivery" wrappingWidth="324.7324294447899">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <FontAwesomeIconView glyphName="CLOSE" layoutX="899.0" layoutY="33.0" onMouseClicked="#close" size="25" styleClass="FontAwesomeIconView" />
+      <VBox layoutX="33.0" layoutY="98.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="62.0" prefWidth="496.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Text fill="#3c3838" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Name" wrappingWidth="161.13671875">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="4.0" />
+                           </VBox.margin>
+                        </Text>
+                        <TextField fx:id="productName" prefHeight="35.0" prefWidth="215.0" style="-fx-background-color: transparent; -fx-border-color: #9E9E9E; -fx-border-width: 2px; -fx-border-radius: 8px;">
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="10.0">
+                     <children>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <VBox>
+                                 <children>
+                                    <Text fill="#3c3838" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" wrappingWidth="161.13671875">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets left="4.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <TextField fx:id="quantity" prefHeight="35.0" prefWidth="215.0" style="-fx-background-color: transparent; -fx-border-color: #9E9E9E; -fx-border-width: 2px; -fx-border-radius: 8px;" translateY="-3.0">
+                                       <font>
+                                          <Font name="Century Gothic" size="18.0" />
+                                       </font>
+                                    </TextField>
+                                 </children>
+                              </VBox>
+                              <FontAwesomeIconView fill="#17ff61" glyphName="ANGLE_DOUBLE_DOWN" onMouseClicked="#minus" size="22" styleClass="FontAwesomeIconView" translateX="-44.0" translateY="9.0" />
+                              <FontAwesomeIconView fill="#e10561" glyphName="ANGLE_DOUBLE_UP" onMouseClicked="#plus" size="22" styleClass="FontAwesomeIconView" translateX="-39.0" translateY="9.0" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="509.0">
+               <children>
+                  <VBox layoutX="33.0" layoutY="10.0">
+                     <children>
+                        <Text fill="#3c3838" strokeType="OUTSIDE" strokeWidth="0.0" text="Total of this product" wrappingWidth="179.13671875">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="4.0" />
+                           </VBox.margin>
+                        </Text>
+                        <TextField fx:id="totalProduct" prefHeight="39.0" prefWidth="215.0" style="-fx-background-color: transparent; -fx-border-color: #9E9E9E; -fx-border-width: 2px; -fx-border-radius: 8px;">
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <RadioButton fx:id="cashBtn" mnemonicParsing="false" onMouseClicked="#cashMode" prefHeight="39.0" prefWidth="103.0" text="Cash">
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="21.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                        <RadioButton fx:id="retailBtn" mnemonicParsing="false" onMouseClicked="#retailMode" prefHeight="39.0" prefWidth="103.0" text="Retail">
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets top="21.0" />
+                           </HBox.margin>
+                        </RadioButton>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="35.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="13.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+               <VBox.margin>
+                  <Insets top="13.0" />
+               </VBox.margin>
+               <children>
+                  <VBox>
+                     <children>
+                        <Text fill="#3c3838" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Deadline" wrappingWidth="179.13671875">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Text>
+                        <JFXDatePicker fx:id="paymentDeadline" defaultColor="#0fb959" prefHeight="39.0" prefWidth="455.0" style="-fx-border-width: 2px; -fx-border-color: #9E9E9E; -fx-border-radius: 8px;" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT">
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+               <children>
+                  <VBox>
+                     <children>
+                        <Text fill="#3c3838" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Name" wrappingWidth="161.13671875">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="4.0" />
+                           </VBox.margin>
+                        </Text>
+                        <TextField fx:id="supplierName" prefHeight="39.0" prefWidth="215.0" style="-fx-background-color: transparent; -fx-border-color: #9E9E9E; -fx-border-width: 2px; -fx-border-radius: 8px;">
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="10.0">
+                     <children>
+                        <Text fill="#3c3838" strokeType="OUTSIDE" strokeWidth="0.0" text="Total of Delivery" wrappingWidth="161.13671875">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="4.0" />
+                           </VBox.margin>
+                        </Text>
+                        <TextField fx:id="totalDelivery" prefHeight="39.0" prefWidth="215.0" style="-fx-background-color: transparent; -fx-border-color: #9E9E9E; -fx-border-width: 2px; -fx-border-radius: 8px;">
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="39.0" prefWidth="491.0" translateZ="-1.0">
+               <children>
+                  <Button mnemonicParsing="false" onMouseClicked="#save" prefHeight="39.0" prefWidth="120.0" style="-fx-background-radius: 20px; -fx-background-color: #7f0877;" text="Save" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button disable="true" layoutX="27.0" layoutY="10.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="200.0" style="-fx-background-radius: 20px; -fx-background-color: #6A1B9A;" text="add Another" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="120.0" style="-fx-background-radius: 20px; -fx-background-color: #455A64;" text="Cancel" textFill="WHITE">
+                     <font>
+                        <Font name="Century Gothic" size="16.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="25.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>
