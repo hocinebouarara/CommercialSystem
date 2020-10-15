@@ -1,11 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="purchases.orders.OrdersViewController">
-    
+<AnchorPane prefHeight="449.0" prefWidth="913.0" stylesheets="@../../home/homeview.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="purchases.orders.OrdersViewController">
+   <children>
+      <HBox alignment="CENTER_LEFT" layoutX="47.0" layoutY="-2.0" prefHeight="55.0" prefWidth="876.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <FontAwesomeIconView fill="#0288d1" glyphName="PLUS_SQUARE" onMouseClicked="#addMembers" size="40" styleClass="FontAwesomeIconView">
+               <HBox.margin>
+                  <Insets left="5.0" right="10.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fill="#880e4f" glyphName="REFRESH" onMouseClicked="#refreshTable" size="40" styleClass="FontAwesomeIconView" text="">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fill="#0dd764" glyphName="DOWNLOAD" layoutX="10.0" layoutY="44.0" size="40" styleClass="FontAwesomeIconView">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fill="#455a64" glyphName="PRINT" layoutX="60.0" layoutY="44.0" size="40" styleClass="FontAwesomeIconView" />
+            <HBox alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="690.0">
+               <children>
+                  <FontAwesomeIconView fill="#6b6363" glyphName="SEARCH" size="30" wrappingWidth="31.0">
+                     <HBox.margin>
+                        <Insets left="8.0" />
+                     </HBox.margin>
+                  </FontAwesomeIconView>
+                  <TextField prefHeight="32.0" prefWidth="329.0" promptText="Searching for Item" style="-fx-background-radius: 20px;">
+                     <HBox.margin>
+                        <Insets right="44.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Century Gothic" size="16.0" />
+                     </font>
+                  </TextField>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </HBox>
+         </children>
+      </HBox>
+      <TableView fx:id="ordersTable" layoutX="22.0" layoutY="62.0" prefHeight="320.0" prefWidth="849.0" style="-fx-alignment: center;" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="63.0">
+         <columns>
+            <TableColumn fx:id="idOrderCol" maxWidth="70.0" minWidth="0.0" prefWidth="70.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="ID" />
+            <TableColumn fx:id="idProductCol" maxWidth="70.0" prefWidth="70.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="Prod. ID" />
+            <TableColumn fx:id="desigCol" maxWidth="110.0" prefWidth="110.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="Designation" />
+            <TableColumn fx:id="referenceCol" maxWidth="70.0" prefWidth="70.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="Prix" />
+            <TableColumn fx:id="quantityCol" maxWidth="70.0" prefWidth="70.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="Quantity" />
+            <TableColumn fx:id="IdSupplierCol" maxWidth="70.0" prefWidth="70.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="Prov. ID" />
+            <TableColumn fx:id="SupplierNameCol" maxWidth="110.0" prefWidth="110.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="Prov.  Name" />
+            <TableColumn fx:id="OrderDateCol" maxWidth="85.0" minWidth="0.0" prefWidth="85.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="Order Date" />
+            <TableColumn fx:id="DeliveryDateCol" maxWidth="85.0" minWidth="0.0" prefWidth="85.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="Deliv Date" />
+            <TableColumn fx:id="actionCol" maxWidth="94.0" minWidth="0.0" prefWidth="94.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="Action" />
+         </columns>
+      </TableView>
+   </children>
 </AnchorPane>
