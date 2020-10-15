@@ -5,6 +5,7 @@
  */
 package clients;
 
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import helpers.DbConnect;
 import java.net.URL;
@@ -18,6 +19,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -32,17 +35,17 @@ import models.Client;
 public class AddClientController implements Initializable {
 
     @FXML
-    private JFXTextField nameField;
+    private TextField nameField;
     @FXML
-    private JFXTextField adressField;
+    private TextField adressField;
     @FXML
-    private JFXTextField cityField;
+    private TextField cityField;
     @FXML
-    private JFXTextField phoneField;
+    private TextField phoneField;
     @FXML
-    private JFXTextField faxField;
+    private TextField faxField;
     @FXML
-    private JFXTextField agentField;
+    private TextField agentField;
     @FXML
     private VBox succesfullyPane;
 
@@ -50,7 +53,7 @@ public class AddClientController implements Initializable {
     Connection connection = null;
     ResultSet resultSet = null;
     PreparedStatement preparedStatement = null;
-    private boolean update = true;
+    private boolean update = false;
     int clientId;
 
     /**
@@ -119,11 +122,11 @@ public class AddClientController implements Initializable {
     public void isRegister() {
         connection = DbConnect.getConnect();
         if (update == false) {
-            
+
             query = "INSERT INTO client (NOCL, ADCL, VICL, TECL, FACL, NORECL) VALUES (?, ?, ?,?, ?, ?)";
 
         } else {
-            
+
             query = "UPDATE `client` SET "
                     + "`NOCL`=?,"
                     + "`ADCL`=?,"
@@ -131,7 +134,7 @@ public class AddClientController implements Initializable {
                     + "`TECL`=?,"
                     + "`FACL`=?,"
                     + "`NORECL`=? WHERE IDCL = '"+clientId+"'";
-            
+
         }
         insert();
     }
@@ -143,7 +146,7 @@ public class AddClientController implements Initializable {
     }
 
     private void insert() {
-try {
+        try {
 
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, nameField.getText());
@@ -161,5 +164,9 @@ try {
             // TODO: handle exception
             JOptionPane.showMessageDialog(null, e);
         }    }
+
+    @FXML
+    private void getBuyTot(KeyEvent event) {
+    }
 
 }
