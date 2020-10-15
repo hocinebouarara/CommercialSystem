@@ -1,11 +1,230 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="purchases.orders.AddSupplierOrderController">
-    
+<AnchorPane id="AnchorPane" prefHeight="485.0" prefWidth="933.0" stylesheets="@../../home/homeview.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="purchases.orders.AddSupplierOrderController">
+   <children>
+      <HBox layoutX="5.0" layoutY="115.0">
+         <children>
+            <VBox alignment="TOP_CENTER" prefHeight="350.0" prefWidth="429.0">
+               <children>
+                  <HBox>
+                     <children>
+                        <VBox>
+                           <children>
+                              <Text fill="#3c3838" strokeType="OUTSIDE" strokeWidth="0.0" text="Product Name" wrappingWidth="153.732421875">
+                                 <font>
+                                    <Font name="Century Gothic Italic" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <HBox>
+                                 <children>
+                                    <TextField fx:id="productFld" prefHeight="35.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: #9E9E9E; -fx-border-width: 2px; -fx-border-radius: 8px;" translateX="3.0">
+                                       <padding>
+                                          <Insets left="14.0" />
+                                       </padding>
+                                       <font>
+                                          <Font name="Century Gothic" size="18.0" />
+                                       </font>
+                                    </TextField>
+                                    <JFXButton alignment="CENTER" onMouseClicked="#getProducts" prefHeight="35.0" prefWidth="75.0" style="-fx-background-color: #651fff; -fx-background-radius: 0 8 8 0;" text="Click" textFill="WHITE" translateX="-15.0">
+                                       <font>
+                                          <Font name="Century Gothic Bold Italic" size="13.0" />
+                                       </font>
+                                    </JFXButton>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <VBox>
+                           <children>
+                              <Text fill="#3c3838" strokeType="OUTSIDE" strokeWidth="0.0" text="Quantity" wrappingWidth="119.732421875">
+                                 <font>
+                                    <Font name="Century Gothic Italic" size="18.0" />
+                                 </font>
+                                 <VBox.margin>
+                                    <Insets left="10.0" />
+                                 </VBox.margin>
+                              </Text>
+                              <HBox alignment="CENTER">
+                                 <children>
+                                    <TextField fx:id="quantityFld" prefHeight="37.0" prefWidth="200.0" style="-fx-background-color: transparent; -fx-border-color: #9E9E9E; -fx-border-width: 2px; -fx-border-radius: 8px;">
+                                       <padding>
+                                          <Insets left="14.0" />
+                                       </padding>
+                                       <font>
+                                          <Font name="Century Gothic" size="18.0" />
+                                       </font>
+                                    </TextField>
+                                    <FontAwesomeIconView fill="#17ff61" glyphName="ANGLE_DOUBLE_DOWN" onMouseClicked="#minus" scaleX="1.5" scaleY="1.5" size="18" styleClass="FontAwesomeIconView" translateX="-45.0" />
+                                    <FontAwesomeIconView fill="#e10561" glyphName="ANGLE_DOUBLE_UP" onMouseClicked="#plus" scaleX="1.5" scaleY="1.5" size="18" styleClass="FontAwesomeIconView" translateX="-35.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <VBox>
+                     <children>
+                        <Text fill="#3c3838" strokeType="OUTSIDE" strokeWidth="0.0" text="Delivery Date" wrappingWidth="141.732421875">
+                           <font>
+                              <Font name="Century Gothic Italic" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="10.0" />
+                           </VBox.margin>
+                        </Text>
+                        <JFXDatePicker fx:id="delivDateFld" defaultColor="#10e14b" prefHeight="35.0" prefWidth="403.0" style="-fx-background-color: transparent; -fx-border-color: #9E9E9E; -fx-border-width: 2px; -fx-border-radius: 8px;" styleClass="textField" translateX="2.0">
+                           <padding>
+                              <Insets left="14.0" />
+                           </padding>
+                        </JFXDatePicker>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <VBox prefHeight="60.0" prefWidth="403.0">
+                     <children>
+                        <Text fill="#3c3838" strokeType="OUTSIDE" strokeWidth="0.0" text="Supplier Name" wrappingWidth="153.732421875">
+                           <font>
+                              <Font name="Century Gothic Italic" size="18.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets left="73.0" />
+                           </VBox.margin>
+                        </Text>
+                        <HBox prefHeight="35.0" prefWidth="377.0">
+                           <children>
+                              <TextField fx:id="supplierFld" prefHeight="35.0" prefWidth="225.0" style="-fx-background-color: transparent; -fx-border-color: #9E9E9E; -fx-border-width: 2px; -fx-border-radius: 8px;" translateX="3.0">
+                                 <padding>
+                                    <Insets left="14.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="Century Gothic" size="18.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="63.0" />
+                                 </HBox.margin>
+                              </TextField>
+                              <JFXButton alignment="CENTER" onMouseClicked="#getSuppliers" prefHeight="35.0" prefWidth="55.0" style="-fx-background-color: #651fff; -fx-background-radius: 0 8 8 0;" text="Click" textFill="WHITE" translateX="-14.0">
+                                 <font>
+                                    <Font name="Century Gothic Bold" size="13.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </VBox>
+                  <HBox alignment="CENTER" prefHeight="46.0" prefWidth="747.0">
+                     <children>
+                        <JFXButton onMouseClicked="#Registersign" prefHeight="38.0" prefWidth="100.0" style="-fx-background-color: #7f0877; -fx-background-radius: 20px;" text="Save" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Century Gothic" size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="btnAnother" layoutX="90.0" layoutY="14.0" onMouseClicked="#addAnother" prefHeight="38.0" prefWidth="186.0" style="-fx-background-color: #6A1B9A; -fx-background-radius: 20px;" text="Save &amp; add Another" textFill="WHITE">
+                           <font>
+                              <Font name="Century Gothic" size="16.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton onMouseClicked="#clean" prefHeight="38.0" prefWidth="100.0" style="-fx-background-color: #455A64; -fx-background-radius: 20px;" text="Clean" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Century Gothic" size="16.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+            <AnchorPane fx:id="productPane" prefHeight="293.0" prefWidth="490.0">
+               <children>
+                  <TableView fx:id="productsTable" prefHeight="240.0" prefWidth="490.0" style="-fx-alignment: center;">
+                     <columns>
+                        <TableColumn fx:id="idCol" maxWidth="77.0" minWidth="0.0" prefWidth="77.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="ID" />
+                        <TableColumn fx:id="referenceCol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="REFERENCE" />
+                        <TableColumn fx:id="desigCol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="DESIGNATION" />
+                        <TableColumn fx:id="categoryCol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="CATRGORY" />
+                        <TableColumn fx:id="quantityCol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="QUANTITY" />
+                     </columns>
+                  </TableView>
+                  <HBox alignment="CENTER" layoutY="173.0" prefHeight="46.0" prefWidth="490.0" AnchorPane.topAnchor="261.0">
+                     <children>
+                        <JFXButton onMouseClicked="#getProductsItem" prefHeight="35.0" prefWidth="260.0" style="-fx-background-color: #6A1B9A; -fx-background-radius: 20px;" text="OK" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Century Gothic" size="18.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <Pane layoutX="10.0" layoutY="75.0" prefHeight="3.0" prefWidth="200.0" style="-fx-background-color: black;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="40.0" />
+      <Text layoutX="33.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Purchase Order" wrappingWidth="283.7324294447899">
+         <font>
+            <Font name="Century Gothic" size="26.0" />
+         </font>
+      </Text>
+      <FontAwesomeIconView glyphName="CLOSE" layoutX="899.0" layoutY="33.0" onMouseClicked="#close" size="25" styleClass="FontAwesomeIconView" />
+      <AnchorPane fx:id="suppliersPane" layoutX="200.0" layoutY="-1.0" prefHeight="350.0" prefWidth="499.0" translateX="234.0" translateY="114.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="234.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <TableView fx:id="suppliersTable" prefHeight="240.0" prefWidth="490.0" style="-fx-alignment: center;">
+               <columns>
+                  <TableColumn fx:id="supplierIdCol" maxWidth="77.0" minWidth="0.0" prefWidth="77.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="ID" />
+                  <TableColumn fx:id="supplierNameCol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="NAME" />
+                  <TableColumn fx:id="agentCol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="AGENT" />
+                  <TableColumn fx:id="adressCol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="ADRESS" />
+                  <TableColumn fx:id="phoneCol" maxWidth="100.0" prefWidth="100.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="PHONE" />
+               </columns>
+            </TableView>
+            <HBox alignment="CENTER" layoutY="174.0" prefHeight="46.0" prefWidth="490.0" AnchorPane.topAnchor="261.0">
+               <children>
+                  <JFXButton onMouseClicked="#getSuppliersItem" prefHeight="35.0" prefWidth="260.0" style="-fx-background-color: #6A1B9A; -fx-background-radius: 20px;" text="OK" textFill="WHITE">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="Century Gothic" size="18.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </children>
 </AnchorPane>
