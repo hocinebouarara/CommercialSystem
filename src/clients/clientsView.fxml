@@ -5,6 +5,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
@@ -60,6 +61,23 @@
                      </HBox.margin>
                   </FontAwesomeIconView>
                   <FontAwesomeIconView fill="#455a64" glyphName="PRINT" layoutX="60.0" layoutY="44.0" size="40" styleClass="FontAwesomeIconView" />
+                  <HBox alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="690.0">
+                     <children>
+                        <FontAwesomeIconView fill="#6b6363" glyphName="SEARCH" size="30" wrappingWidth="31.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </FontAwesomeIconView>
+                        <TextField prefHeight="32.0" prefWidth="329.0" promptText="Searching for Item" style="-fx-background-radius: 20px;">
+                           <HBox.margin>
+                              <Insets right="44.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Century Gothic" size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                  </HBox>
                </children>
             </HBox>
             <TableView fx:id="tableView" layoutX="9.0" layoutY="63.0" prefHeight="320.0" prefWidth="849.0" style="-fx-alignment: center;" stylesheets="@../home/homeview.css" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="63.0">
