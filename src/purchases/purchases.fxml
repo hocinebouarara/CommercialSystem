@@ -24,7 +24,7 @@
                         <String fx:value="FontAwesomeIconView" />
                      </styleClass>
                   </JFXButton>
-                  <Pane fx:id="ordersPane" prefHeight="10.0" prefWidth="200.0" style="-fx-background-color: #00E676;" styleClass="MenuBar" />
+                  <Pane fx:id="ordersPane" prefHeight="10.0" prefWidth="200.0" style="-fx-background-color: #651FFF;" />
                </children>
                <HBox.margin>
                   <Insets right="8.0" />
@@ -41,7 +41,7 @@
                         <String fx:value="FontAwesomeIconView" />
                      </styleClass>
                   </JFXButton>
-                  <Pane fx:id="deliveriesPane" prefHeight="10.0" prefWidth="200.0" style="-fx-background-color: #00E676;" styleClass="MenuBar" />
+                  <Pane fx:id="deliveriesPane" prefHeight="10.0" prefWidth="200.0" style="-fx-background-color: #651FFF;" />
                </children>
                <HBox.margin>
                   <Insets right="7.0" />
@@ -58,7 +58,7 @@
                         <String fx:value="FontAwesomeIconView" />
                      </styleClass>
                   </JFXButton>
-                  <Pane fx:id="payPane" prefHeight="10.0" prefWidth="200.0" style="-fx-background-color: #00E676;" styleClass="MenuBar" />
+                  <Pane fx:id="payPane" prefHeight="10.0" prefWidth="200.0" style="-fx-background-color: #651FFF;" />
                </children>
             </VBox>
          </children>
