@@ -12,21 +12,23 @@ import java.sql.Date;
  * @author hocin
  */
 public class PurchaseOrder {
-    
-    int orderId,productId;
+
+    int orderId, productId;
 
     String reference, designation;
-    
-    int quantity,supplierId;
-    
-    String SupplierName;
-    
-    Date orderDate,deliveryDate;
 
-    public PurchaseOrder(int orderId, int productId, String reference, String designation, int quantity, int supplierId, String SupplierName, Date orderDate, Date deliveryDate) {
+    int quantity, supplierId;
+
+    float price;
+
+    String SupplierName;
+
+    Date orderDate, deliveryDate;
+
+    public PurchaseOrder(int orderId, int productId, float price, String designation, int quantity, int supplierId, String SupplierName, Date orderDate, Date deliveryDate) {
         this.orderId = orderId;
         this.productId = productId;
-        this.reference = reference;
+        this.price = price;
         this.designation = designation;
         this.quantity = quantity;
         this.supplierId = supplierId;
@@ -58,6 +60,16 @@ public class PurchaseOrder {
     public void setReference(String reference) {
         this.reference = reference;
     }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+   
 
     public String getDesignation() {
         return designation;
@@ -106,10 +118,5 @@ public class PurchaseOrder {
     public void setDeliveryDate(Date deliveryDate) {
         this.deliveryDate = deliveryDate;
     }
-    
-    
-    
-    
-    
-    
+
 }
