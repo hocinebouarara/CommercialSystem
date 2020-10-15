@@ -12,11 +12,14 @@ package helpers;
 public class Links {
 
     public static String CLIENTSVIEW = "/clients/clientsView.fxml";
-    public static String HOMEVIEW ="/home/homeView.fxml";
-    public static String PRODUCTSVIEW ="/products/productsView.fxml";
-    public static String SUPPLIERSVIEW ="/suppliers/suppliersView.fxml";
-    public static String PURCHASESORDERS ="/orders/ordersView.fxml";
-    
+    public static String HOMEVIEW = "/home/homeView.fxml";
+    public static String PRODUCTSVIEW = "/products/productsView.fxml";
+    public static String SUPPLIERSVIEW = "/suppliers/suppliersView.fxml";
+     public static String PURCHASES = "/purchases/purchases.fxml";
+    public static String PURCHASESORDERS = "/purchases/orders/ordersView.fxml";
+    public static String PURCHASESDELIVERIES = "/purchases/deliveries/deliveriesView.fxml";
+    public static String PURCHASESPAY = "/purchases/payement/payementView.fxml";
+
     public static String VIEWSTYLE = "/home/homeview.css";
 
 }
