@@ -41,8 +41,7 @@ public class LoginViewController implements Initializable {
     private TextField userNameFld;
     @FXML
     private PasswordField passwordFld;
-    
-   
+
     String query = null;
     Connection connection = null;
     PreparedStatement preparedStatement = null;
@@ -55,10 +54,9 @@ public class LoginViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-    
-    
-     public boolean checkUsername(String username) {
+    }
+
+    public boolean checkUsername(String username) {
 
         query = "SELECT * FROM `employee` WHERE `USEM` =?";
 
@@ -122,6 +120,9 @@ public class LoginViewController implements Initializable {
 
     @FXML
     private void close(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
+
     }
-    
+
 }
