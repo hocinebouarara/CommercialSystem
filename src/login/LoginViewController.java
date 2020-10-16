@@ -7,6 +7,8 @@ package login;
 
 import com.mysql.jdbc.PreparedStatement;
 import helpers.DbConnect;
+import helpers.Links;
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -15,14 +17,18 @@ import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -73,11 +79,45 @@ public class LoginViewController implements Initializable {
     }
 
     @FXML
-    private void onKeyTyped(KeyEvent event) {
-    }
-
-    @FXML
     private void signIn(MouseEvent event) {
+
+        String userName = userNameFld.getText();
+        String password = passwordFld.getText();
+        query = "SELECT * FROM `employee` WHERE `USEM` =? and PAEM = ?";
+        connection = DbConnect.getConnect();
+        try {
+            preparedStatement = (PreparedStatement) connection.prepareStatement(query);
+            preparedStatement.setString(1, userName);
+            preparedStatement.setString(2, password);
+            resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+
+                try {
+                    Parent parent = FXMLLoader.load(getClass().getResource(Links.HOMEVIEW));
+                    Scene scene = new Scene(parent);
+                    scene.setFill(Color.TRANSPARENT);
+                    Stage stage = new Stage();
+                    stage.setScene(scene);
+                    stage.initStyle(StageStyle.TRANSPARENT);
+                    stage.show();
+
+                    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                    stage.close();
+
+                } catch (IOException ex) {
+                    Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            } else {
+
+                JOptionPane.showMessageDialog(null, "Incorrect Username Or Password", "Login Failed", 2);
+
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     @FXML

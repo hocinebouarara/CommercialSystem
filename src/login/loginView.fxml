@@ -23,7 +23,7 @@
                   <Insets top="35.0" />
                </VBox.margin>
             </Text>
-            <TextField fx:id="userNameFld" onKeyTyped="#onKeyTyped" prefHeight="36.0" prefWidth="255.0" styleClass="textFields">
+            <TextField fx:id="userNameFld" prefHeight="36.0" prefWidth="255.0" styleClass="textFields">
                <VBox.margin>
                   <Insets left="40.0" right="40.0" top="2.0" />
                </VBox.margin>
@@ -39,7 +39,7 @@
                   <Insets top="10.0" />
                </VBox.margin>
             </Text>
-            <PasswordField fx:id="passwordFld" onKeyTyped="#onKeyTyped" prefHeight="16.0" prefWidth="255.0" styleClass="textFields">
+            <PasswordField fx:id="passwordFld" prefHeight="16.0" prefWidth="255.0" styleClass="textFields">
                <VBox.margin>
                   <Insets left="40.0" right="40.0" top="2.0" />
                </VBox.margin>
