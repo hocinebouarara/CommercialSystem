@@ -51,7 +51,7 @@
             </HBox>
          </children>
       </HBox>
-      <TableView fx:id="ordersTable" layoutX="32.0" layoutY="72.0" prefHeight="320.0" prefWidth="849.0" style="-fx-alignment: center;" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="63.0">
+      <TableView fx:id="ordersTable" layoutX="32.0" layoutY="72.0" maxHeight="380.0" prefHeight="330.0" prefWidth="849.0" style="-fx-alignment: center;" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="63.0">
          <columns>
             <TableColumn fx:id="idDelivCol" maxWidth="70.0" prefWidth="70.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="ID" />
             <TableColumn fx:id="idOrderCol" maxWidth="70.0" minWidth="0.0" prefWidth="70.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="Order ID" />
