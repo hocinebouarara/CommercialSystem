@@ -8,29 +8,61 @@
 .table-view {
     -fx-background-color:#651FFF;
     -fx-background-radius:14 14 0 0;
-    
-    }
+
+}
 .table-view .column-header-background{
-        -fx-background-color: #651FFF;
-        -fx-background-radius:14;
-        -fx-background-insets: 0 0 10 0;
-       
-        
-        
-    }
+    -fx-background-color: #651FFF;
+    -fx-background-radius:14;
+    -fx-background-insets: 0 0 10 0;
+
+
+
+}
 .table-view .column-header, .table-view .filler{
-        -fx-size:50px;
-        -fx-border-width: 0 0 10 0;
-        -fx-background-color:transparent;
-        
-    }
-    .table-view .column-header .label {
-        -fx-text-fill: white ;
-    }
+    -fx-size:50px;
+    -fx-border-width: 0 0 10 0;
+    -fx-background-color:transparent;
+
+}
+.table-view .column-header .label {
+    -fx-text-fill: white ;
+}
 
 .textField{
     -fx-text-fill:white ;
     -fx-font-size: 15px;
     -fx-font-family: "Century Gothic";        
-    }
-    
+}
+.btn {
+    -fx-border-color: white ;
+    -fx-background-color: transparent ;
+    -fx-border-radius: 20px ;
+    -fx-border-width: 2px ;
+    -fx-text-fill:white;
+}
+.btn2 {
+    -fx-border-color: #651666 ;
+    -fx-background-color: transparent ;
+    -fx-border-radius: 8px ;
+    -fx-border-width: 2px ;
+}
+.btn2:hover {
+    -fx-border-color: #651666 ;
+    -fx-background-color: transparent ;
+    -fx-border-radius: 8px ;
+    -fx-border-width: 4px ;
+    -fx-cursor: hand;
+}
+
+.btn:hover{
+    -fx-background-color: transparent ;
+    -fx-border-color: black;
+    -fx-text-fill:black;
+    -fx-cursor: hand;
+}
+.textFields{
+    -fx-background-color: transparent ;
+    -fx-border-color: #424242 ;
+    -fx-border-radius: 8px;
+    -fx-border-width: 3px;
+}    
