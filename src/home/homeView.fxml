@@ -13,21 +13,21 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<HBox alignment="TOP_RIGHT" prefHeight="650.0" prefWidth="1200.0" style="-fx-background-color: #651FFF;" stylesheets="@homeview.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.HomeViewController">
+<HBox prefHeight="650.0" prefWidth="1200.0" style="-fx-background-color: #651FFF;" stylesheets="@homeview.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="home.HomeViewController">
    <children>
-      <VBox>
+      <VBox maxWidth="250.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
          <children>
-            <HBox alignment="CENTER" prefHeight="138.0" prefWidth="164.0">
+            <HBox alignment="CENTER" maxHeight="200.0" maxWidth="280.0" prefHeight="170.0" prefWidth="200.0">
                <children>
-                  <Circle fx:id="myImage" fill="TRANSPARENT" radius="69.0" stroke="WHITE" strokeType="INSIDE" />
+                  <Circle fx:id="myImage" fill="TRANSPARENT" radius="77.0" stroke="WHITE" strokeType="INSIDE" HBox.hgrow="ALWAYS" />
                </children>
                <VBox.margin>
                   <Insets top="30.0" />
                </VBox.margin>
             </HBox>
-            <VBox fx:id="boxButton">
+            <VBox fx:id="boxButton" maxWidth="280.0" prefWidth="200.0">
                <children>
-                  <JFXButton accessibleText="homeMenu" onMouseClicked="#getHomeView" prefHeight="60.0" prefWidth="190.0" text="Dashboard" textFill="WHITE">
+                  <JFXButton accessibleText="homeMenu" maxHeight="75.0" maxWidth="280.0" onMouseClicked="#getHomeView" prefHeight="60.0" prefWidth="200.0" text="Dashboard" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Italic" size="20.0" />
                      </font>
@@ -35,7 +35,7 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="BANK" size="30" translateX="-4.0" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton accessibleText="productsMenu" onMouseClicked="#getproductsView" prefHeight="60.0" prefWidth="190.0" text="Products" textFill="WHITE">
+                  <JFXButton accessibleText="productsMenu" maxHeight="75.0" maxWidth="280.0" onMouseClicked="#getproductsView" prefHeight="60.0" prefWidth="200.0" text="Products" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Italic" size="20.0" />
                      </font>
@@ -43,7 +43,7 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="ARCHIVE" size="30" translateX="-19.0" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton accessibleText="clientsMenu" onMouseClicked="#getClientsView" prefHeight="60.0" prefWidth="190.0" text="Clients" textFill="WHITE">
+                  <JFXButton accessibleText="clientsMenu" maxHeight="75.0" maxWidth="280.0" onMouseClicked="#getClientsView" prefHeight="60.0" prefWidth="200.0" text="Clients" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Italic" size="20.0" />
                      </font>
@@ -51,7 +51,7 @@
                         <MaterialDesignIconView fill="WHITE" glyphName="HUMAN_MALE_FEMALE" size="35" translateX="-29.0" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton accessibleText="supplierMenu" alignment="CENTER" onMouseClicked="#getSuppliersView" prefHeight="60.0" prefWidth="190.0" text="Supplier" textFill="WHITE">
+                  <JFXButton accessibleText="supplierMenu" alignment="CENTER" maxHeight="75.0" maxWidth="280.0" onMouseClicked="#getSuppliersView" prefHeight="60.0" prefWidth="200.0" text="Supplier" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Italic" size="20.0" />
                      </font>
@@ -59,7 +59,7 @@
                         <MaterialDesignIconView fill="WHITE" glyphName="TRUCK" size="30" translateX="-21.0" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton accessibleText="purchasesMenu" alignment="CENTER" onMouseClicked="#getPurchasesView" prefHeight="60.0" prefWidth="190.0" text="Purchases" textFill="WHITE">
+                  <JFXButton accessibleText="purchasesMenu" alignment="CENTER" maxHeight="75.0" maxWidth="280.0" onMouseClicked="#getPurchasesView" prefHeight="60.0" prefWidth="200.0" text="Purchases" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Italic" size="20.0" />
                      </font>
@@ -67,7 +67,7 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="CART_ARROW_DOWN" size="30" translateX="-12.0" />
                      </graphic>
                   </JFXButton>
-                  <JFXButton accessibleText="salesMenu" alignment="CENTER" onMouseClicked="#getSalesView" prefHeight="60.0" prefWidth="190.0" text="Sales" textFill="WHITE">
+                  <JFXButton accessibleText="salesMenu" alignment="CENTER" maxHeight="75.0" maxWidth="280.0" onMouseClicked="#getSalesView" prefHeight="60.0" prefWidth="200.0" text="Sales" textFill="WHITE">
                      <font>
                         <Font name="Century Gothic Italic" size="20.0" />
                      </font>
@@ -83,18 +83,18 @@
             </VBox>
          </children>
       </VBox>
-      <AnchorPane maxWidth="1100.0" prefHeight="585.0" prefWidth="1025.0" style="-fx-background-radius: 30 0 0 30; -fx-background-color: white;">
+      <AnchorPane maxWidth="1200.0" prefHeight="585.0" prefWidth="1025.0" style="-fx-background-radius: 30 0 0 30; -fx-background-color: white;" HBox.hgrow="ALWAYS">
          <children>
             <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="33.0" prefHeight="70.0" prefWidth="986.0" style="-fx-background-color: #651FFF; -fx-background-radius: 10px;" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
                <children>
                   <HBox prefHeight="70.0" prefWidth="353.0">
                      <children>
-                        <FontAwesomeIconView fill="WHITE" glyphName="WEIXIN" size="28">
+                        <FontAwesomeIconView fill="WHITE" glyphName="WEIXIN" size="28" styleClass="FontAwesomeIconView">
                            <HBox.margin>
                               <Insets top="35.0" />
                            </HBox.margin>
                         </FontAwesomeIconView>
-                        <OctIconView fill="WHITE" glyphName="SIGN_OUT" size="28">
+                        <OctIconView fill="WHITE" glyphName="SIGN_OUT" onMouseClicked="#logOut" size="28" styleClass="FontAwesomeIconView">
                            <HBox.margin>
                               <Insets left="13.0" top="35.0" />
                            </HBox.margin>
