@@ -15,12 +15,16 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 /**
  * FXML Controller class
@@ -35,7 +39,6 @@ public class HomeViewController implements Initializable {
     private VBox boxButton;
     @FXML
     private AnchorPane anchorPane;
-    @FXML
     private BorderPane borderPane;
 
     /**
@@ -109,6 +112,24 @@ public class HomeViewController implements Initializable {
 
     @FXML
     private void getSalesView(MouseEvent event) {
+    }
+
+    @FXML
+    private void logOut(MouseEvent event) {
+        try {
+            Parent parent = FXMLLoader.load(getClass().getResource(Links.LOGINVIEW));
+            Scene scene = new Scene(parent);
+            scene.setFill(Color.TRANSPARENT);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.show();
+            
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.close();
+        } catch (IOException ex) {
+            Logger.getLogger(HomeViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }
