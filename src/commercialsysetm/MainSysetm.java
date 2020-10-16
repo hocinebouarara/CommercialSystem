@@ -28,7 +28,7 @@ public class MainSysetm extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         
-        Parent root = FXMLLoader.load(getClass().getResource(Links.HOMEVIEW));
+        Parent root = FXMLLoader.load(getClass().getResource(Links.LOGINVIEW));
         Scene scene  = new Scene(root);
         scene.getStylesheets().add(getClass().getResource(Links.VIEWSTYLE).toExternalForm());
         scene.setFill(Color.TRANSPARENT);
