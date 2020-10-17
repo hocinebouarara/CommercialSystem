@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="fontawesomefx-8.9">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../NetBeansProjects/test/dist/lib/fontawesomefx-8.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../NetBeansProjects/test/dist/lib/jfoenix-8.0.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../NetBeansProjects/test/dist/lib/mysql-connector-java-5.1.42-bin.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

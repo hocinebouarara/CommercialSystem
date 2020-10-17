@@ -65,4 +65,11 @@
     -fx-border-color: #424242 ;
     -fx-border-radius: 8px;
     -fx-border-width: 3px;
-}    
+}
+.hover_border:hover{
+
+    -fx-border-color: #0746A6;
+    -fx-border-width: 0px 8px 0px 2px;
+    -fx-background-color:#34e7e4e0;
+    -fx-cursor:hand;
+}

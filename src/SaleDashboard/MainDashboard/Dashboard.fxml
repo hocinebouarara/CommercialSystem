@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="1200.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SaleDashboard.MainDashboard.DashboardController">
+   <children>
+      <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="235.0" style="-fx-background-color: #fff;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane accessibleText="hhhh" prefHeight="189.0" prefWidth="235.0">
+               <children>
+                  <FontAwesomeIconView fill="#0746a6" glyphName="XING" layoutX="26.0" layoutY="107.0" size="40" text="" wrappingWidth="37.428571701049805" AnchorPane.bottomAnchor="73.50446319580078" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="207.5714282989502" />
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="63.0" layoutY="81.0" prefHeight="24.0" prefWidth="46.0" text="Pro" textAlignment="CENTER" textFill="#0746a6">
+                     <font>
+                        <Font name="Tahoma Bold" size="22.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="109.0" layoutY="81.0" prefHeight="28.0" prefWidth="74.0" text="Seller">
+                     <font>
+                        <Font name="Tahoma Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <JFXButton accessibleText="specialities" alignment="TOP_LEFT" focusTraversable="false" onAction="#SaleAction" prefHeight="53.0" prefWidth="235.0" ripplerFill="#f2ff02" text="Sale" textFill="#222020">
+               <font>
+                  <Font name="Arial Bold Italic" size="16.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#0746a6" glyphName="CIRCLE_ALT_NOTCH" size="40" textAlignment="RIGHT" wrappingWidth="37.85714340209961" />
+               </graphic>
+               <styleClass>
+                  <String fx:value="hover_border" />
+                  <String fx:value="cursor_hand" />
+               </styleClass>
+            </JFXButton>
+            <JFXButton accessibleText="std_info" alignment="TOP_LEFT" focusTraversable="false" prefHeight="53.0" prefWidth="238.0" ripplerFill="#f2ff02" text="See sales" textFill="#282727">
+               <font>
+                  <Font name="Arial Bold Italic" size="16.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="#0746a6" glyphName="CHAIN" size="40" textAlignment="RIGHT" wrappingWidth="37.85714340209961" />
+               </graphic>
+               <styleClass>
+                  <String fx:value="hover_border" />
+                  <String fx:value="cursor_hand" />
+               </styleClass>
+            </JFXButton>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <JFXButton accessibleText="std_info" alignment="CENTER" focusTraversable="false" prefHeight="53.0" prefWidth="238.0" ripplerFill="#f2ff02" text="Debt Book" textAlignment="CENTER" textFill="#282727">
+                     <font>
+                        <Font name="Arial Bold Italic" size="16.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#0746a6" glyphName="LIST_ALT" size="40" textAlignment="CENTER" wrappingWidth="56.85714340209961" />
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="hover_border" />
+                        <String fx:value="cursor_hand" />
+                     </styleClass>
+                  </JFXButton>
+                  <JFXButton accessibleText="std_info" alignment="CENTER" focusTraversable="false" onAction="#ChartsAction" prefHeight="53.0" prefWidth="238.0" ripplerFill="#f2ff02" text="Chart" textFill="#282727">
+                     <font>
+                        <Font name="Arial Bold Italic" size="16.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="#0746a6" glyphName="AREA_CHART" size="40" wrappingWidth="60.85714340209961" />
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="hover_border" />
+                        <String fx:value="cursor_hand" />
+                     </styleClass>
+                  </JFXButton>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+      <AnchorPane layoutX="235.0" prefHeight="40.0" prefWidth="966.0" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="235.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <FontAwesomeIconView fill="#0846a6" glyphName="BELL" layoutX="560.0" layoutY="27.0" size="20" styleClass="cursor_hand" AnchorPane.bottomAnchor="10.609375" AnchorPane.rightAnchor="385.0" AnchorPane.topAnchor="10.0" />
+            <Label fx:id="Seller" alignment="CENTER" layoutX="658.0" layoutY="5.0" prefHeight="31.0" prefWidth="186.0" styleClass="cursor_hand" textFill="#0746a6" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="5.0">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+            <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="936.0" layoutY="2.0" onAction="#Exit" prefHeight="29.0" prefWidth="29.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <graphic>
+                  <FontAwesomeIconView fill="#0746a6" glyphName="TIMES_CIRCLE" size="20" />
+               </graphic>
+               <styleClass>
+                  <String fx:value="hover_border_exit" />
+                  <String fx:value="cursor_hand" />
+               </styleClass>
+            </JFXButton>
+            <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="870.0" onAction="#reduire" prefHeight="29.0" prefWidth="29.0" AnchorPane.rightAnchor="58.0" AnchorPane.topAnchor="0.0">
+               <graphic>
+                  <FontAwesomeIconView fill="#0746a6" glyphName="MINUS" size="20" />
+               </graphic>
+               <styleClass>
+                  <String fx:value="hover_border_ag" />
+                  <String fx:value="cursor_hand" />
+               </styleClass>
+            </JFXButton>
+            <JFXButton contentDisplay="GRAPHIC_ONLY" layoutX="902.0" onAction="#Agrandir" prefHeight="29.0" prefWidth="29.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="0.0">
+               <graphic>
+                  <FontAwesomeIconView fill="#0746a6" glyphName="CIRCLE" size="20" />
+               </graphic>
+               <styleClass>
+                  <String fx:value="hover_border_ag" />
+                  <String fx:value="cursor_hand" />
+               </styleClass>
+            </JFXButton>
+            <Circle fx:id="ARC" fill="#0746a6" layoutX="659.0" layoutY="20.0" radius="15.0" stroke="#0746a6" strokeType="INSIDE" AnchorPane.bottomAnchor="6.0" AnchorPane.rightAnchor="291.0" AnchorPane.topAnchor="5.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="Parent" layoutX="235.0" layoutY="41.0" prefHeight="610.0" prefWidth="965.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="235.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="41.0" />
+   </children>
+</AnchorPane>

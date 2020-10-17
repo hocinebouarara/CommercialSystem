@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="610.0" prefWidth="965.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SaleDashboard.Charts.ChartsController">
+   <children>
+      <LineChart fx:id="linechart" layoutX="14.0" layoutY="73.0" prefHeight="465.0" prefWidth="509.0" title="Sales Line charts" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="73.0">
+        <xAxis>
+          <CategoryAxis label="Months" side="BOTTOM">
+               <tickLabelFont>
+                  <Font name="Tahoma Bold" size="12.0" />
+               </tickLabelFont>
+            </CategoryAxis>
+        </xAxis>
+        <yAxis>
+          <NumberAxis label="Sale Value" side="LEFT" tickLabelFill="#0746a6" upperBound="10000.0">
+               <tickLabelFont>
+                  <Font name="Tahoma Bold" size="11.0" />
+               </tickLabelFont>
+            </NumberAxis>
+        </yAxis>
+      </LineChart>
+      <PieChart fx:id="PieChart" layoutX="542.0" layoutY="177.0" prefHeight="494.0" prefWidth="409.0" AnchorPane.bottomAnchor="59.0" AnchorPane.leftAnchor="542.0" />
+   </children>
+</AnchorPane>

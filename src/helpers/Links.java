@@ -20,7 +20,8 @@ public class Links {
     public static String PURCHASESDELIVERIES = "/purchases/deliveries/deliveriesView.fxml";
     public static String PURCHASESPAY = "/purchases/payement/payementView.fxml";
     public static String LOGINVIEW = "/login/loginView.fxml";
-
+    public static String SALEVIEW = "/SaleDashboard/NormallySale/SaleFxml.fxml";
+    public static String ChartView = "/SaleDashboard/Charts/Charts.fxml";
     public static String VIEWSTYLE = "/home/homeview.css";
 
 }

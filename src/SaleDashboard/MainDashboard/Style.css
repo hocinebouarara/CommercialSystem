@@ -1,0 +1,20 @@
+.hover_border_exit:hover{
+
+    -fx-background-color:#ff0303;
+
+}
+.hover_border_ag:hover{
+
+    -fx-background-color:#E2E4DD;
+
+}
+.hover_border:hover{
+
+    -fx-border-color: #0746A6;
+    -fx-border-width: 0px 2px 0px 8px;
+    -fx-background-color:#34e7e4e0;
+    -fx-cursor:hand;
+}
+.cursor_hand{
+    -fx-cursor:hand;
+}
