@@ -7,6 +7,7 @@ import com.jfoenix.controls.JFXTextField;
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
 import com.mysql.jdbc.ResultSetImpl;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import helpers.DbConnect;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -50,6 +51,8 @@ public class SaleController implements Initializable {
 
     @FXML
     private TableColumn<?, ?> price_total;
+
+    private  TableColumn<?,?> Action;
 
     @FXML
     private TableView<produit> table;
@@ -115,6 +118,7 @@ public class SaleController implements Initializable {
 
                     float price= (float) (Double.parseDouble(quant.getText())*rs.getFloat(7));
                     int quantities=Integer.parseInt(quant.getText());
+
                     data.add(new produit(i,rs.getString(3),rs.getFloat(7),quantities,price));
 
                     id_prod.setCellValueFactory(new PropertyValueFactory <> ("id"));

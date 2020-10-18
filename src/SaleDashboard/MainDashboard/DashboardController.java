@@ -54,6 +54,14 @@ public class DashboardController implements Initializable {
     void ChartsAction(ActionEvent event){
         loadViews(Links.ChartView);
     }
+    @FXML
+    void SeeSalesAction(ActionEvent event){
+        loadViews(Links.SeeSales);
+    }
+    @FXML
+    void DebtBookAction(ActionEvent event){
+
+    }
     private void loadViews(String viewName) {
         try {
             AnchorPane pane = FXMLLoader.load(getClass().getResource(viewName));

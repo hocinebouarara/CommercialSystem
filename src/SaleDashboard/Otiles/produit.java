@@ -1,5 +1,9 @@
 package SaleDashboard.Otiles;
 
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+
+import java.awt.*;
+
 public class produit {
     private int id;
     private String nom_pro;
@@ -7,12 +11,14 @@ public class produit {
     private int Quantite;
     private double prix;
 
+
     public produit(int id, String nom_pro, float prix_pro, int Quantite, float prix) {
         this.id = id;
         this.nom_pro = nom_pro;
         this.prix_pro = prix_pro;
         this.Quantite = Quantite;
         this.prix = prix;
+
     }
 
     public int getId() {

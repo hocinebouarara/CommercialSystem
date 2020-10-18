@@ -22,6 +22,7 @@ public class Links {
     public static String LOGINVIEW = "/login/loginView.fxml";
     public static String SALEVIEW = "/SaleDashboard/NormallySale/SaleFxml.fxml";
     public static String ChartView = "/SaleDashboard/Charts/Charts.fxml";
+    public static String SeeSales = "/SaleDashboard/SeeSales/SeeSales.fxml";
     public static String VIEWSTYLE = "/home/homeview.css";
 
 }

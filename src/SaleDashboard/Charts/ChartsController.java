@@ -25,7 +25,9 @@ public class ChartsController implements Initializable {
                 new PieChart.Data("January",80),
                 new PieChart.Data("February",100),
                 new PieChart.Data("March",120),
-                new PieChart.Data("April",60)
+                new PieChart.Data("April",60),
+                new PieChart.Data("May",280),
+                new PieChart.Data("June",100)
         );
         PieChart.setData(list);
 
@@ -35,6 +37,13 @@ public class ChartsController implements Initializable {
         Months.getData().add(new XYChart.Data("February",7000));
         Months.getData().add(new XYChart.Data("March",9000));
         Months.getData().add(new XYChart.Data("April",8000));
+        Months.getData().add(new XYChart.Data("May",5000));
+        Months.getData().add(new XYChart.Data("June",7000));
+        Months.getData().add(new XYChart.Data("July",9000));
+        Months.getData().add(new XYChart.Data("August",8000));
+        Months.getData().add(new XYChart.Data("September",5000));
+        Months.getData().add(new XYChart.Data("October",7000));
+
 
         XYChart.Series Monthss = new XYChart.Series();
         Monthss.setName("Hocine");
@@ -42,6 +51,12 @@ public class ChartsController implements Initializable {
         Monthss.getData().add(new XYChart.Data("February",500));
         Monthss.getData().add(new XYChart.Data("March",6000));
         Monthss.getData().add(new XYChart.Data("April",10000));
+        Monthss.getData().add(new XYChart.Data("May",5000));
+        Monthss.getData().add(new XYChart.Data("June",7000));
+        Monthss.getData().add(new XYChart.Data("July",9000));
+        Monthss.getData().add(new XYChart.Data("August",8000));
+        Monthss.getData().add(new XYChart.Data("September",5000));
+        Monthss.getData().add(new XYChart.Data("October",7000));
 
         linechart.getData().addAll(Months,Monthss);
 
