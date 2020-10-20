@@ -68,7 +68,7 @@
                               <Insets left="8.0" />
                            </HBox.margin>
                         </FontAwesomeIconView>
-                        <TextField prefHeight="32.0" prefWidth="329.0" promptText="Searching for Item" style="-fx-background-radius: 20px;">
+                        <TextField fx:id="filterfield" prefHeight="32.0" prefWidth="329.0" promptText="Searching for Item" style="-fx-background-radius: 20px;">
                            <HBox.margin>
                               <Insets right="44.0" />
                            </HBox.margin>

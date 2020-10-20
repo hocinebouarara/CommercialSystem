@@ -21,6 +21,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -30,6 +32,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -81,6 +84,9 @@ public class ProductsViewController implements Initializable {
     @FXML
     private Pane statPane;
 
+    @FXML
+    private TextField filterfield;
+
     /**
      * Initializes the controller class.
      */
@@ -88,6 +94,7 @@ public class ProductsViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         loadData();
+        filtersearch();
     }
 
     private void loadData() {
@@ -256,6 +263,29 @@ public class ProductsViewController implements Initializable {
         } catch (IOException ex) {
             Logger.getLogger(ClientsViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+
+    public void filtersearch(){
+        FilteredList<Product>  filteredList =new FilteredList<>(productList ,b-> true);
+        filterfield.textProperty().addListener((observable ,oldValue,newValue)->{
+            filteredList.setPredicate(product -> {
+                if (newValue==null || newValue.isEmpty()){
+                    return true;
+                }
+                String lowercasefilter=newValue.toLowerCase();
+                if (product.getDesignation().toLowerCase().indexOf(lowercasefilter)!=-1){
+                    return  true;
+                }else if(product.getCategory().toLowerCase().indexOf(lowercasefilter)!=-1){
+                    return true;
+                }else if(product.getReference().toLowerCase().indexOf(lowercasefilter)!=-1){
+                    return true;
+                }
+                else return false;
+            });
+        });
+        SortedList<Product> sortedList=new SortedList<>(filteredList);
+        sortedList.comparatorProperty().bind(productTable.comparatorProperty());
+        productTable.setItems(sortedList);
     }
 
 }

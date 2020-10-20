@@ -5,6 +5,7 @@
  */
 package clients;
 
+import com.jfoenix.controls.JFXTextField;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
 import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import helpers.DbConnect;
@@ -20,6 +21,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -29,6 +32,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
@@ -37,6 +41,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
 import models.Client;
+import models.Product;
 import products.ProductsViewController;
 import suppliers.AddSupplierController;
 
@@ -69,6 +74,8 @@ public class ClientsViewController implements Initializable {
     private TableColumn<Client, String> agentCol;
     @FXML
     private TableColumn<Client, String> operationCol;
+    @FXML
+    private TextField filterfield;
 
     String query = null;
     Connection connection = null;
@@ -85,6 +92,7 @@ public class ClientsViewController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         loadData();
+        filtersearch();
     }
 
     private void loadData() {
@@ -252,6 +260,30 @@ public class ClientsViewController implements Initializable {
             Logger.getLogger(ClientsViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
 
+    }
+    public void filtersearch(){
+        FilteredList<Client> filteredList =new FilteredList<>(cliensList , b-> true);
+        filterfield.textProperty().addListener((observable ,oldValue,newValue)->{
+            filteredList.setPredicate(client -> {
+                if (newValue==null || newValue.isEmpty()){
+                    return true;
+                }
+                String lowercasefilter=newValue.toLowerCase();
+                if (client.getName().toLowerCase().indexOf(lowercasefilter)!=-1){
+                    return  true;
+                }else if(client.getCity().toLowerCase().indexOf(lowercasefilter)!=-1){
+                    return true;
+                }else if(client.getAdress().toLowerCase().indexOf(lowercasefilter)!=-1){
+                    return true;
+                }else if(client.getPhone().toLowerCase().indexOf(lowercasefilter)!=-1){
+                    return true;
+                }
+                else return false;
+            });
+        });
+        SortedList<Client> sortedList=new SortedList<>(filteredList);
+        sortedList.comparatorProperty().bind(tableView.comparatorProperty());
+        tableView.setItems(sortedList);
     }
 
 }

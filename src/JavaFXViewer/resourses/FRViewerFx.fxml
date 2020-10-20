@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="view" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="660.0" style="-fx-border-color: #0746A6; -fx-border-width: 5px;" stylesheets="@ViewerFxStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="JavaFXViewer.Classes.JRViewerFxController">
+   <top>
+      <Pane prefHeight="86.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+              <Slider fx:id="zoomLevel" blockIncrement="25.0" layoutX="436.0" layoutY="48.0" majorTickUnit="75.0" max="175.0" min="25.0" minorTickCount="2" prefHeight="23.0" prefWidth="141.0" showTickLabels="true" showTickMarks="true" value="100.0" />
+            <Label layoutX="222.0" layoutY="51.0" text="View Page:">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font></Label>
+            <Label layoutX="491.0" layoutY="34.0" text="Zoom">
+               <font>
+                  <Font name="Tahoma Bold" size="14.0" />
+               </font></Label>
+            <JFXButton layoutX="24.0" layoutY="43.0" onAction="#print" ripplerFill="#99fa00" style="-fx-background-color: #0646A6;" text="Print" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="93.0" layoutY="43.0" onAction="#save" ripplerFill="#99fa00" style="-fx-background-color: #0646A6;" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="Tahoma Bold" size="16.0" />
+               </font>
+            </JFXButton>
+            <JFXComboBox fx:id="pageList" focusColor="#0746a6" layoutX="310.0" layoutY="48.0" onAction="#pageListSelected" promptText="View Page" unFocusColor="#0746a6" />
+            <AnchorPane layoutX="-5.0" prefHeight="30.0" prefWidth="660.0" style="-fx-background-color: #0746A6;">
+               <children>
+                  <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="600.0" layoutY="-1.0" onAction="#exit" prefHeight="30.0" prefWidth="30.0" ripplerFill="WHITE" styleClass="hover_border" stylesheets="@../../../../SMA_project/src/exitstyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <graphic>
+                        <FontAwesomeIconView fill="#fead05" glyphName="TIMES" size="20" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="566.0" layoutY="-1.0" onAction="#reduire" prefHeight="30.0" prefWidth="30.0" ripplerFill="#bc7373" styleClass="hover_border1" stylesheets="@../../../../SMA_project/src/exitstyle.css" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="0.0">
+                     <graphic>
+                        <FontAwesomeIconView fill="#fead05" glyphName="MINUS" size="20" wrappingWidth="15.714285850524902" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+
+         </children></Pane>
+   </top>
+   <center>
+      <ScrollPane prefHeight="500.0" prefWidth="500.0" stylesheets="@ViewerFxStyle.css" BorderPane.alignment="CENTER">
+         <content>
+            <ImageView fx:id="imageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         </content>
+         <styleClass>
+            <String fx:value="scroll-pane" />
+            <String fx:value="thumb" />
+            <String fx:value="track" />
+         </styleClass>
+      </ScrollPane>
+   </center>
+   <right>
+   </right>
+    <bottom>
+            <Accordion fx:id="resultAccordion" BorderPane.alignment="CENTER">
+              <panes>
+                <TitledPane fx:id="resultPane" animated="false" text="untitled 1" visible="false">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Label fx:id="resultDescription" layoutX="14.0" layoutY="7.0" text="Label" wrapText="true" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </TitledPane>
+              </panes>
+            </Accordion>
+         </bottom>
+</BorderPane>

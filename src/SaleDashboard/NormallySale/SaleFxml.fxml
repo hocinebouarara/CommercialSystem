@@ -5,6 +5,7 @@
 <?import com.jfoenix.controls.JFXDatePicker?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -14,26 +15,18 @@
 
 <AnchorPane prefHeight="610.0" prefWidth="965.0" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SaleDashboard.NormallySale.SaleController">
    <children>
-      <TableView fx:id="table" layoutX="440.0" layoutY="29.0" prefHeight="449.0" prefWidth="525.0" AnchorPane.bottomAnchor="161.0">
+      <TableView fx:id="table" layoutX="440.0" layoutY="29.0" prefHeight="457.0" prefWidth="525.0" AnchorPane.bottomAnchor="153.0">
         <columns>
           <TableColumn fx:id="id_prod" prefWidth="46.0" text="Id" />
           <TableColumn fx:id="nom_prod" prefWidth="103.0" text="Name" />
             <TableColumn fx:id="prix" prefWidth="118.0" text="Unit price" />
             <TableColumn fx:id="Quantity" prefWidth="104.0" text="Quantity" />
             <TableColumn fx:id="price_total" prefWidth="72.0" text="Price" />
-            <TableColumn fx:id="Set" prefWidth="147.0" text="Action" />
+            <TableColumn fx:id="Action" prefWidth="147.0" text="Action" />
         </columns>
       </TableView>
-      <HBox alignment="TOP_RIGHT" layoutX="14.0" layoutY="404.0" prefHeight="90.0" prefWidth="965.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+      <HBox alignment="CENTER" layoutX="14.0" layoutY="404.0" prefHeight="90.0" prefWidth="965.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <JFXButton onAction="#Add" prefHeight="121.0" prefWidth="241.0" ripplerFill="#1bf80f" style="-fx-background-radius: 100;" text="Add">
-               <font>
-                  <Font size="25.0" />
-               </font>
-               <graphic>
-                  <FontAwesomeIconView fill="#0746a6" glyphName="PLUS" size="30" wrappingWidth="57.0" />
-               </graphic>
-            </JFXButton>
             <JFXButton onAction="#Update" prefHeight="121.0" prefWidth="241.0" ripplerFill="#11dcf7" style="-fx-background-radius: 100;" text="Update">
                <font>
                   <Font size="25.0" />
@@ -60,13 +53,13 @@
             </JFXButton>
          </children>
       </HBox>
-      <JFXComboBox fx:id="comp" layoutX="54.0" layoutY="14.0" prefHeight="30.0" prefWidth="340.0" promptText="Shoose product" unFocusColor="#0746a6" AnchorPane.leftAnchor="54.0" AnchorPane.topAnchor="14.0" />
-      <Label layoutX="440.0" layoutY="449.0" prefHeight="54.0" prefWidth="114.0" text="Price Total :">
+      <JFXComboBox fx:id="comp" layoutX="54.0" onAction="#LoadProductItems" prefHeight="44.0" prefWidth="340.0" promptText="Shoose product" unFocusColor="#0746a6" AnchorPane.leftAnchor="54.0" AnchorPane.topAnchor="0.0" />
+      <Label layoutX="440.0" layoutY="460.0" prefHeight="54.0" prefWidth="114.0" text="Price Total :">
          <font>
             <Font name="Tahoma Bold" size="18.0" />
          </font>
       </Label>
-      <Label fx:id="Price_total" layoutX="554.0" layoutY="449.0" prefHeight="54.0" prefWidth="192.0">
+      <Label fx:id="Price_total" layoutX="554.0" layoutY="460.0" prefHeight="54.0" prefWidth="192.0">
          <font>
             <Font name="Tahoma Bold" size="18.0" />
          </font>
@@ -76,6 +69,34 @@
             <Font name="Arial Bold Italic" size="20.0" />
          </font>
       </JFXTextField>
-      <JFXDatePicker layoutX="54.0" layoutY="114.0" prefHeight="25.0" prefWidth="340.0" promptText="Delivery Date " />
+      <JFXDatePicker fx:id="DeliveryDate" layoutX="54.0" layoutY="147.0" prefHeight="44.0" prefWidth="340.0" promptText="Delivery Date " />
+      <JFXComboBox fx:id="ClientCombobox" layoutX="54.0" layoutY="235.0" onAction="#LoadClient" prefHeight="44.0" prefWidth="340.0" promptText="Shoose Client" unFocusColor="#0746a6" />
+      <JFXButton fx:id="AddNewClient" layoutX="54.0" layoutY="468.0" onAction="#Add" prefHeight="46.0" prefWidth="210.0" ripplerFill="#1bf80f" styleClass="JFXButton" text=" Add new client">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="#0746a6" glyphName="PLUS" size="25" wrappingWidth="22.0" />
+         </graphic>
+      </JFXButton>
+      <JFXButton layoutX="54.0" layoutY="94.0" onAction="#Add" prefHeight="44.0" prefWidth="210.0" ripplerFill="#1bf80f" text=" Add to basket">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="#0746a6" glyphName="SHOPPING_BASKET" size="25" wrappingWidth="34.0" />
+         </graphic>
+         <styleClass>
+            <String fx:value="JFXButton" />
+            <String fx:value="JFXButton_hover" />
+         </styleClass>
+      </JFXButton>
+      <JFXTextField layoutX="54.0" layoutY="288.0" prefHeight="35.0" prefWidth="340.0" promptText="Nome" />
+      <JFXTextField layoutX="54.0" layoutY="335.0" prefHeight="35.0" prefWidth="340.0" />
+      <JFXTextField layoutX="54.0" layoutY="383.0" prefHeight="35.0" prefWidth="165.0" />
+      <JFXTextField layoutX="229.0" layoutY="383.0" prefHeight="35.0" prefWidth="165.0" />
+      <JFXTextField layoutX="54.0" layoutY="428.0" prefHeight="35.0" prefWidth="165.0" />
+      <JFXTextField layoutX="229.0" layoutY="428.0" prefHeight="35.0" prefWidth="165.0" />
+      <JFXDatePicker fx:id="DARG" layoutX="54.0" layoutY="191.0" prefHeight="44.0" prefWidth="340.0" promptText="Costomer Payment Date" />
    </children>
 </AnchorPane>

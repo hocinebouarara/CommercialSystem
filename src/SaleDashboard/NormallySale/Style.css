@@ -29,3 +29,24 @@
             derive(-fx-base, 80%)
             transparent;
 }
+.JFXButton{
+-fx-border:3px;
+-fx-border-radius:5px;
+-fx-border-color:#000000;
+-fx-transition:.5s;
+}
+.JFXButton:hover{
+-fx-border-width:5px;
+}
+JFXTextField{
+-fx-border-radius:5px;
+-fx-decoration:none;
+}
+JFXComboBox{
+-fx-font-size:18px;
+-fx-font-family:tahoma;
+}
+JFXDatePicker{
+-fx-font-size:18px;
+-fx-font-family:tahoma;
+}
