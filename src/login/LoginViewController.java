@@ -90,22 +90,42 @@ public class LoginViewController implements Initializable {
             resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
+                System.out.println(resultSet.getString(6));
+                if (resultSet.getString(6).equals("admin")){
+                    try {
+                        Parent parent = FXMLLoader.load(getClass().getResource(Links.HOMEVIEW));
+                        Scene scene = new Scene(parent);
+                        scene.setFill(Color.TRANSPARENT);
+                        Stage stage = new Stage();
+                        stage.setScene(scene);
+                        stage.initStyle(StageStyle.TRANSPARENT);
+                        stage.show();
 
-                try {
-                    Parent parent = FXMLLoader.load(getClass().getResource(Links.HOMEVIEW));
-                    Scene scene = new Scene(parent);
-                    scene.setFill(Color.TRANSPARENT);
-                    Stage stage = new Stage();
-                    stage.setScene(scene);
-                    stage.initStyle(StageStyle.TRANSPARENT);
-                    stage.show();
+                        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        stage.close();
 
-                    stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    stage.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }else
+                {
+                    try {
+                        Parent parent = FXMLLoader.load(getClass().getResource(Links.Dashbord));
+                        Scene scene = new Scene(parent);
+                        scene.setFill(Color.TRANSPARENT);
+                        Stage stage = new Stage();
+                        stage.setScene(scene);
+                        stage.initStyle(StageStyle.TRANSPARENT);
+                        stage.show();
 
-                } catch (IOException ex) {
-                    Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+                        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                        stage.close();
+
+                    } catch (IOException ex) {
+                        Logger.getLogger(LoginViewController.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
+
             } else {
 
                 JOptionPane.showMessageDialog(null, "Incorrect Username Or Password", "Login Failed", 2);

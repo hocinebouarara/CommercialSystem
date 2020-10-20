@@ -150,6 +150,7 @@ public class SaleController implements Initializable {
                     int quantities = Integer.parseInt(quant.getText());
                     data.add(new produit(
                             i,
+                            rs.getInt(1),
                             rs.getString(3),
                             rs.getFloat(7),
                             quantities,
@@ -326,7 +327,7 @@ public class SaleController implements Initializable {
 
         }catch(SQLException e){
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setContentText(e.getMessage());
+            alert.setContentText("Commende table :"+e.getMessage());
             alert.show();
         }
     }
@@ -337,7 +338,7 @@ public class SaleController implements Initializable {
                 Connection connection=(Connection)DbConnect.getConnect();
                 String sqlOrder = "INSERT INTO `ligne_cmd_cl`(`IDAR`, `IDCA`, `QCDA`) VALUES (?,?,?)";
                 preparedStatement = (PreparedStatement) connection.prepareStatement(sqlOrder);
-                preparedStatement.setInt(1,produit.getId());
+                preparedStatement.setInt(1,produit.getId_ar());
                 preparedStatement.setInt(2,new ExecuteQuery().GetLastIdCommend());
                 preparedStatement.setInt(3,produit.getQ());
                 preparedStatement.execute();
@@ -346,7 +347,7 @@ public class SaleController implements Initializable {
         }catch(SQLException e){
 
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setContentText(e.getMessage());
+            alert.setContentText("Ligne commend table :"+e.getMessage());
             alert.show();
 
         }
@@ -368,7 +369,7 @@ public class SaleController implements Initializable {
         }catch(SQLException e){
 
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setContentText(e.getMessage());
+            alert.setContentText("reglement client table:"+e.getMessage());
             alert.show();
 
         }
@@ -388,7 +389,7 @@ public class SaleController implements Initializable {
         }catch(SQLException e){
 
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setContentText(e.getMessage());
+            alert.setContentText("facture_vente table"+e.getMessage());
             alert.show();
 
         }
@@ -411,7 +412,7 @@ public class SaleController implements Initializable {
         }catch(SQLException e){
 
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setContentText(e.getMessage());
+            alert.setContentText("livraision_cl table :"+e.getMessage());
             alert.show();
 
         }
@@ -423,7 +424,7 @@ public class SaleController implements Initializable {
                 Connection connection=(Connection)DbConnect.getConnect();
                 String sqlOrder = "INSERT INTO `ligne_livr_cl`(`IDAR`, `IDBA`,`QLAR`,`TOQL`) VALUES (?,?,?,?)";
                 preparedStatement = (PreparedStatement) connection.prepareStatement(sqlOrder);
-                preparedStatement.setInt(1,produit.getId());
+                preparedStatement.setInt(1,produit.getId_ar());
                 preparedStatement.setInt(2,ExecuteQuery.GetLastIdLivraision());
                 preparedStatement.setInt(3,produit.getQ());
                 preparedStatement.setFloat(3,price);
@@ -433,7 +434,7 @@ public class SaleController implements Initializable {
         }catch(SQLException e){
 
             Alert alert = new Alert(Alert.AlertType.WARNING);
-            alert.setContentText(e.getMessage());
+            alert.setContentText("ligne_livr_cl table :"+e.getMessage());
             alert.show();
 
         }

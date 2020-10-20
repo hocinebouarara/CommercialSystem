@@ -1,5 +1,6 @@
 package SaleDashboard.MainDashboard;
 
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import helpers.Links;
 import home.HomeViewController;
 import javafx.application.Platform;
@@ -34,6 +35,9 @@ public class DashboardController implements Initializable {
 
     @FXML
     AnchorPane Parent;
+
+    @FXML
+    FontAwesomeIconView Notification;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

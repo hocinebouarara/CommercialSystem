@@ -85,7 +85,7 @@
       </VBox>
       <AnchorPane layoutX="235.0" prefHeight="40.0" prefWidth="966.0" style="-fx-background-color: #fff;" AnchorPane.leftAnchor="235.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <FontAwesomeIconView fill="#0846a6" glyphName="BELL" layoutX="560.0" layoutY="27.0" size="20" styleClass="cursor_hand" AnchorPane.bottomAnchor="10.609375" AnchorPane.rightAnchor="385.0" AnchorPane.topAnchor="10.0" />
+            <FontAwesomeIconView fx:id="Notification" fill="#0846a6" glyphName="BELL" layoutX="560.0" layoutY="27.0" size="20" styleClass="cursor_hand" AnchorPane.bottomAnchor="10.609375" AnchorPane.rightAnchor="385.0" AnchorPane.topAnchor="10.0" />
             <Label fx:id="Seller" alignment="CENTER" layoutX="658.0" layoutY="5.0" prefHeight="31.0" prefWidth="186.0" styleClass="cursor_hand" textFill="#0746a6" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="120.0" AnchorPane.topAnchor="5.0">
                <font>
                   <Font name="Tahoma Bold" size="14.0" />

@@ -1,5 +1,7 @@
 package SaleDashboard.NormallySale;
 
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIcon;
+import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView;
 import javafx.fxml.Initializable;
 
 import java.net.URL;
@@ -9,5 +11,7 @@ public class AddClientController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+  
+        
     }
 }

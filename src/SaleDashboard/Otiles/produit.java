@@ -8,19 +8,33 @@ import java.awt.*;
 
 public class produit {
     private int id;
+    private int id_ar;
     private String nom_pro;
     private float prix_pro;
     private int Q;
     private double prix;
     FontAwesomeIconView iconView;
 
-    public produit(int id, String nom_pro, float prix_pro, int Quantite, float prix) {
+    public produit(int id,int id_ar, String nom_pro, float prix_pro, int Quantite, float prix) {
         this.id = id;
+        this.id_ar=id_ar;
         this.nom_pro = nom_pro;
         this.prix_pro = prix_pro;
         this.Q = Quantite;
         this.prix = prix;
         this.iconView=new FontAwesomeIconView(FontAwesomeIcon.TRASH);
+    }
+
+    public void setPrix(double prix) {
+        this.prix = prix;
+    }
+
+    public int getId_ar() {
+        return id_ar;
+    }
+
+    public void setId_ar(int id_ar) {
+        this.id_ar = id_ar;
     }
 
     public int getQ() {

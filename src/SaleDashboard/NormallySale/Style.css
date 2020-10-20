@@ -50,3 +50,6 @@ JFXDatePicker{
 -fx-font-size:18px;
 -fx-font-family:tahoma;
 }
+TableColumn{
+-fx-font-size:18px;
+}

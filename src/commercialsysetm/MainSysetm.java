@@ -29,7 +29,7 @@ public class MainSysetm extends Application {
     public void start(Stage primaryStage) throws IOException {
         
         //Parent root = FXMLLoader.load(getClass().getResource(Links.LOGINVIEW));
-        Parent root = FXMLLoader.load(getClass().getResource("../SaleDashboard/MainDashboard/Dashboard.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../login/loginView.fxml"));
         Scene scene  = new Scene(root);
         scene.getStylesheets().add(getClass().getResource(Links.VIEWSTYLE).toExternalForm());
         scene.setFill(Color.TRANSPARENT);
