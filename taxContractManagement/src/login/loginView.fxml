@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.CubicCurve?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="413.0" prefWidth="800.0" style="-fx-background-color: white; -fx-background-radius: 0 20 20 0;" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="login.LoginViewController">
+    <stylesheets>
+        <URL value="@loginview.css" />
+    </stylesheets>
+   <children>
+      <AnchorPane layoutX="459.0" prefHeight="440.0" prefWidth="341.0" style="-fx-background-color: #6200EA; -fx-background-radius: 0 20 20 0;">
+         <children>
+            <FontAwesomeIconView fill="WHITE" glyphName="CLOSE" layoutX="301.0" layoutY="36.0" onMouseClicked="#close" size="24" styleClass="FontAwesomeIconView" />
+         </children>
+      </AnchorPane>
+      <Polygon fill="WHITE" layoutX="400.0" layoutY="351.0" points="-462.0, 40.0, 319.66668701171875, 40.0, -465.0, -401.03411865234375" stroke="WHITE" strokeType="INSIDE" translateX="62.0" translateY="49.0" AnchorPane.leftAnchor="-65.0" />
+      <CubicCurve controlX1="-79.0" controlX2="-94.0" controlY1="-100.36746215820312" controlY2="-21.701065063476562" endX="99.33331298828125" endY="-189.49545288085938" fill="#6200ea" layoutX="343.0" layoutY="128.0" startX="18.33331298828125" startY="191.632568359375" stroke="#6200ea" translateX="73.0" />
+      <CubicCurve controlX1="-115.32839965820312" controlX2="96.0754165649414" controlY1="-205.92922973632812" controlY2="-53.15132141113281" endX="165.8695831298828" endY="-300.97662353515625" fill="#6200ea" layoutX="423.0" layoutY="184.0" rotate="-49.4" startX="170.59271240234375" startY="235.13458251953125" stroke="#6200ea" translateX="10.0" translateY="170.0" />
+      <VBox alignment="CENTER" layoutX="42.0" layoutY="105.0" prefHeight="291.0" prefWidth="274.0">
+         <children>
+            <VBox>
+               <children>
+                  <Text fill="#68626f" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom d'utilisateur" wrappingWidth="62.8033447265625">
+                     <font>
+                        <Font name="Traditional Arabic Bold" size="8.0" />
+                     </font>
+                  </Text>
+                  <JFXTextField fx:id="userNameFld" focusColor="#07d061" prefHeight="44.0" prefWidth="242.0" style="-fx-border-color: #CFD8DC; -fx-border-radius: 8;" unFocusColor="WHITE">
+                     <font>
+                        <Font name="Traditional Arabic" size="22.0" />
+                     </font>
+                     <padding>
+                        <Insets left="8.0" />
+                     </padding>
+                  </JFXTextField>
+               </children>
+            </VBox>
+            <VBox>
+               <children>
+                  <Text fill="#68626f" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe" wrappingWidth="62.8033447265625">
+                     <font>
+                        <Font name="Traditional Arabic Bold" size="8.0" />
+                     </font>
+                  </Text>
+                  <JFXPasswordField fx:id="passwordFld" focusColor="#07d061" prefHeight="44.0" style="-fx-border-color: #CFD8DC; -fx-border-radius: 10;" unFocusColor="WHITE">
+                     <font>
+                        <Font name="Traditional Arabic" size="22.0" />
+                     </font>
+                     <padding>
+                        <Insets left="8.0" />
+                     </padding>
+                  </JFXPasswordField>
+               </children>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </VBox>
+            <HBox alignment="CENTER_RIGHT">
+               <VBox.margin>
+                  <Insets top="2.0" />
+               </VBox.margin>
+               <children>
+                  <Text fill="#6200ea" strokeType="OUTSIDE" strokeWidth="0.0" text="Mot de passe oublié ?" wrappingWidth="81.47003173828125">
+                     <font>
+                        <Font name="Traditional Arabic Bold" size="8.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#Login" prefHeight="44.0" prefWidth="287.0" style="-fx-background-color: #6200EA; -fx-background-radius: 10;" styleClass="FontAwesomeIconView" text="Se connecter" textFill="WHITE">
+               <font>
+                  <Font name="MV Boli" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="13.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <Text layoutX="42.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Direction des impôts" wrappingWidth="330.1366882324219">
+         <font>
+            <Font name="Traditional Arabic" size="35.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
