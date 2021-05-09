@@ -10,5 +10,9 @@ package helpres;
  * @author Deeplight
  */
 public class Links {
-    
+
+    public static String LOGINVIEW = "/login/loginView.fxml";
+    public static String HOMEVIEW = "/home/homeView.fxml";
+    public static String PAYINGVIEW = "/payingOff/payingView.fxml";
+
 }
