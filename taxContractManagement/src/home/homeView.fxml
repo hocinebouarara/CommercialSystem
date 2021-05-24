@@ -13,17 +13,23 @@
    <children>
       <VBox alignment="BOTTOM_CENTER" prefHeight="650.0" prefWidth="213.0" style="-fx-background-color: #123456; -fx-background-radius: 0 20 0 20;">
          <children>
-            <VBox prefHeight="445.0" prefWidth="213.0">
+            <VBox prefHeight="484.0" prefWidth="213.0">
                <VBox.margin>
                   <Insets />
                </VBox.margin>
                <children>
                   <HBox alignment="CENTER" prefHeight="65.0" prefWidth="230.0">
                      <children>
-                        <JFXButton fx:id="homeBtn" accessibleText="homeMenu" alignment="CENTER" maxHeight="75.0" maxWidth="280.0" onMouseClicked="#getHomeView" prefHeight="65.0" prefWidth="172.0" style="-fx-background-radius: 25 0 0 25;" styleClass="btn" text="Dashboard" textFill="#6670a1f7" translateX="43.0">
+                        <JFXButton fx:id="homeBtn" accessibleText="homeMenu" alignment="BASELINE_LEFT" maxHeight="75.0" maxWidth="280.0" onMouseClicked="#getHomeView" prefHeight="65.0" prefWidth="172.0" style="-fx-background-radius: 25 0 0 25;" styleClass="btn" text="Dashboard" textFill="#6670a1f7" translateX="43.0">
                            <font>
-                              <Font size="24.0" />
+                              <Font name="MingLiU_HKSCS-ExtB" size="20.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
                         </JFXButton>
                         <JFXButton fx:id="homeIcon" alignment="CENTER" onMouseClicked="#getHomeView" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 12 12 0 12;" styleClass="btn" textFill="WHITE" translateX="-150.0">
                            <graphic>
@@ -37,10 +43,16 @@
                   </HBox>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="65.0" prefWidth="230.0">
                      <children>
-                        <Button fx:id="propaBtn" mnemonicParsing="false" onMouseClicked="#getPropaView" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: transparent;" styleClass="btn" text="Propa" textFill="#6670a1" translateX="43.0">
+                        <Button fx:id="propaBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onMouseClicked="#getPropaView" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: transparent;" styleClass="btn" text="Propriétés" textFill="#6670a1" translateX="43.0">
                            <font>
-                              <Font size="24.0" />
+                              <Font name="MingLiU_HKSCS-ExtB" size="20.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
                         </Button>
                         <JFXButton fx:id="propaIcon" alignment="CENTER" onMouseClicked="#getPropaView" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 12 12 0 12;" styleClass="btn" textFill="WHITE" translateX="-150.0">
                            <graphic>
@@ -54,10 +66,16 @@
                   </HBox>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="75.0" prefHeight="65.0" prefWidth="230.0">
                      <children>
-                        <Button fx:id="proprBtn" mnemonicParsing="false" onMouseClicked="#getProprView" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: transparent;" styleClass="btn" text="propr" textFill="#6670a1" translateX="43.0">
+                        <Button fx:id="proprBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onMouseClicked="#getProprView" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: transparent;" styleClass="btn" text="Propriétaires" textFill="#6670a1" translateX="43.0">
                            <font>
-                              <Font size="24.0" />
+                              <Font name="MingLiU_HKSCS-ExtB" size="20.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
                         </Button>
                         <JFXButton fx:id="proprIcon" alignment="CENTER" onMouseClicked="#getProprView" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 12 12 0 12;" styleClass="btn" textFill="WHITE" translateX="-150.0">
                            <graphic>
@@ -71,10 +89,16 @@
                   </HBox>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="140.0" prefHeight="65.0" prefWidth="230.0">
                      <children>
-                        <Button fx:id="contratBtn" mnemonicParsing="false" onMouseClicked="#getContratsView" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: transparent;" styleClass="btn" text="Contrats" textFill="#6670a1" translateX="43.0">
+                        <Button fx:id="contratBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onMouseClicked="#getContratsView" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: transparent;" styleClass="btn" text="Contrats" textFill="#6670a1" translateX="43.0">
                            <font>
-                              <Font size="24.0" />
+                              <Font name="MingLiU_HKSCS-ExtB" size="20.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
                         </Button>
                         <JFXButton fx:id="contratIcon" alignment="CENTER" onMouseClicked="#getContratsView" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 12 12 0 12;" styleClass="btn" textFill="WHITE" translateX="-150.0">
                            <graphic>
@@ -88,10 +112,16 @@
                   </HBox>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="205.0" prefHeight="65.0" prefWidth="230.0">
                      <children>
-                        <Button fx:id="benefiBtn" mnemonicParsing="false" onMouseClicked="#getBenefisView" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: transparent;" styleClass="btn" text="Beneficiaire" textFill="#6670a1" translateX="43.0">
+                        <Button fx:id="benefiBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onMouseClicked="#getBenefisView" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: transparent;" styleClass="btn" text="Bénéficiaires" textFill="#6670a1" translateX="43.0">
                            <font>
-                              <Font size="24.0" />
+                              <Font name="MingLiU_HKSCS-ExtB" size="20.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
                         </Button>
                         <JFXButton fx:id="benefiIcon" alignment="CENTER" onMouseClicked="#getBenefisView" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 12 12 0 12;" styleClass="btn" textFill="WHITE" translateX="-150.0">
                            <graphic>
@@ -105,10 +135,16 @@
                   </HBox>
                   <HBox alignment="CENTER" layoutX="10.0" layoutY="270.0" prefHeight="65.0" prefWidth="230.0">
                      <children>
-                        <Button fx:id="paymentBtn" mnemonicParsing="false" onMouseClicked="#getpaymentView" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: transparent;" styleClass="btn" text="Payment " textFill="#6670a1" translateX="43.0">
+                        <Button fx:id="paymentBtn" alignment="BASELINE_LEFT" mnemonicParsing="false" onMouseClicked="#getpaymentView" prefHeight="65.0" prefWidth="171.0" style="-fx-background-color: transparent;" styleClass="btn" text="Paiements" textFill="#6670a1" translateX="43.0">
                            <font>
-                              <Font size="24.0" />
+                              <Font name="MingLiU_HKSCS-ExtB" size="20.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <padding>
+                              <Insets left="20.0" />
+                           </padding>
                         </Button>
                         <JFXButton fx:id="paymentIcon" alignment="CENTER" onMouseClicked="#getpaymentView" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 12 12 0 12;" styleClass="btn" textFill="WHITE" translateX="-150.0">
                            <graphic>
@@ -124,6 +160,19 @@
             </VBox>
          </children>
       </VBox>
-      <AnchorPane prefHeight="650.0" prefWidth="1000.0" HBox.hgrow="ALWAYS" />
+      <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+         <children>
+            <HBox prefHeight="44.0" prefWidth="960.0" style="-fx-background-color: GREEN; -fx-background-radius: 20;">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </HBox>
+            <AnchorPane fx:id="anchorPane" prefHeight="580.0" prefWidth="1000.0">
+               <VBox.margin>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </VBox.margin>
+            </AnchorPane>
+         </children>
+      </VBox>
    </children>
 </HBox>

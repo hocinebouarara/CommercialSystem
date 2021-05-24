@@ -6,12 +6,18 @@
 package home;
 
 import com.jfoenix.controls.JFXButton;
+import helpres.Links;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -45,6 +51,8 @@ public class HomeViewController implements Initializable {
     private Button paymentBtn;
     @FXML
     private JFXButton paymentIcon;
+    @FXML
+    private AnchorPane anchorPane;
 
     /**
      * Initializes the controller class.
@@ -90,6 +98,8 @@ public class HomeViewController implements Initializable {
 
         propaIcon.setStyle("-fx-background-color:#81D4FA;-fx-background-radius:12 12 0 12;");
         propaBtn.setStyle("-fx-text-fill:white;-fx-background-color:#0277BD;-fx-background-radius:20 0 0 20;");
+        
+        loadViews(Links.PROPERTYVIEW);
     }
 
     @FXML
@@ -161,6 +171,16 @@ public class HomeViewController implements Initializable {
 
         paymentIcon.setStyle("-fx-background-color:#81D4FA;-fx-background-radius:12 12 0 12;");
         paymentBtn.setStyle("-fx-text-fill:white;-fx-background-color:#0277BD;-fx-background-radius:20 0 0 20;");
+    }
+    
+     private void loadViews(String viewName) {
+        try {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource(viewName));
+            anchorPane.getChildren().setAll(pane);
+        } catch (IOException ex) {
+            Logger.getLogger(HomeViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
 }
