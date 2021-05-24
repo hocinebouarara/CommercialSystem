@@ -14,5 +14,6 @@ public class Links {
     public static String LOGINVIEW = "/login/loginView.fxml";
     public static String HOMEVIEW = "/home/homeView.fxml";
     public static String PAYINGVIEW = "/payingOff/payingView.fxml";
+    public static String PROPERTYVIEW = "/properties/propertiesView.fxml";
 
 }
