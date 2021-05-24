@@ -22,7 +22,7 @@ public class TaxContractManagement extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource(Links.LOGINVIEW));
+        Parent root = FXMLLoader.load(getClass().getResource(Links.HOMEVIEW));
         Scene scene = new Scene(root);
         scene.setFill(Color.TRANSPARENT);
         stage.setScene(scene);
