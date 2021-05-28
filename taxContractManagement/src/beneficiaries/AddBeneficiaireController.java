@@ -92,12 +92,18 @@ public class AddBeneficiaireController implements Initializable {
         } else {
             getQuery();
             insert();
+            clean();
 
         }
     }
 
     @FXML
-    private void clean(MouseEvent event) {
+    private void clean() {
+        nameField.setText(null);
+        dateFld.setValue(null);
+        wilayaField.setText(null);
+        communeFld.setText(null);
+        nationaFld.setText(null);
     }
 
     private void getQuery() {
