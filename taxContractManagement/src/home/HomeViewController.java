@@ -52,7 +52,7 @@ public class HomeViewController implements Initializable {
     @FXML
     private JFXButton paymentIcon;
     @FXML
-    private AnchorPane anchorPane;
+    private AnchorPane anchor;
 
     /**
      * Initializes the controller class.
@@ -89,16 +89,14 @@ public class HomeViewController implements Initializable {
         homeBtn.setStyle("-fx-text-fill:#6670a1;-fx-background-color:transparent;");
         benefiIcon.setStyle("-fx-background-color:transparent;");
         benefiBtn.setStyle("-fx-text-fill:#6670a1;-fx-background-color:transparent;");
-         contratIcon.setStyle("-fx-background-color:transparent;");
+        contratIcon.setStyle("-fx-background-color:transparent;");
         contratBtn.setStyle("-fx-text-fill:#6670a1;-fx-background-color:transparent;");
-         paymentIcon.setStyle("-fx-background-color:transparent;");
+        paymentIcon.setStyle("-fx-background-color:transparent;");
         paymentBtn.setStyle("-fx-text-fill:#6670a1;-fx-background-color:transparent;");
-
-
 
         propaIcon.setStyle("-fx-background-color:#81D4FA;-fx-background-radius:12 12 0 12;");
         propaBtn.setStyle("-fx-text-fill:white;-fx-background-color:#0277BD;-fx-background-radius:20 0 0 20;");
-        
+
         loadViews(Links.PROPERTYVIEW);
     }
 
@@ -112,12 +110,13 @@ public class HomeViewController implements Initializable {
         contratBtn.setStyle("-fx-text-fill:#6670a1;-fx-background-color:transparent;");
         benefiIcon.setStyle("-fx-background-color:transparent;");
         benefiBtn.setStyle("-fx-text-fill:#6670a1;-fx-background-color:transparent;");
-         paymentIcon.setStyle("-fx-background-color:transparent;");
+        paymentIcon.setStyle("-fx-background-color:transparent;");
         paymentBtn.setStyle("-fx-text-fill:#6670a1;-fx-background-color:transparent;");
-
 
         proprIcon.setStyle("-fx-background-color:#81D4FA;-fx-background-radius:12 12 0 12;");
         proprBtn.setStyle("-fx-text-fill:white;-fx-background-color:#0277BD;-fx-background-radius:20 0 0 20;");
+        
+        loadViews(Links.PROPIETORVIEW);
     }
 
     @FXML
@@ -153,6 +152,8 @@ public class HomeViewController implements Initializable {
 
         benefiIcon.setStyle("-fx-background-color:#81D4FA;-fx-background-radius:12 12 0 12;");
         benefiBtn.setStyle("-fx-text-fill:white;-fx-background-color:#0277BD;-fx-background-radius:20 0 0 20;");
+        
+        loadViews(Links.BENEFICIAIREVIEW);
 
     }
 
@@ -172,11 +173,11 @@ public class HomeViewController implements Initializable {
         paymentIcon.setStyle("-fx-background-color:#81D4FA;-fx-background-radius:12 12 0 12;");
         paymentBtn.setStyle("-fx-text-fill:white;-fx-background-color:#0277BD;-fx-background-radius:20 0 0 20;");
     }
-    
-     private void loadViews(String viewName) {
+
+    private void loadViews(String viewName) {
         try {
             AnchorPane pane = FXMLLoader.load(getClass().getResource(viewName));
-            anchorPane.getChildren().setAll(pane);
+            anchor.getChildren().setAll(pane);
         } catch (IOException ex) {
             Logger.getLogger(HomeViewController.class.getName()).log(Level.SEVERE, null, ex);
         }
