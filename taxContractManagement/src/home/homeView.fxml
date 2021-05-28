@@ -28,7 +28,7 @@
                               <Insets />
                            </HBox.margin>
                            <padding>
-                              <Insets left="20.0" />
+                              <Insets left="26.0" />
                            </padding>
                         </JFXButton>
                         <JFXButton fx:id="homeIcon" alignment="CENTER" onMouseClicked="#getHomeView" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 12 12 0 12;" styleClass="btn" textFill="WHITE" translateX="-150.0">
@@ -51,7 +51,7 @@
                               <Insets />
                            </HBox.margin>
                            <padding>
-                              <Insets left="20.0" />
+                              <Insets left="26.0" />
                            </padding>
                         </Button>
                         <JFXButton fx:id="propaIcon" alignment="CENTER" onMouseClicked="#getPropaView" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 12 12 0 12;" styleClass="btn" textFill="WHITE" translateX="-150.0">
@@ -74,7 +74,7 @@
                               <Insets />
                            </HBox.margin>
                            <padding>
-                              <Insets left="20.0" />
+                              <Insets left="26.0" />
                            </padding>
                         </Button>
                         <JFXButton fx:id="proprIcon" alignment="CENTER" onMouseClicked="#getProprView" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 12 12 0 12;" styleClass="btn" textFill="WHITE" translateX="-150.0">
@@ -97,7 +97,7 @@
                               <Insets />
                            </HBox.margin>
                            <padding>
-                              <Insets left="20.0" />
+                              <Insets left="26.0" />
                            </padding>
                         </Button>
                         <JFXButton fx:id="contratIcon" alignment="CENTER" onMouseClicked="#getContratsView" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 12 12 0 12;" styleClass="btn" textFill="WHITE" translateX="-150.0">
@@ -120,7 +120,7 @@
                               <Insets />
                            </HBox.margin>
                            <padding>
-                              <Insets left="20.0" />
+                              <Insets left="26.0" />
                            </padding>
                         </Button>
                         <JFXButton fx:id="benefiIcon" alignment="CENTER" onMouseClicked="#getBenefisView" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 12 12 0 12;" styleClass="btn" textFill="WHITE" translateX="-150.0">
@@ -143,7 +143,7 @@
                               <Insets />
                            </HBox.margin>
                            <padding>
-                              <Insets left="20.0" />
+                              <Insets left="26.0" />
                            </padding>
                         </Button>
                         <JFXButton fx:id="paymentIcon" alignment="CENTER" onMouseClicked="#getpaymentView" prefHeight="45.0" prefWidth="45.0" style="-fx-background-radius: 12 12 0 12;" styleClass="btn" textFill="WHITE" translateX="-150.0">
@@ -167,7 +167,7 @@
                   <Insets left="20.0" right="20.0" />
                </VBox.margin>
             </HBox>
-            <AnchorPane fx:id="anchorPane" prefHeight="580.0" prefWidth="1000.0">
+            <AnchorPane fx:id="anchor" prefHeight="580.0" prefWidth="1000.0">
                <VBox.margin>
                   <Insets left="5.0" right="5.0" top="5.0" />
                </VBox.margin>
