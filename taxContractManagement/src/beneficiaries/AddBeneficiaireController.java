@@ -45,18 +45,25 @@ public class AddBeneficiaireController implements Initializable {
     Beneficiaire beneficiaire = null;
     private boolean update;
     int beneficiaireId;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
+    }
 
     void setUpdate(boolean b) {
     }
 
     void setTextField(int id, String name, LocalDate toLocalDate, String wilaya, String commune, String nationnalite) {
+        beneficiaireId = id;
+        nameField.setText(name);
+        dateFld.setValue(toLocalDate);
+        wilayaField.setText(wilaya);
+        communeFld.setText(commune);
+        nationaFld.setText(nationnalite);
     }
 
     @FXML
@@ -66,5 +73,5 @@ public class AddBeneficiaireController implements Initializable {
     @FXML
     private void clean(MouseEvent event) {
     }
-    
+
 }
