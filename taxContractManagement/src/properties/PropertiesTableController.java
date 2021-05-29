@@ -167,11 +167,12 @@ public class PropertiesTableController implements Initializable {
                                 + "-glyph-size:28px;"
                                 + "-fx-fill:#00E676;"
                         );
-                        /*deleteIcon.setOnMouseClicked((MouseEvent event) -> {
+                        deleteIcon.setOnMouseClicked((MouseEvent event) -> {
 
                             try {
-                                beneficiaire = beneficiairesTable.getSelectionModel().getSelectedItem();
-                                query = "DELETE FROM `beneficiaire` WHERE id  =" + beneficiaire.getId();
+                                property = propertiesTable.getSelectionModel().getSelectedItem();
+                                query = "DELETE FROM `fiche_habitation` WHERE id = '" + property.getId()+ "'"
+                                        + " and id_propr = '" + property.getId_propr()+ "'";
                                 connection = DbConnect.getConnect();
                                 preparedStatement = connection.prepareStatement(query);
                                 preparedStatement.execute();
@@ -181,7 +182,7 @@ public class PropertiesTableController implements Initializable {
                                 Logger.getLogger(ProprietorsViewController.class.getName()).log(Level.SEVERE, null, ex);
                             }
 
-                        });*/
+                        });
                         /*editIcon.setOnMouseClicked((MouseEvent event) -> {
 
                             beneficiaire = beneficiairesTable.getSelectionModel().getSelectedItem();
