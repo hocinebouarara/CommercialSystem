@@ -1,99 +1,97 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" fx:id="anchorPane" prefHeight="580.0" prefWidth="1000.0" stylesheets="@../../../CommercialSystem-master/src/home/homeview.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="properties.PropertiesViewController">
+<AnchorPane fx:id="anchorPane" prefHeight="580.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="properties.PropertiesViewController">
    <children>
-      <HBox alignment="CENTER_LEFT" layoutX="6.0" layoutY="7.0" prefWidth="894.0" style="-fx-border-color: #BDBDBD; -fx-border-width: 0px 0px 2px 0px;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="74.0" AnchorPane.topAnchor="0.0">
+      <VBox alignment="CENTER" prefHeight="580.0" prefWidth="1000.0">
          <children>
-            <VBox prefWidth="200.0">
+            <HBox prefHeight="49.0" prefWidth="980.0">
                <children>
-                  <JFXButton onMouseClicked="#editPane" prefHeight="55.0" prefWidth="200.0" styleClass="MenuBar" text="Edits">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Propriétés" wrappingWidth="162.13674926757812">
                      <font>
-                        <Font name="Bodoni MT" size="29.0" />
+                        <Font name="Comic Sans MS Bold" size="26.0" />
                      </font>
-                  </JFXButton>
-                  <Pane fx:id="editPane" prefHeight="4.0" prefWidth="200.0" style="-fx-background-color: #651FFF;" />
-               </children>
-               <HBox.margin>
-                  <Insets right="10.0" />
-               </HBox.margin>
-            </VBox>
-            <VBox prefWidth="200.0">
-               <children>
-                  <JFXButton onMouseClicked="#statisticsPane" prefHeight="55.0" prefWidth="200.0" styleClass="MenuBar" text="Statistics">
-                     <font>
-                        <Font name="Bodoni MT" size="29.0" />
-                     </font>
-                  </JFXButton>
-                  <Pane fx:id="statPane" prefHeight="4.0" prefWidth="200.0" />
-               </children>
-            </VBox>
-         </children>
-      </HBox>
-      <AnchorPane layoutX="10.0" layoutY="73.0" prefHeight="449.0" prefWidth="913.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="70.0">
-         <children>
-            <HBox layoutX="47.0" layoutY="14.0" prefHeight="40.0" prefWidth="854.0" AnchorPane.topAnchor="10.0">
-               <children>
-                  <FontAwesomeIconView fill="#0288d1" glyphName="PLUS_SQUARE" onMouseClicked="#addMembers" size="40" styleClass="FontAwesomeIconView">
-                     <HBox.margin>
-                        <Insets left="5.0" right="10.0" />
-                     </HBox.margin>
-                  </FontAwesomeIconView>
-                  <FontAwesomeIconView fill="#880e4f" glyphName="REFRESH" onMouseClicked="#refreshTable" size="40" styleClass="FontAwesomeIconView">
-                     <HBox.margin>
-                        <Insets right="10.0" />
-                     </HBox.margin>
-                  </FontAwesomeIconView>
-                  <FontAwesomeIconView fill="#0dd764" glyphName="DOWNLOAD" layoutX="10.0" layoutY="44.0" size="40" styleClass="FontAwesomeIconView">
-                     <HBox.margin>
-                        <Insets right="10.0" />
-                     </HBox.margin>
-                  </FontAwesomeIconView>
-                  <FontAwesomeIconView fill="#455a64" glyphName="PRINT" layoutX="60.0" layoutY="44.0" size="40" styleClass="FontAwesomeIconView" />
-                  <HBox alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="690.0">
+                  </Text>
+                  <VBox prefHeight="59.0" prefWidth="153.0">
                      <children>
-                        <FontAwesomeIconView fill="#6b6363" glyphName="SEARCH" size="30" wrappingWidth="31.0">
-                           <HBox.margin>
-                              <Insets left="8.0" />
-                           </HBox.margin>
-                        </FontAwesomeIconView>
-                        <TextField prefHeight="32.0" prefWidth="329.0" promptText="Searching for Item" style="-fx-background-radius: 20px;">
-                           <HBox.margin>
-                              <Insets right="44.0" />
-                           </HBox.margin>
+                        <JFXButton alignment="BOTTOM_CENTER" onMouseClicked="#getPropertiesTable" prefHeight="24.0" prefWidth="153.0" styleClass="MenuBar" text="Propriétés">
                            <font>
-                              <Font name="Century Gothic" size="16.0" />
+                              <Font size="22.0" />
                            </font>
-                        </TextField>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </JFXButton>
+                        <Pane fx:id="editPane" prefHeight="3.0" prefWidth="190.0" style="-fx-background-color: #651FFF;">
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </VBox.margin>
+                        </Pane>
+                     </children>
+                     <HBox.margin>
+                        <Insets right="5.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="153.0">
+                     <children>
+                        <JFXButton alignment="BOTTOM_CENTER" onMouseClicked="#statView" prefHeight="21.0" prefWidth="153.0" styleClass="MenuBar" text="Stat">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </JFXButton>
+                        <Pane fx:id="editPane1" prefHeight="3.0" prefWidth="190.0" style="-fx-background-color: #651FFF;">
+                           <VBox.margin>
+                              <Insets left="5.0" right="5.0" />
+                           </VBox.margin>
+                        </Pane>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="46.0" prefWidth="508.0">
+                     <HBox.margin>
+                        <Insets top="3.0" />
+                     </HBox.margin>
+                     <children>
+                        <JFXButton alignment="CENTER_RIGHT" onMouseClicked="#getAddPropertiesView" style="-fx-background-color: #123456; -fx-background-radius: 100px;" styleClass="MenuBar" text="Ajouter Propriétés" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </JFXButton>
                      </children>
                   </HBox>
                </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
             </HBox>
-            <TableView fx:id="supplierTable" layoutX="9.0" layoutY="63.0" maxHeight="380.0" prefHeight="330.0" prefWidth="849.0" style="-fx-alignment: center;" stylesheets="@../../../CommercialSystem-master/src/home/homeview.css" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="44.0" AnchorPane.topAnchor="63.0">
-               <columns>
-                  <TableColumn fx:id="idCol" maxWidth="78.0" prefWidth="78.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="ID" />
-                  <TableColumn fx:id="nameCol" maxWidth="108.0" prefWidth="108.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="NAME" />
-                  <TableColumn fx:id="agentCol" maxWidth="108.0" prefWidth="108.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="AGENT" />
-                  <TableColumn fx:id="adressCol" maxWidth="108.0" prefWidth="108.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="ADRESS" />
-                  <TableColumn fx:id="CityCol" maxWidth="104.0" prefWidth="104.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="CITY" />
-                  <TableColumn fx:id="phoneCol" maxWidth="88.0" prefWidth="88.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="PHONE" />
-                  <TableColumn fx:id="faxCol" maxWidth="88.0" prefWidth="88.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="FAX" />
-                  <TableColumn fx:id="CnssCol" maxWidth="88.0" prefWidth="88.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="CNSS" />
-                  <TableColumn fx:id="operationCol" maxWidth="64.0" minWidth="0.0" prefWidth="64.0" style="-fx-alignment: center; -fx-font-size: 13px;" text="ACTION" />
-               </columns>
-            </TableView>
+            <AnchorPane fx:id="PropertiesAnchor" prefHeight="510.0" prefWidth="980.0">
+               <VBox.margin>
+                  <Insets top="2.0" />
+               </VBox.margin>
+            </AnchorPane>
          </children>
-      </AnchorPane>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </VBox>
    </children>
 </AnchorPane>
