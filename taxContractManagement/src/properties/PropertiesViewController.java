@@ -5,15 +5,22 @@
  */
 package properties;
 
+import helpres.Links;
+import home.HomeViewController;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 
 /**
  * FXML Controller class
@@ -27,27 +34,9 @@ public class PropertiesViewController implements Initializable {
     @FXML
     private Pane editPane;
     @FXML
-    private Pane statPane;
+    private Pane editPane1;
     @FXML
-    private TableView<?> supplierTable;
-    @FXML
-    private TableColumn<?, ?> idCol;
-    @FXML
-    private TableColumn<?, ?> nameCol;
-    @FXML
-    private TableColumn<?, ?> agentCol;
-    @FXML
-    private TableColumn<?, ?> adressCol;
-    @FXML
-    private TableColumn<?, ?> CityCol;
-    @FXML
-    private TableColumn<?, ?> phoneCol;
-    @FXML
-    private TableColumn<?, ?> faxCol;
-    @FXML
-    private TableColumn<?, ?> CnssCol;
-    @FXML
-    private TableColumn<?, ?> operationCol;
+    private AnchorPane PropertiesAnchor;
 
     /**
      * Initializes the controller class.
@@ -55,22 +44,31 @@ public class PropertiesViewController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-    }    
-
-    @FXML
-    private void editPane(MouseEvent event) {
+        getPropertiesTable();
     }
 
     @FXML
-    private void statisticsPane(MouseEvent event) {
+    private void getPropertiesTable() {
+        loadViews(Links.PROPERTYTABLEVIEW);
     }
 
     @FXML
-    private void addMembers(MouseEvent event) {
+    private void statView(MouseEvent event) {
     }
 
     @FXML
-    private void refreshTable(MouseEvent event) {
+    private void getAddPropertiesView(MouseEvent event) {
+        loadViews(Links.ADDPROPERTYVIEW);
     }
-    
+
+    private void loadViews(String viewName) {
+        try {
+            AnchorPane pane = FXMLLoader.load(getClass().getResource(viewName));
+            PropertiesAnchor.getChildren().setAll(pane);
+        } catch (IOException ex) {
+            Logger.getLogger(HomeViewController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+    }
+
 }
