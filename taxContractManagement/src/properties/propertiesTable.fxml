@@ -1,11 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="properties.PropertiesTableController">
-    
+<AnchorPane prefHeight="510.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="properties.PropertiesTableController">
+   <children>
+      <VBox prefWidth="854.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="42.0" prefWidth="980.0">
+               <children>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="42.0" prefWidth="930.0">
+                     <children>
+                        <FontAwesomeIconView fill="#6b6363" glyphName="SEARCH" size="30" wrappingWidth="31.0">
+                           <HBox.margin>
+                              <Insets left="8.0" />
+                           </HBox.margin>
+                        </FontAwesomeIconView>
+                        <TextField prefHeight="37.0" prefWidth="449.0" promptText="Searching for Item" style="-fx-background-radius: 20px;">
+                           <HBox.margin>
+                              <Insets right="4.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Century Gothic" size="16.0" />
+                           </font>
+                        </TextField>
+                     </children>
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="5.0" />
+               </VBox.margin>
+            </HBox>
+            <TableView fx:id="propertiesTable" maxHeight="1.7976931348623157E308" prefHeight="399.0" prefWidth="980.0" style="-fx-alignment: center;">
+               <columns>
+                  <TableColumn fx:id="checkCol" maxWidth="90.0" prefWidth="27.333343505859375" style="-fx-alignment: center; -fx-font-size: 16px;" />
+                  <TableColumn fx:id="idCol" maxWidth="90.0" prefWidth="53.33331298828125" style="-fx-alignment: center; -fx-font-size: 16px;" text="Id " />
+                  <TableColumn fx:id="idProprCol" maxWidth="90.0" prefWidth="52.0" style="-fx-alignment: center; -fx-font-size: 16px;" text="Id pro" />
+                  <TableColumn fx:id="nomProprCol" maxWidth="357.33331298828125" minWidth="8.66668701171875" prefWidth="136.66668701171875" style="-fx-alignment: center; -fx-font-size: 16px;" text="Nom propr" />
+                  <TableColumn fx:id="articleCol" maxWidth="215.33334350585938" minWidth="75.66668701171875" prefWidth="107.0" style="-fx-alignment: center; -fx-font-size: 16px;" text="N° article" />
+                  <TableColumn fx:id="titreCol" maxWidth="357.33331298828125" minWidth="8.66668701171875" prefWidth="107.33331298828125" style="-fx-alignment: center; -fx-font-size: 16px;" text="Titre " />
+                  <TableColumn fx:id="communeCol" maxWidth="270.0" minWidth="0.0" prefWidth="105.0" style="-fx-alignment: center; -fx-font-size: 16px;" text="Commune" />
+                  <TableColumn fx:id="reuCol" maxWidth="357.33331298828125" minWidth="8.66668701171875" prefWidth="130.6666259765625" style="-fx-alignment: center; -fx-font-size: 16px;" text="Reu" />
+                  <TableColumn fx:id="acieCol" maxWidth="357.33331298828125" minWidth="0.66668701171875" prefWidth="77.66668701171875" style="-fx-alignment: center; -fx-font-size: 16px;" text="N° acie" />
+                  <TableColumn fx:id="dateCol" maxWidth="357.33331298828125" minWidth="0.66668701171875" prefWidth="98.66668701171875" style="-fx-alignment: center; -fx-font-size: 16px;" text="Date" />
+                  <TableColumn fx:id="operationCol" maxWidth="270.0" minWidth="0.0" prefWidth="70.0" style="-fx-alignment: center; -fx-font-size: 16px;" text="Action" />
+               </columns>
+               <VBox.margin>
+                  <Insets bottom="4.0" top="-1.0" />
+               </VBox.margin>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT" prefHeight="41.0" prefWidth="980.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="55.0" prefWidth="477.0" style="-fx-background-color: #123456; -fx-background-radius: 16 16 0 16;">
+                     <children>
+                        <Text fill="#6670a1" strokeType="OUTSIDE" strokeWidth="0.0" text=" 0  choisie" wrappingWidth="75.8638916015625">
+                           <HBox.margin>
+                              <Insets left="25.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font name="Andalus" size="18.0" />
+                           </font>
+                        </Text>
+                        <HBox alignment="CENTER" prefHeight="26.0" prefWidth="121.0" style="-fx-border-width: 0 1 0 1; -fx-border-color: #565c78;">
+                           <children>
+                              <FontAwesomeIconView fill="#6670a1" glyphName="CLONE" size="26">
+                                 <HBox.margin>
+                                    <Insets right="11.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIconView>
+                              <FontAwesomeIconView fill="#6670a1" glyphName="PRINT" scaleY="1.1" size="27.5" wrappingWidth="22.785715103149414">
+                                 <HBox.margin>
+                                    <Insets right="11.0" />
+                                 </HBox.margin>
+                              </FontAwesomeIconView>
+                              <FontAwesomeIconView fill="#6670a1" glyphName="TRASH" layoutX="73.0" layoutY="42.0" size="27.5" wrappingWidth="22.785715103149414" />
+                           </children>
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <JFXToggleButton contentDisplay="RIGHT" prefHeight="40.0" prefWidth="227.0" size="6.5" text=" uniquement la sélection" textFill="#6670a1">
+                                 <font>
+                                    <Font name="Andalus" size="16.0" />
+                                 </font>
+                              </JFXToggleButton>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" top="5.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="2.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>
