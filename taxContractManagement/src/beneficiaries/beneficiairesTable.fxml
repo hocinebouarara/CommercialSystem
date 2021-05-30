@@ -45,13 +45,13 @@
             </HBox>
             <TableView fx:id="beneficiairesTable" maxHeight="1.7976931348623157E308" prefHeight="399.0" prefWidth="980.0" style="-fx-alignment: center;">
                <columns>
-                  <TableColumn fx:id="idCol" maxWidth="90.0" prefWidth="90.0" style="-fx-alignment: center; -fx-font-size: 16px;" text="ID" />
-                  <TableColumn fx:id="nameCol" maxWidth="180.0" minWidth="180.0" prefWidth="180.0" style="-fx-alignment: center; -fx-font-size: 16px;" text="Nom et Prenom/R. S." />
-                  <TableColumn fx:id="dateCol" maxWidth="157.3333740234375" prefWidth="152.6666259765625" style="-fx-alignment: center; -fx-font-size: 16px;" text="Date d'anniversaire" />
-                  <TableColumn fx:id="wilayaCol" maxWidth="110.0" prefWidth="110.0" style="-fx-alignment: center; -fx-font-size: 16px;" text="Wilaya" />
-                  <TableColumn fx:id="communeCol" maxWidth="115.0" minWidth="8.66668701171875" prefWidth="115.0" style="-fx-alignment: center; -fx-font-size: 16px;" text="Commune" />
-                  <TableColumn fx:id="natCol" maxWidth="110.0" minWidth="8.66668701171875" prefWidth="110.0" style="-fx-alignment: center; -fx-font-size: 16px;" text="Nationnalité" />
-                  <TableColumn fx:id="operationCol" maxWidth="88.0" minWidth="0.0" prefWidth="88.0" style="-fx-alignment: center; -fx-font-size: 16px;" text="Operation" />
+                  <TableColumn fx:id="idCol" maxWidth="90.0" minWidth="0.0" prefWidth="0.0" style="-fx-alignment: center; -fx-font-size: 16px;" text="ID" />
+                  <TableColumn fx:id="nameCol" maxWidth="270.0" minWidth="175.33334350585938" prefWidth="192.0" style="-fx-alignment: center; -fx-font-size: 16px;" text="Nom et Prenom/R. S." />
+                  <TableColumn fx:id="dateCol" maxWidth="247.66665649414062" prefWidth="158.0" style="-fx-alignment: center; -fx-font-size: 16px;" text="Date d'anniversaire" />
+                  <TableColumn fx:id="wilayaCol" maxWidth="187.3333740234375" prefWidth="142.0" style="-fx-alignment: center; -fx-font-size: 16px;" text="Wilaya" />
+                  <TableColumn fx:id="communeCol" maxWidth="158.0" minWidth="8.66668701171875" prefWidth="138.66668701171875" style="-fx-alignment: center; -fx-font-size: 16px;" text="Commune" />
+                  <TableColumn fx:id="natCol" maxWidth="129.33331298828125" minWidth="8.66668701171875" prefWidth="124.66668701171875" style="-fx-alignment: center; -fx-font-size: 16px;" text="Nationnalité" />
+                  <TableColumn fx:id="operationCol" maxWidth="89.33331298828125" minWidth="0.0" prefWidth="86.66668701171875" style="-fx-alignment: center; -fx-font-size: 16px;" text="Operation" />
                </columns>
                <VBox.margin>
                   <Insets bottom="4.0" top="-1.0" />
