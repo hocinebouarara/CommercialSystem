@@ -55,12 +55,12 @@ public class AddProprietorController implements Initializable {
         // TODO
     }
 
-    void setUpdate(boolean b) {
+    public void setUpdate(boolean b) {
         this.update = b;
 
     }
 
-    void setTextField(int id, String name, LocalDate toLocalDate, String adress, String email) {
+    public void setTextField(int id, String name, LocalDate toLocalDate, String adress, String email) {
 
         proprietorId = id;
         nameField.setText(name);
