@@ -88,6 +88,7 @@ public class PropertiesTableController implements Initializable {
         loadDate();
     }
 
+    @FXML
     private void refreshTable() {
         try {
             propertyList.clear();
@@ -185,19 +186,20 @@ public class PropertiesTableController implements Initializable {
                         });
                         /*editIcon.setOnMouseClicked((MouseEvent event) -> {
 
-                            beneficiaire = beneficiairesTable.getSelectionModel().getSelectedItem();
+                            property = propertiesTable.getSelectionModel().getSelectedItem();
                             FXMLLoader loader = new FXMLLoader();
-                            loader.setLocation(getClass().getResource(Links.ADDBENEFICIAIREVIEW));
+                            loader.setLocation(getClass().getResource(Links.ADDPROPIETORVIEW));
                             try {
                                 loader.load();
                             } catch (IOException ex) {
                                 Logger.getLogger(ProprietorsViewController.class.getName()).log(Level.SEVERE, null, ex);
                             }
 
-                            AddBeneficiaireController addBeneficiaireController = loader.getController();
-                            addBeneficiaireController.setUpdate(true);
-                            addBeneficiaireController.setTextField(beneficiaire.getId(), beneficiaire.getName(),
-                                    beneficiaire.getDate().toLocalDate(), beneficiaire.getWilaya(), beneficiaire.getCommune(), beneficiaire.getNationnalite());
+                            AddPropertyController addPropertyController = loader.getController();
+                            addPropertyController.setUpdate(true);
+                            addPropertyController.setTextField(property.getId(), property.getId_propr(),
+                                    property.getNom(),property.getArticle(),property.getTitre(),property.getCommune(),
+                                    property.getReu(),property.getAcie(),property.getDate());
                             Parent parent = loader.getRoot();
                             Stage stage = new Stage();
                             stage.setScene(new Scene(parent));
