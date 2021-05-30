@@ -1,11 +1,369 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="properties.AddPropertyController">
-    
+<AnchorPane id="AnchorPane" prefHeight="510.0" prefWidth="980.0" stylesheets="@propertiesview.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="properties.AddPropertyController">
+   <children>
+      <VBox layoutY="18.0" prefHeight="487.0" prefWidth="980.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="205.0" prefWidth="980.0">
+               <children>
+                  <VBox prefWidth="455.0" style="-fx-border-color: #c7d1d1d1; -fx-border-width: 2px; -fx-border-radius: 8px;">
+                     <children>
+                        <HBox alignment="CENTER_RIGHT">
+                           <children>
+                              <JFXTextField fx:id="articleFld" prefHeight="39.0" prefWidth="272.0" promptText="N° article" unFocusColor="#c7d1d1">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" layoutX="11.0" layoutY="17.0">
+                           <children>
+                              <JFXTextField fx:id="wilayaFld" prefHeight="25.0" prefWidth="216.0" promptText="Wilaya" unFocusColor="#c7d1d1">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="communeFld" layoutX="215.0" layoutY="10.0" prefHeight="25.0" prefWidth="216.0" promptText="Commune" unFocusColor="#c7d1d1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="20.0" layoutY="73.0">
+                           <children>
+                              <JFXTextField fx:id="reuFld" prefHeight="39.0" prefWidth="435.0" promptText="Reu" unFocusColor="#c7d1d1">
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" layoutX="19.0" layoutY="68.0">
+                           <children>
+                              <JFXRadioButton fx:id="rezChaFld" contentDisplay="CENTER" nodeOrientation="RIGHT_TO_LEFT" prefHeight="27.0" prefWidth="163.0" text="Rez de chaussée" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets top="11.0" />
+                                 </HBox.margin>
+                              </JFXRadioButton>
+                              <JFXTextField fx:id="nEtageFld" layoutX="215.0" layoutY="10.0" prefHeight="25.0" prefWidth="216.0" promptText="N° etage" unFocusColor="#c7d1d1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="nApprtFld" layoutX="9.0" layoutY="10.0" prefHeight="25.0" prefWidth="216.0" promptText="N° appertement" unFocusColor="#c7d1d1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="7.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="10.0" prefWidth="455.0" style="-fx-border-color: #c7d1d1d1; -fx-border-width: 2px; -fx-border-radius: 8px;">
+                     <children>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <JFXTextField fx:id="nomProprFld" prefHeight="39.0" prefWidth="185.0" promptText="N° article" text="Nom et Prenom" unFocusColor="#c7d1d1">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="adresseProprFld" focusColor="#123456" layoutX="237.0" layoutY="10.0" prefHeight="37.0" prefWidth="216.0" promptText="Adresse" unFocusColor="#c7d1d1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="4.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="11.0" layoutY="17.0">
+                           <children>
+                              <JFXComboBox fx:id="orignPropCombo" prefHeight="25.0" prefWidth="265.0" promptText="Origine de propriété" style="-fx-font-size: 16px;" unFocusColor="#c7d1d1" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="20.0" layoutY="73.0">
+                           <children>
+                              <JFXTextField fx:id="titreFld" prefHeight="39.0" prefWidth="430.0" promptText="Titre de propriété" unFocusColor="#c7d1d1">
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" layoutX="19.0" layoutY="68.0">
+                           <children>
+                              <JFXTextField fx:id="acieFld" prefHeight="25.0" prefWidth="205.0" promptText="N° acie" unFocusColor="#c7d1d1">
+                                 <HBox.margin>
+                                    <Insets right="4.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXDatePicker fx:id="dateAcieFld" prefHeight="37.0" prefWidth="205.0" style="-fx-font-size: 16px;">
+                                 <HBox.margin>
+                                    <Insets left="4.0" />
+                                 </HBox.margin></JFXDatePicker>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="7.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="205.0" prefWidth="980.0">
+               <children>
+                  <VBox prefWidth="455.0" style="-fx-border-color: #c7d1d1d1; -fx-border-width: 2px; -fx-border-radius: 8px;">
+                     <children>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <JFXRadioButton fx:id="collectifBtn" contentDisplay="CENTER" nodeOrientation="RIGHT_TO_LEFT" prefHeight="16.0" prefWidth="163.0" text="Rez de chaussée" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </JFXRadioButton>
+                              <JFXRadioButton fx:id="induvidlBtn" contentDisplay="CENTER" nodeOrientation="RIGHT_TO_LEFT" prefHeight="27.0" prefWidth="163.0" text="Rez de chaussée" textAlignment="CENTER">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </JFXRadioButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" layoutX="11.0" layoutY="17.0">
+                           <children>
+                              <JFXTextField fx:id="superTotFld" prefHeight="25.0" prefWidth="216.0" promptText="Superficie total" unFocusColor="#c7d1d1">
+                                 <HBox.margin>
+                                    <Insets right="7.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </JFXTextField>
+                              <JFXTextField fx:id="SuperBatieFld" layoutX="215.0" layoutY="10.0" prefHeight="25.0" prefWidth="216.0" promptText="Superficie bâtie " unFocusColor="#c7d1d1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="7.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="superNonBatieFLd" layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="216.0" promptText="superficie non bâtie " unFocusColor="#c7d1d1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" layoutX="19.0" layoutY="68.0">
+                           <children>
+                              <JFXTextField fx:id="nbrPiecesFld" layoutX="215.0" layoutY="10.0" prefHeight="25.0" prefWidth="216.0" promptText="Nombre pieces" unFocusColor="#c7d1d1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets right="5.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                              <JFXTextField fx:id="nbrEtageFld" layoutX="9.0" layoutY="10.0" prefHeight="25.0" prefWidth="216.0" promptText="Nomber etages" unFocusColor="#c7d1d1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <JFXDatePicker fx:id="dateAchevFld" prefHeight="37.0" prefWidth="424.0" promptText="Date d'achevement de la construction" style="-fx-font-size: 16px;">
+                                 <HBox.margin>
+                                    <Insets left="4.0" />
+                                 </HBox.margin>
+                              </JFXDatePicker>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets right="7.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox layoutX="10.0" layoutY="10.0" prefWidth="455.0" style="-fx-border-color: #c7d1d1d1; -fx-border-width: 2px; -fx-border-radius: 8px;">
+                     <children>
+                        <HBox alignment="CENTER" layoutX="11.0" layoutY="17.0" prefHeight="18.0" prefWidth="435.0">
+                           <children>
+                              <JFXComboBox fx:id="usageCombo" prefHeight="37.0" prefWidth="196.0" promptText="Usage habitation" style="-fx-font-size: 16px;" unFocusColor="#c7d1d1" />
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <JFXTextField fx:id="adresseResdcPrincpFld" focusColor="#123456" layoutX="237.0" layoutY="10.0" prefHeight="37.0" prefWidth="312.0" promptText="Adresse residence principale" unFocusColor="#c7d1d1">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="4.0" />
+                                 </HBox.margin>
+                              </JFXTextField>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER" layoutX="20.0" layoutY="73.0">
+                           <VBox.margin>
+                              <Insets top="8.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                     </padding>
+                     <HBox.margin>
+                        <Insets left="7.0" />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+               <VBox.margin>
+                  <Insets top="12.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false" onMouseClicked="#save" prefHeight="25.0" prefWidth="271.0" style="-fx-background-color: #123456; -fx-background-radius: 8px;" text="ENREGISTRÉ" textFill="WHITE">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onMouseClicked="#clean" prefHeight="25.0" prefWidth="271.0" style="-fx-background-color: #FFA000; -fx-background-radius: 8px;" text="SE VIDER" textFill="WHITE">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </HBox>
+         </children>
+      </VBox>
+      <Text layoutX="93.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Habitation" translateX="-47.0" translateY="-454.0" wrappingWidth="99.47003173828125">
+         <font>
+            <Font name="MV Boli" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="54.0" layoutY="458.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Affectation du bien" translateX="459.0" translateY="-222.0" wrappingWidth="126.80337524414062">
+         <font>
+            <Font name="MV Boli" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="441.0" layoutY="473.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Proprietaire" translateX="73.0" translateY="-454.0" wrappingWidth="99.47003173828125">
+         <font>
+            <Font name="MV Boli" size="12.0" />
+         </font>
+      </Text>
+      <Text layoutX="74.0" layoutY="463.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Designation du bien " translateX="-30.0" translateY="-227.0" wrappingWidth="147.47000122070312">
+         <font>
+            <Font name="MV Boli" size="12.0" />
+         </font>
+      </Text>
+      <FontAwesomeIconView glyphName="HAND_POINTER_ALT" layoutX="684.0" layoutY="56.0" onMouseClicked="#getProprietorsView" size="22" />
+   </children>
 </AnchorPane>
