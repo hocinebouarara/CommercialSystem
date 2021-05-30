@@ -15,7 +15,7 @@
          <children>
             <HBox prefHeight="49.0" prefWidth="980.0">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="propriétaires" wrappingWidth="162.13674926757812">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Propriétaires" wrappingWidth="162.13674926757812">
                      <font>
                         <Font name="Comic Sans MS Bold" size="26.0" />
                      </font>
